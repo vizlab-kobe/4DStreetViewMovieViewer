@@ -2,7 +2,7 @@
 #include "Input.h"
 #include <kvs/SharedPointer>
 #include <kvs/FileList>
-#include <4DStreatViewMovieViewer/Lib/MovieObject.h>
+#include <4DStreetViewMovieViewer/Lib/MovieObject.h>
 
 
 namespace local

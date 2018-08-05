@@ -1,5 +1,5 @@
 #include "MovieScreen.h"
-#include <4DStreatViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
+#include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
 
 
 namespace local

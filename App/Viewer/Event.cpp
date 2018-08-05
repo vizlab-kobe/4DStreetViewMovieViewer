@@ -5,7 +5,7 @@
 #include "Program.h"
 #include <kvs/Timer>
 #include <kvs/Camera>
-#include <4DStreatViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
+#include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
 
 
 namespace local
