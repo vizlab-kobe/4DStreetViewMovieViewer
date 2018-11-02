@@ -19,6 +19,9 @@ private:
     local::Event m_event;
     local::Slider m_slider;
     local::Button m_button;
+//-↓↓---------try---18Oct25--
+	local::ChangeButton m_button2;
+//-↑↑---------try------------
     local::CheckBox m_check_box;
     local::Timer m_timer;
 
@@ -26,6 +29,9 @@ public:
     Controller( local::Model* model, local::View* view );
     local::Slider& slider() { return m_slider; }
     local::Button& button() { return m_button; }
+//-↓↓---------try---18Oct25--
+    local::ChangeButton& button2() { return m_button2; }
+//-↑↑---------try------------
     local::CheckBox& checkBox() { return m_check_box; }
 };
 

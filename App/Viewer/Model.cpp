@@ -47,6 +47,14 @@ void Model::updateCameraPosition( const kvs::Vec3i& position )
     this->setup_object( this->camera_position_index() );
 }
 
+//-↓↓---------try---18Oct30--
+void Model::changeFilePath( const std::string filepath )
+{
+	const std::string filename = filepath;
+	this->setup_object( filename );
+}
+//-↑↑---------------18Oct30--
+
 void Model::setup_object( const size_t index )
 {
     kvs::File file = m_files[ index ];
@@ -57,6 +65,13 @@ void Model::setup_object( const size_t index )
     m_object_pointer = ObjectPointer( new Object( filename ) );
 }
 
+//-↓↓---------try---18Oct30--
+void Model::setup_object( const std::string filepath )
+{
+	const std::string filename = filepath;
+	m_object_pointer = ObjectPointer( new Object( filename ) );
+}
+//-↑↑---------------18Oct30--
 size_t Model::camera_position_index() const
 {
     const kvs::Vec3i& dims = m_camera_array_dimensions;

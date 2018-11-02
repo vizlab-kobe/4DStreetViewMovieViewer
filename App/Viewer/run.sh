@@ -1,7 +1,7 @@
 #!/bin/sh
 PROGRAM=${PWD##*/}
 
-DIRNAME=~/Work/Data/4DStreatViewData/movies/
+DIRNAME=~/Documents/GitHub/4DStreetViewMovieViewer/TestData/movies/
 EXTENSION=mp4
 DIMENSIONS=(10,10,10)
 POSITION=(0,0,0)

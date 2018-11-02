@@ -29,4 +29,28 @@ void Button::pressed()
     }
 }
 
+//-↓↓---------try---18Oct25--
+ChangeButton::ChangeButton( local::Model* model, local::View* view ):
+	kvs::PushButton( &(view->movieScreen()) ),
+	m_model( model ),
+	m_view( view )
+{
+		this->setCaption("TRY!");
+}
+
+void ChangeButton::pressed()
+{
+//-↓↓---------try---18Oct30--
+    const kvs::Vec3i try_pos( 5, 5, 5);
+    m_model->updateCameraPosition( try_pos);
+//	std::string try_path = "/Users/otsujikeiko/Work/Data/4DStreetViewData/movies/test.mp4";
+//	m_model->changeFilePath( try_path );
+    m_view->movieScreen().update( m_model );
+//-↑↑---------------18Oct30--
+	this->setCaption("OK!!");
+}
+//-↑↑---------------18Oct25--
+
+
+
 } // end of namespace local

@@ -32,9 +32,15 @@ public:
     float frameRate() const { return m_frame_rate; }
     Object* object() const;
     void updateCameraPosition( const kvs::Vec3i& position );
+//-↓↓---------try---18Oct30--
+	void changeFilePath(const std::string filepath);
+//-↑↑---------------18Oct30--
 
 private:
     void setup_object( const size_t index );
+//-↓↓---------try---18Oct30--
+    void setup_object( const std::string filepath );
+//-↑↑---------------18Oct30--
     size_t camera_position_index() const;
 };
 
