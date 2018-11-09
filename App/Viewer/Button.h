@@ -19,14 +19,14 @@ public:
 };
 
 //-↓↓---------try---18Oct25--
-class ChangeButton : public kvs::PushButton
+class FlipCameraButton : public kvs::PushButton
 {
 private:
     local::Model* m_model;
     local::View* m_view;
 
 public:
-    ChangeButton( local::Model* model, local::View* view );
+    FlipCameraButton( local::Model* model, local::View* view );
     void pressed();
 };
 //-↑↑---------try------------

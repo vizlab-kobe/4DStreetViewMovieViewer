@@ -22,10 +22,29 @@ Model::Model( const local::Input& input )
         }
     }
 
+//-↓↓---------try---18Nov02--
+	std::string gray_dirname = input.dirname + "gray/";
+	kvs::Directory gray_dir( gray_dirname );
+    if ( !gray_dir.exists() ) { throw; }
+    if ( !gray_dir.isDirectory() ) { throw; }
+	
+    const kvs::FileList& gray_files = gray_dir.fileList();
+    for ( size_t i = 0; i < gray_files.size(); i++ )
+    {
+       if ( gray_files[i].extension() == ext )
+        {
+            m_gray_files.push_back( gray_files[i] );
+        }
+    }
+//-↑↑---------------18Nov02--
+
     m_camera_position = input.position;
     m_camera_array_dimensions = input.dimensions;
     m_frame_rate = input.frame_rate;
-
+//-↓↓---------try---18Nov02--
+	// jm_flip_camera_on = false;
+	m_flip_camera_on = true;
+//-↑↑---------------18Nov02--
     this->setup_object( this->camera_position_index() );
 }
 
@@ -47,17 +66,14 @@ void Model::updateCameraPosition( const kvs::Vec3i& position )
     this->setup_object( this->camera_position_index() );
 }
 
-//-↓↓---------try---18Oct30--
-void Model::changeFilePath( const std::string filepath )
-{
-	const std::string filename = filepath;
-	this->setup_object( filename );
-}
-//-↑↑---------------18Oct30--
 
 void Model::setup_object( const size_t index )
 {
-    kvs::File file = m_files[ index ];
+//-↓↓---------try---18Nov02--
+	kvs::File file = m_flip_camera_on ? m_gray_files[ index ] : m_files[ index ];
+//-↑↑---------------18Nov02--
+//    	kvs::File file = m_files[ index ];
+
     if ( !file.exists() ) { throw; }
     if ( !file.isFile() ) { throw; }
 
@@ -65,13 +81,6 @@ void Model::setup_object( const size_t index )
     m_object_pointer = ObjectPointer( new Object( filename ) );
 }
 
-//-↓↓---------try---18Oct30--
-void Model::setup_object( const std::string filepath )
-{
-	const std::string filename = filepath;
-	m_object_pointer = ObjectPointer( new Object( filename ) );
-}
-//-↑↑---------------18Oct30--
 size_t Model::camera_position_index() const
 {
     const kvs::Vec3i& dims = m_camera_array_dimensions;

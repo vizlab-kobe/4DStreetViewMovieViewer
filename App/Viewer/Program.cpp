@@ -28,7 +28,7 @@ Program::Program()
 
 int Program::exec( int argc, char** argv )
 {
-    local::Application app( argc, argv );
+	local::Application app( argc, argv );
 
     local::Input input( argc, argv );
     if ( !input.parse() ) { return 1; }

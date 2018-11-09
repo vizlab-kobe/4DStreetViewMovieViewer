@@ -30,24 +30,31 @@ void Button::pressed()
 }
 
 //-↓↓---------try---18Oct25--
-ChangeButton::ChangeButton( local::Model* model, local::View* view ):
+FlipCameraButton::FlipCameraButton( local::Model* model, local::View* view ):
 	kvs::PushButton( &(view->movieScreen()) ),
 	m_model( model ),
 	m_view( view )
 {
-		this->setCaption("TRY!");
+		this->setCaption("Flip Cameras");
 }
 
-void ChangeButton::pressed()
+void FlipCameraButton::pressed()
 {
-//-↓↓---------try---18Oct30--
-    const kvs::Vec3i try_pos( 5, 5, 5);
-    m_model->updateCameraPosition( try_pos);
-//	std::string try_path = "/Users/otsujikeiko/Work/Data/4DStreetViewData/movies/test.mp4";
-//	m_model->changeFilePath( try_path );
+//-↓↓---------try---18Nov02--
+    const kvs::Vec3i pos = m_model->cameraPosition();
+	if ( m_model->flipCameraOn() == false )
+	{
+		m_model->setFlipCameraOn( true );
+	}
+	else
+	{
+		m_model->setFlipCameraOn( false );
+	}
+
+//-↑↑---------------18Nov02--
+    m_model->updateCameraPosition( pos);
     m_view->movieScreen().update( m_model );
-//-↑↑---------------18Oct30--
-	this->setCaption("OK!!");
+	this->setCaption("Flip");
 }
 //-↑↑---------------18Oct25--
 

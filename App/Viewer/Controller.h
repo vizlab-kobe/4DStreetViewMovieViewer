@@ -20,7 +20,7 @@ private:
     local::Slider m_slider;
     local::Button m_button;
 //-↓↓---------try---18Oct25--
-	local::ChangeButton m_button2;
+	local::FlipCameraButton m_flip_camera_button;
 //-↑↑---------try------------
     local::CheckBox m_check_box;
     local::Timer m_timer;
@@ -30,7 +30,7 @@ public:
     local::Slider& slider() { return m_slider; }
     local::Button& button() { return m_button; }
 //-↓↓---------try---18Oct25--
-    local::ChangeButton& button2() { return m_button2; }
+    local::FlipCameraButton& flip_camera_button() { return m_flip_camera_button; }
 //-↑↑---------try------------
     local::CheckBox& checkBox() { return m_check_box; }
 };
