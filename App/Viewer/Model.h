@@ -17,7 +17,7 @@ public:
 private:
     kvs::FileList m_files;
 //-↓↓---------try---18Nov02--
-	kvs::FileList m_gray_files;
+	kvs::FileList m_camera_on_files;
 //-↑↑---------------18Nov02--	
     kvs::Vec3i m_camera_position;
     kvs::Vec3i m_camera_array_dimensions;

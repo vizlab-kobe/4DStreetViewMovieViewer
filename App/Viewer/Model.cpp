@@ -8,7 +8,11 @@ namespace local
 
 Model::Model( const local::Input& input )
 {
-    kvs::Directory dir( input.dirname );
+//-↓↓---------try---18Nov05--
+	std::string dirname = input.dirname + "camera_off/";
+//    kvs::Directory dir( input.dirname );
+	kvs::Directory dir( dirname );
+//-↑↑---------------18Nov05--
     if ( !dir.exists() ) { throw; }
     if ( !dir.isDirectory() ) { throw; }
 
@@ -23,17 +27,17 @@ Model::Model( const local::Input& input )
     }
 
 //-↓↓---------try---18Nov02--
-	std::string gray_dirname = input.dirname + "gray/";
-	kvs::Directory gray_dir( gray_dirname );
-    if ( !gray_dir.exists() ) { throw; }
-    if ( !gray_dir.isDirectory() ) { throw; }
+	std::string camera_on_dirname = input.dirname + "camera_on/";
+	kvs::Directory camera_on_dir( camera_on_dirname );
+    if ( !camera_on_dir.exists() ) { throw; }
+    if ( !camera_on_dir.isDirectory() ) { throw; }
 	
-    const kvs::FileList& gray_files = gray_dir.fileList();
-    for ( size_t i = 0; i < gray_files.size(); i++ )
+    const kvs::FileList& camera_on_files = camera_on_dir.fileList();
+    for ( size_t i = 0; i < camera_on_files.size(); i++ )
     {
-       if ( gray_files[i].extension() == ext )
+       if ( camera_on_files[i].extension() == ext )
         {
-            m_gray_files.push_back( gray_files[i] );
+            m_camera_on_files.push_back( camera_on_files[i] );
         }
     }
 //-↑↑---------------18Nov02--
@@ -42,8 +46,7 @@ Model::Model( const local::Input& input )
     m_camera_array_dimensions = input.dimensions;
     m_frame_rate = input.frame_rate;
 //-↓↓---------try---18Nov02--
-	// jm_flip_camera_on = false;
-	m_flip_camera_on = true;
+	m_flip_camera_on = false;
 //-↑↑---------------18Nov02--
     this->setup_object( this->camera_position_index() );
 }
@@ -70,7 +73,7 @@ void Model::updateCameraPosition( const kvs::Vec3i& position )
 void Model::setup_object( const size_t index )
 {
 //-↓↓---------try---18Nov02--
-	kvs::File file = m_flip_camera_on ? m_gray_files[ index ] : m_files[ index ];
+	kvs::File file = m_flip_camera_on ? m_camera_on_files[ index ] : m_files[ index ];
 //-↑↑---------------18Nov02--
 //    	kvs::File file = m_files[ index ];
 

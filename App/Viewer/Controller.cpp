@@ -58,41 +58,62 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_event( model, view, this ),
     m_slider( model, view ),
     m_button( model, view ),
-//-↓↓---------try---18Oct23--
+//-↓↓---------try---18Oct25--
 	m_flip_camera_button( model, view ),
-//-↑↑---------try------------
+//-↑↑---------------18Oct25--
     m_check_box( model, view ),
-    m_timer( ::FrameRate2MSec( model->frameRate() ) )
+    m_timer( ::FrameRate2MSec( model->frameRate() ) ),
+//-↓↓---------try---18Nov09--
+	widget_width(150),
+	widget_height(30)
+//-↑↑---------------18Nov09--
 {
     m_view->movieScreen().addEvent( &m_event );
     m_view->movieScreen().addTimerEvent( new ::TimerEvent( model, view, this ), &m_timer );
 
-    const size_t widget_width = 150;
-    const size_t widget_height = 30;
     m_slider.setMargin( 0 );
     m_slider.setSize( widget_width, widget_height );
     m_button.setSize( widget_width / 2, widget_height );
-//-↓↓---------try---18Oct23--
+//-↓↓---------try---18Oct25--
 	m_flip_camera_button.setSize( widget_width, widget_height );
-//-↑↑---------try------------
+//-↑↑---------------18Oct25--
     m_check_box.setSize( widget_width / 2, widget_height );
 
-    const size_t screen_width = m_view->movieScreen().width();
-    const size_t screen_height = m_view->movieScreen().height();
-    const size_t margin = 10;
-    m_slider.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 2 - margin * 3 );
+//-↓↓---------try---18Nov09--
+	this->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+//-↑↑---------------18Nov09--
+
+}
+
+
+//-↓↓---------try---18Nov09--
+void Controller::showWidget( const int width, const int height )
+{
+	const size_t screen_width = width;
+	const size_t screen_height = height;
+	const size_t margin = 10;
+
+	m_slider.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 2 - margin * 3 );
     m_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height - margin );
-//-↓↓---------try---18Oct23--
 	m_flip_camera_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 3 - margin  );
-//-↑↑---------try------------
     m_check_box.setPosition( screen_width - widget_width / 2, screen_height - widget_height - margin / 2 );
 
     m_slider.show();
     m_button.show();
-//-↓↓---------try---18Oct23--
 	m_flip_camera_button.show();
-//-↑↑---------try------------
     m_check_box.show();
+
 }
+//-↑↑---------------18Nov09--
+
+
+
+//-↓↓---------try---18Nov05--
+void Controller::resizeShow( const int width, const int height )
+{
+	this->showWidget( width, height );
+}
+//-↑↑---------------18Nov05--
+
 
 } // end of namespace local
