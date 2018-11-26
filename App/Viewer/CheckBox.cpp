@@ -24,4 +24,25 @@ void CheckBox::stateChanged()
     renderer->setEnabledLoopPlay( this->state() );
 }
 
+//-↓↓---------try---18Nov20--
+ReversePlayBox::ReversePlayBox( local::Model* model, local::View* view ):
+	kvs::CheckBox( &(view->movieScreen()) ),
+	m_model( model ),
+	m_view( view )
+{
+	typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+	Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+	this->setCaption("Reverse");
+	this->setState( renderer->isEnabledReversePlay() );	
+}
+
+void ReversePlayBox::stateChanged()
+{
+	typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+	Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+	renderer->setEnableReversePlay( this->state() );
+}
+
+//-↑↑---------------18Nov20--
 } // end of namespace local

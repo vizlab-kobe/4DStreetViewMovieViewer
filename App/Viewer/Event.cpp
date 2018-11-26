@@ -15,10 +15,12 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
     m_model( model ),
     m_view( view ),
     m_controller( controller ),
-    m_enable_auto_play( false )
+    m_enable_auto_play( false )//,
+//	previous_width( 512 ),				/*----18Nov09----*/
+//	previous_height( 512 )				/*----18Nov09----*/
 {
     setEventType(
-	    kvs::EventBase::ResizeEvent |	/*----18Nov05----  */
+	    kvs::EventBase::ResizeEvent |	/*----18Nov05----*/
         kvs::EventBase::MousePressEvent |
         kvs::EventBase::MouseMoveEvent |
         kvs::EventBase::MouseReleaseEvent |
@@ -108,6 +110,15 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         m_controller->checkBox().stateChanged();
         break;
     }
+//-↓↓---------try---18Nov20--
+    case kvs::Key::r:
+    {
+        const bool state = m_controller->reverseBox().state();
+        m_controller->reverseBox().setState( !state );
+        m_controller->reverseBox().stateChanged();
+        break;
+    }
+//-↑↑---------------18Nov20--
     case kvs::Key::a:
     {
         const int index = 0;
@@ -135,25 +146,20 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 		break;
     }
 //-↓↓---------try---18Nov09--
-	case kvs::Key::R:
+	case kvs::Key::s:
 	{
 		int sc_width = m_view->movieScreen().width() - 50;
 		int sc_height = m_view->movieScreen().height() - 50;
 			
-		std::cout << sc_width << " , " << sc_height << std::endl;
-		
 		m_view->movieScreen().resize( sc_width, sc_height );
-//		m_controller->resizeShow( sc_width - 50, sc_height - 50 );
-
 		break;
 	}
-	case kvs::Key::r:
+	case kvs::Key::b:
 	{
 		int sc_width = m_view->movieScreen().width() + 50;
 		int sc_height = m_view->movieScreen().height() + 50;
 		
-		m_view->movieScreen().resize( sc_width + 50, sc_height + 50 );
-//		m_controller->resizeShow( scrn_width + 50, scrn_height + 50 );	
+		m_view->movieScreen().resize( sc_width, sc_height );
 		break;
 	}
 //-↑↑---------------18Nov09--
@@ -163,17 +169,33 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     m_view->movieScreen().update( m_model );
 }
 
-//-↓↓---------try---18Nov05--
+//-↓↓---------try---18Nov09--
 
 void Event::resizeEvent(int width, int height)
 {
-	std::cout << "width:" << width << ",height:" << height << std::endl;
+//	std::cout << "width:" << previous_width  << ",height:" << previous_height << std::endl;
+//	std::cout << "width2:" << width << ",height2:" << height << std::endl;
 	
+//	int difference_x = kvs::Math::Abs( width - previous_width );
+//	int difference_y = kvs::Math::Abs( height - previous_height );
+//	int s_width;
+
+//	if ( difference_x >= difference_y )
+//	{	
+//		s_width = width;
+//	}
+//	else
+//	{	
+//		s_width = height;
+//	}
 	int s_width = kvs::Math::Max( width, height );
 
 	m_view->movieScreen().resize( s_width , s_width );
 	m_controller->resizeShow( s_width, s_width );
+
+//	previous_width = s_width;
+//	previous_height = s_width;
 }
-//-↑↑---------------18Nov05--
+//-↑↑---------------18Nov09--
 
 } // end of namespace local

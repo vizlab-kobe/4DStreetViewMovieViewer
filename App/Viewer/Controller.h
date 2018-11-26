@@ -23,6 +23,9 @@ private:
 	local::FlipCameraButton m_flip_camera_button;
 //-↑↑---------------18Oct25--
     local::CheckBox m_check_box;
+//-↓↓---------try---18Nov20--
+	local::ReversePlayBox m_reverse_box;
+//-↑↑---------------18Nov20--
     local::Timer m_timer;
 //-↓↓---------try---18Nov09--
 	const size_t widget_width;
@@ -37,6 +40,9 @@ public:
     local::FlipCameraButton& flip_camera_button() { return m_flip_camera_button; }
 //-↑↑---------------18Oct25--
     local::CheckBox& checkBox() { return m_check_box; }
+//-↓↓---------try---18Nov20--
+	local::ReversePlayBox& reverseBox() { return m_reverse_box;}
+//-↑↑---------------18Nov20--
 
 //-↓↓---------try---18Nov09--
 	void showWidget( const int width, const int height ); 
