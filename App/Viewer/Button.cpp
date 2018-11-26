@@ -35,7 +35,7 @@ FlipCameraButton::FlipCameraButton( local::Model* model, local::View* view ):
 	m_model( model ),
 	m_view( view )
 {
-		this->setCaption("Flip Cameras");
+		this->setCaption("Cameras On");
 }
 
 void FlipCameraButton::pressed()
@@ -45,16 +45,17 @@ void FlipCameraButton::pressed()
 	if ( m_model->flipCameraOn() == false )
 	{
 		m_model->setFlipCameraOn( true );
+		this->setCaption("Camera Off");
 	}
 	else
 	{
 		m_model->setFlipCameraOn( false );
+		this->setCaption("Camera On");
 	}
 
 //-↑↑---------------18Nov02--
     m_model->updateCameraPosition( pos);
     m_view->movieScreen().update( m_model );
-	this->setCaption("Flip");
 }
 //-↑↑---------------18Oct25--
 

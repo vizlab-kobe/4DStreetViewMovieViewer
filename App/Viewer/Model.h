@@ -30,8 +30,10 @@ private:
 public:
     Model( const local::Input& input );
 
-    const kvs::File& file() const { return m_files[this->camera_position_index()]; }
-    const std::string filename() const { return m_files[this->camera_position_index()].fileName(); }
+//-↓↓---------try---18Nov12--
+    const kvs::File& file() const { return m_flip_camera_on ? m_camera_on_files[this->camera_position_index()] : m_files[this->camera_position_index()]; }
+    const std::string filename() const { return m_flip_camera_on ? m_camera_on_files[this->camera_position_index()].fileName() : m_files[this->camera_position_index()].fileName(); }
+//-↑↑---------------18Nov12--	
     const kvs::Vec3i& cameraPosition() const { return m_camera_position; }
     const kvs::Vec3i& cameraArrayDimensions() const { return m_camera_array_dimensions; }
     const ObjectPointer& objectPointer() const { return m_object_pointer; }
