@@ -44,7 +44,13 @@ private:
     kvs::ProgramObject m_shader_program; ///< shader program
     bool m_enable_auto_play;
     bool m_enable_loop_play;
-    int m_frame_index;
+//-↓↓---------try---18Nov20--
+	bool m_enable_reverse_play;
+//-↑↑---------------18Nov20--
+	int m_frame_index;
+//-↓↓---------try---18Nov26--
+	int m_current_frame_index;
+//-↑↑---------------18Nov26--
 
 public:
     SphericalMapMovieRenderer( const Type& type = SphericalMapMovieRenderer::Centering );
@@ -52,16 +58,31 @@ public:
     void exec( kvs::ObjectBase* object, kvs::Camera* camera, kvs::Light* light );
 
     int frameIndex() const { return m_frame_index; }
+//-↓↓---------try---18Nov26--
+	int currentFrameIndex() const { return m_current_frame_index; }
+//-↑↑---------------18Nov26--
     bool isEnabledAutoPlay() const { return m_enable_auto_play; }
     bool isEnabledLoopPlay() const { return m_enable_loop_play; }
+//-↓↓---------try---18Nov20--
+	bool isEnabledReversePlay() const { return m_enable_reverse_play; }
+//-↑↑---------------18Nov20--
 
     void setFrameIndex( const int index ) { m_frame_index = index; }
     void setEnabledAutoPlay( const bool enable ) { m_enable_auto_play = enable; }
     void setEnabledLoopPlay( const bool enable ) { m_enable_loop_play = enable; }
+//-↓↓---------try---18Nov20--
+	void setEnableReversePlay( const bool enable ) { m_enable_reverse_play = enable; }
+//-↑↑---------------18Nov20--
     void enableAutoPlay() { this->setEnabledAutoPlay( true ); }
     void enableLoopPlay() { this->setEnabledLoopPlay( true ); }
+//-↓↓---------try---18Nov20--
+	void enableReversePlay() { this->setEnableReversePlay( true ); }
+//-↑↑---------------18Nov20--
     void disableAutoPlay() { this->setEnabledAutoPlay( false ); }
     void disableLoopPlay() { this->setEnabledLoopPlay( false ); }
+//-↓↓---------try---18Nov20--
+	void disableReversePlay() { this->setEnableReversePlay( false ); }
+//-↑↑---------------18Nov20--
 
 private:
     void create_shader_program();
