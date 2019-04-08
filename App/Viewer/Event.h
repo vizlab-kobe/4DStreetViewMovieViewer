@@ -3,7 +3,6 @@
 //#include "View.h"
 #include <kvs/EventListener>
 
-
 namespace local
 {
 
@@ -28,6 +27,9 @@ private:
     void mouseReleaseEvent( kvs::MouseEvent* event );
     void mouseDoubleClickEvent( kvs::MouseEvent* event );
     void keyPressEvent( kvs::KeyEvent* event );
+//-↓↓---------try---18Nov05--
+	void resizeEvent( int width, int height );
+//-↑↑---------------18Nov05--
 };
 
 } // end of namespace local

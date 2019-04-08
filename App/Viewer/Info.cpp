@@ -33,7 +33,10 @@ void Info::screenUpdated()
         typedef lib4dsv::SphericalMapMovieRenderer Renderer;
         local::Screen* local_screen = static_cast<local::Screen*>( screen() );
         Renderer* renderer = Renderer::DownCast( local_screen->scene()->renderer("Renderer") );
-        const int index = renderer->frameIndex();
+//-↓↓---------try---18Nov26--
+//        const int index = renderer->frameIndex();
+		const int index = renderer->currentFrameIndex();
+//-↑↑---------------18Nov26--
 
         this->setText( "Filename: %s", m_model->filename().c_str() );
         this->addText( "Image resolution: %d x %d", screen()->width(), screen()->height() );

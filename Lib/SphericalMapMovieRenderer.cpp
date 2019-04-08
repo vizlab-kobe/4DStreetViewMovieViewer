@@ -19,7 +19,13 @@ namespace lib4dsv
 SphericalMapMovieRenderer::SphericalMapMovieRenderer( const SphericalMapMovieRenderer::Type& type ):
     m_enable_auto_play( false ),
     m_enable_loop_play( false ),
-    m_frame_index( 0 )
+//-↓↓---------try---18Nov20--
+	m_enable_reverse_play( false ),
+//-↑↑---------------18Nov20--
+    m_frame_index( 0 ),
+//-↓↓---------try---18Nov26--
+	m_current_frame_index( 0 )
+//-↑↑---------------18Nov26--
 {
     m_type = type;
 }
@@ -106,23 +112,54 @@ void SphericalMapMovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* came
 
     if ( m_enable_auto_play )
     {
-        m_frame_index++;
-        if ( m_enable_loop_play )
-        {
-            if ( video->device().nextFrameIndex() == video->device().numberOfFrames() )
-            {
-                video->device().setNextFrameIndex(0);
-                m_frame_index = 0;
-            }
-        }
-        else
-        {
-            if ( video->device().nextFrameIndex() == video->device().numberOfFrames() )
-            {
-                video->device().setNextFrameIndex( video->device().numberOfFrames() - 1 );
-                m_frame_index = video->device().numberOfFrames() - 1;
-            }
-        }
+//-↓↓---------try---18Nov20--
+//-↓↓---------try---18Nov26--
+		m_current_frame_index = m_frame_index;
+//-↑↑---------------18Nov26--
+		if ( m_enable_reverse_play )
+		{
+			int reverse_play_index = video->device().nextFrameIndex();
+			reverse_play_index = reverse_play_index - 2;
+			m_frame_index--;
+			if ( m_enable_loop_play )
+			{
+				if ( video->device().nextFrameIndex() == 1 )
+				{
+					reverse_play_index = video->device().numberOfFrames() - 1;
+					m_frame_index = video->device().numberOfFrames() - 1;
+				}
+			}
+			else
+			{
+				if ( video->device().nextFrameIndex() == 1 )
+				{
+					reverse_play_index = 0;
+					m_frame_index = 0;
+				}
+			}
+			video->device().setNextFrameIndex( reverse_play_index );
+		}
+		else
+		{
+			m_frame_index++;
+        	if ( m_enable_loop_play )
+        	{
+            	if ( video->device().nextFrameIndex() == video->device().numberOfFrames() )
+            	{
+                	video->device().setNextFrameIndex(0);
+                	m_frame_index = 0;
+            	}
+        	}
+        	else
+        	{
+            	if ( video->device().nextFrameIndex() == video->device().numberOfFrames() )
+            	{
+                	video->device().setNextFrameIndex( video->device().numberOfFrames() - 1 );
+                	m_frame_index = video->device().numberOfFrames() - 1;
+            	}
+        	}
+		}
+//-↑↑---------------18Nov20--
     }
     else
     {

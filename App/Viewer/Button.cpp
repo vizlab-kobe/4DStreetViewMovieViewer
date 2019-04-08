@@ -29,4 +29,36 @@ void Button::pressed()
     }
 }
 
+//-↓↓---------try---18Oct25--
+FlipCameraButton::FlipCameraButton( local::Model* model, local::View* view ):
+	kvs::PushButton( &(view->movieScreen()) ),
+	m_model( model ),
+	m_view( view )
+{
+		this->setCaption("Cameras On");
+}
+
+void FlipCameraButton::pressed()
+{
+//-↓↓---------try---18Nov02--
+    const kvs::Vec3i pos = m_model->cameraPosition();
+	if ( m_model->flipCameraOn() == false )
+	{
+		m_model->setFlipCameraOn( true );
+		this->setCaption("Camera Off");
+	}
+	else
+	{
+		m_model->setFlipCameraOn( false );
+		this->setCaption("Camera On");
+	}
+
+//-↑↑---------------18Nov02--
+    m_model->updateCameraPosition( pos);
+    m_view->movieScreen().update( m_model );
+}
+//-↑↑---------------18Oct25--
+
+
+
 } // end of namespace local
