@@ -15,7 +15,10 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
     m_model( model ),
     m_view( view ),
     m_controller( controller ),
-    m_enable_auto_play( false )//,
+    m_enable_auto_play( false ),
+//-↓↓---------try---18Nov26--
+    m_enable_loop_play( false )//,
+//-↑↑---------------18Nov26--
 //	previous_width( 512 ),				/*----18Nov09----*/
 //	previous_height( 512 )				/*----18Nov09----*/
 {
@@ -95,42 +98,50 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     m_model->updateCameraPosition( pos + d );
     timer.stop();
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
+    m_view->movieScreen().update( m_model );
 
     switch ( event->key() )
     {
     case kvs::Key::Space:
     {
         m_controller->button().pressed();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
         break;
     }
-    case kvs::Key::l:
-    {
-        const bool state = m_controller->checkBox().state();
-        m_controller->checkBox().setState( !state );
-        m_controller->checkBox().stateChanged();
-        break;
-    }
-//-↓↓---------try---18Nov20--
-    case kvs::Key::r:
-    {
-        const bool state = m_controller->reverseBox().state();
-        m_controller->reverseBox().setState( !state );
-        m_controller->reverseBox().stateChanged();
-        break;
-    }
-//-↑↑---------------18Nov20--
+
     case kvs::Key::a:
     {
         const int index = 0;
         m_controller->slider().setValue( index );
         m_controller->slider().sliderMoved();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model, index );
+//-↑↑---------------18Dec03--
         break;
     }
+//-↓↓---------try---18Dec07--
+    case kvs::Key::b:
+    {
+        int sc_width = m_view->movieScreen().width() + 50;
+        int sc_height = m_view->movieScreen().height() + 50;
+
+        m_view->movieScreen().resize( sc_width, sc_height );
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
+    }
+//-↑↑---------------18Dec07--
     case kvs::Key::e:
     {
         const int index = m_model->objectPointer()->device().numberOfFrames() - 1;
         m_controller->slider().setValue( index );
         m_controller->slider().sliderMoved();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model, index );
+//-↑↑---------------18Dec03--
         break;
     }
     case kvs::Key::i:
@@ -143,30 +154,117 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         {
             m_view->info().show();
         }
-		break;
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
     }
+    case kvs::Key::l:
+    {
+        const bool state = m_controller->checkBox().state();
+        m_controller->checkBox().setState( !state );
+        m_controller->checkBox().stateChanged();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
+    }
+//-↓↓---------try---18Nov20--
+    case kvs::Key::r:
+    {
+        const bool state = m_controller->reverseBox().state();
+        m_controller->reverseBox().setState( !state );
+        m_controller->reverseBox().stateChanged();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
+    }
+//-↑↑---------------18Nov20--
 //-↓↓---------try---18Nov09--
-	case kvs::Key::s:
-	{
-		int sc_width = m_view->movieScreen().width() - 50;
-		int sc_height = m_view->movieScreen().height() - 50;
-			
-		m_view->movieScreen().resize( sc_width, sc_height );
-		break;
-	}
-	case kvs::Key::b:
-	{
-		int sc_width = m_view->movieScreen().width() + 50;
-		int sc_height = m_view->movieScreen().height() + 50;
-		
-		m_view->movieScreen().resize( sc_width, sc_height );
-		break;
-	}
+    case kvs::Key::s:
+    {
+        int sc_width = m_view->movieScreen().width() - 50;
+        int sc_height = m_view->movieScreen().height() - 50;
+
+        m_view->movieScreen().resize( sc_width, sc_height );
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
+    }
 //-↑↑---------------18Nov09--
+//-↓↓---------try---18Nov26--
+    case kvs::Key::t:
+    {
+        typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+        Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+        int index = renderer->frameIndex();
+        m_enable_loop_play = renderer->isEnabledLoopPlay();
+        index++;
+
+        if ( m_enable_loop_play )
+        {
+            if ( index == m_model->objectPointer()->device().numberOfFrames() )
+            {
+                index = 0;
+            }
+        }
+        else
+        {
+            if ( index == m_model->objectPointer()->device().numberOfFrames() )
+            {
+            index = m_model->objectPointer()->device().numberOfFrames() - 1;
+            }
+        }
+        renderer->setFrameIndex( index );
+        m_model->objectPointer()->device().setNextFrameIndex( index );
+        m_controller->slider().setValue( index );	//sliderに今の位置を反映
+        m_controller->slider().sliderMoved();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model, index );
+//-↑↑---------------18Dec03--
+        break;
+    }
+    case kvs::Key::T:
+    {
+        typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+        Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+        int index = renderer->frameIndex();
+        m_enable_loop_play = renderer->isEnabledLoopPlay();
+        index--;
+
+        if ( m_enable_loop_play )
+        {
+            if ( index < 0 )
+            {
+                index = m_model->objectPointer()->device().numberOfFrames() - 1;
+            }
+        }
+        else
+        {
+            if ( index < 0 )
+            {
+                index = 0;
+            }
+        }
+        renderer->setFrameIndex( index );
+        m_model->objectPointer()->device().setNextFrameIndex( index );
+        m_controller->slider().setValue( index );
+        m_controller->slider().sliderMoved();
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model, index );
+//-↑↑---------------18Dec03--
+        break;
+    }
+//-↑↑---------------18Nov26--
+
     default: break;
     }
 
-    m_view->movieScreen().update( m_model );
+//-↓↓---------try---18Dec03--
+//    m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
 }
 
 //-↓↓---------try---18Nov09--
@@ -188,10 +286,10 @@ void Event::resizeEvent(int width, int height)
 //	{	
 //		s_width = height;
 //	}
-	int s_width = kvs::Math::Max( width, height );
+    int s_width = kvs::Math::Max( width, height );
 
-	m_view->movieScreen().resize( s_width , s_width );
-	m_controller->resizeShow( s_width, s_width );
+    m_view->movieScreen().resize( s_width , s_width );
+    m_controller->resizeShow( s_width, s_width );
 
 //	previous_width = s_width;
 //	previous_height = s_width;

@@ -68,6 +68,9 @@ public:
 //-↑↑---------------18Nov20--
 
     void setFrameIndex( const int index ) { m_frame_index = index; }
+//-↓↓---------try---18Nov26--
+	void setCurrentFrameIndex( const int index ) { m_current_frame_index = index; }
+//-↑↑---------------18Nov26--
     void setEnabledAutoPlay( const bool enable ) { m_enable_auto_play = enable; }
     void setEnabledLoopPlay( const bool enable ) { m_enable_loop_play = enable; }
 //-↓↓---------try---18Nov20--

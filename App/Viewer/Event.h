@@ -17,6 +17,14 @@ private:
     local::View* m_view;
     local::Controller* m_controller;
     bool m_enable_auto_play;
+//-↓↓---------try---18Nov26--
+	bool m_enable_loop_play;
+//-↑↑---------------18Nov26--
+//-↓↓---------try---18Nov09--
+//	int previous_width;
+//	int previous_height;
+//-↑↑---------------18Nov09--
+
 
 public:
     Event( local::Model* model, local::View* view, local::Controller* controller );
