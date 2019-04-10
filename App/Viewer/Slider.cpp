@@ -23,6 +23,9 @@ void Slider::sliderMoved()
 
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+//-↓↓---------try---18Nov26--
+    renderer->setCurrentFrameIndex( v );
+//-↑↑---------------18Nov26--
     renderer->setFrameIndex( v );
 }
 

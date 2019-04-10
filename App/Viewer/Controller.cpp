@@ -31,13 +31,30 @@ public:
 
             if ( !renderer->isEnabledLoopPlay() )
             {
-                const int nframes = (int)m_model->objectPointer()->device().numberOfFrames();
-                if ( index == nframes - 1 )
+//-↓↓---------try---18Nov26--
+                if ( !renderer->isEnabledReversePlay() )
                 {
-                    renderer->disableAutoPlay();
-                    m_controller->button().setCaption("Play");
+//-↑↑---------------18Nov26--
+                    const int nframes = (int)m_model->objectPointer()->device().numberOfFrames();
+                    if ( index == nframes - 1 )
+                    {
+                        renderer->disableAutoPlay();
+                        renderer->setCurrentFrameIndex( index );
+                        m_controller->button().setCaption("Play");
+                    }
+//-↓↓---------try---18Nov26--
                 }
-            }
+                else
+                {
+                    if ( index == 0 )
+                    {
+                        renderer->disableAutoPlay();
+					    renderer->setCurrentFrameIndex( index );
+                        m_controller->button().setCaption("Play");
+                    }
+			    }
+//-↑↑---------------18Nov26--
+		    }
         }
     }
 };
