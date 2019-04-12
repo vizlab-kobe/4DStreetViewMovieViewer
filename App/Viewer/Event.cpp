@@ -127,6 +127,27 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         break;
     }
 //-↑↑---------------18Dec07--
+//-↓↓---------try---19Jan07--
+    case kvs::Key::c:
+    {
+        const kvs::Vec3i pos = m_model->cameraPosition();
+        if ( m_model->flipCameraOn() == false )
+        {
+            m_model->setFlipCameraOn( true );
+            m_controller->flip_camera_button().setCaption("Cameras OFF");
+        }
+        else
+        {
+            m_model->setFlipCameraOn( false );
+            m_controller->flip_camera_button().setCaption("Cameras ON");
+        }
+
+        m_model->updateCameraPosition( pos );
+        m_view->movieScreen().update( m_model );
+
+        break;
+    }
+//-↑↑---------------19Jan07--
     case kvs::Key::e:
     {
         const int index = m_model->objectPointer()->device().numberOfFrames() - 1;
