@@ -124,13 +124,6 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 //-↓↓---------try---18Dec07--
     case kvs::Key::b:
     {
-        int sc_width = m_view->movieScreen().width() + 50;
-        int sc_height = m_view->movieScreen().height() + 50;
-
-        m_view->movieScreen().resize( sc_width, sc_height );
-//-↓↓---------try---18Dec03--
-        m_view->movieScreen().update( m_model );
-//-↑↑---------------18Dec03--
         break;
     }
 //-↑↑---------------18Dec07--
@@ -184,8 +177,19 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 //-↓↓---------try---18Nov09--
     case kvs::Key::s:
     {
-        int sc_width = m_view->movieScreen().width() - 50;
-        int sc_height = m_view->movieScreen().height() - 50;
+        int sc_width = m_view->movieScreen().width() + 50;
+        int sc_height = m_view->movieScreen().height() + 50;
+
+        m_view->movieScreen().resize( sc_width, sc_height );
+//-↓↓---------try---18Dec03--
+        m_view->movieScreen().update( m_model );
+//-↑↑---------------18Dec03--
+        break;
+    }
+    case kvs::Key::S:
+    {
+        int sc_width = m_view->movieScreen().width() -50;
+        int sc_height = m_view->movieScreen().height() -50;
 
         m_view->movieScreen().resize( sc_width, sc_height );
 //-↓↓---------try---18Dec03--
