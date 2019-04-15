@@ -18,7 +18,6 @@ public:
     void pressed();
 };
 
-//-↓↓---------try---18Oct25--
 class FlipCameraButton : public kvs::PushButton
 {
 private:
@@ -29,6 +28,5 @@ public:
     FlipCameraButton( local::Model* model, local::View* view );
     void pressed();
 };
-//-↑↑---------try------------
 
 } // end of namespace local

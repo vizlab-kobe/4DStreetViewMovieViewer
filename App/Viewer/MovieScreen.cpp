@@ -43,19 +43,15 @@ void MovieScreen::update( local::Model* model )
     scene()->replaceObject( "Object", object );
 }
 
-//-↓↓---------try---18Dec03--
 void MovieScreen::update( local::Model* model, const int index )
 {
-	typedef lib4dsv::MovieObject Object;
+    typedef lib4dsv::MovieObject Object;
 
-	Object* object = model->object();
-	object->setName("Object");
-	object->device().setNextFrameIndex( index );
+    Object* object = model->object();
+    object->setName("Object");
+    object->device().setNextFrameIndex( index );
 
     scene()->replaceObject( "Object", object );
-
 }
-//-↑↑---------------18Dec03--
-
 
 } // end of namespace local
