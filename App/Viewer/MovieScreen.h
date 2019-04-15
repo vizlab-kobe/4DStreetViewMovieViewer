@@ -4,7 +4,6 @@
 #include "Model.h"
 //#include "MovieInfo.h"
 
-
 namespace local
 {
 
@@ -14,9 +13,7 @@ public:
     MovieScreen( local::Application* app );
     void setup( local::Model* model );
     void update( local::Model* model );
-//-↓↓---------try---18Dec03--
     void update( local::Model* model, const int index );
-//-↑↑---------------18Dec03--
 };
 
 } // end of namespace local
