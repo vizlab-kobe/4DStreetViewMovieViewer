@@ -1,5 +1,6 @@
 #include "MovieScreen.h"
 #include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
+#include <kvs/Camera>
 
 namespace local
 {
@@ -8,6 +9,7 @@ MovieScreen::MovieScreen( local::Application* app ):
     local::Screen( app )
 {
     this->setTitle( "4D Street Viewer" );
+    scene()->camera()->setFieldOfView(90);
 }
 
 void MovieScreen::setup( local::Model* model )
