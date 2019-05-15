@@ -27,6 +27,6 @@ void main()
     vec3 rot = vec3( ( ( vec2( 1024, 768 ) / image_size.xy ) - 0.5 ) * vec2( 2.0 * PI,  PI ), 0.0 );
     vec3 rd = normalize(rotateXY(dir*R, rot.yx));
 
-    vec2 tex_coord = vec2( atan( rd.z, rd.x ) + PI, acos( -rd.y ) ) / vec2( 2.0 * PI, PI );
+    vec2 tex_coord = vec2( -atan( rd.z, rd.x ) - PI * 0.5, -asin( rd.y ) + PI * 0.5 ) / vec2( 2.0 * PI, PI );
     gl_FragColor = LookupTexture2D( spherical_map, tex_coord );
 }
