@@ -51,7 +51,7 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
 {
     const kvs::Vec3 p = kvs::Vec3( 0, 0, 0 );
-    const kvs::Vec3 a = kvs::Vec3( 0, 0, 1 );
+    const kvs::Vec3 a = kvs::Vec3( 0, 0, -1 );
     const kvs::Mat3 R = m_view->movieScreen().scene()->object()->xform().rotation();
     const kvs::Vec3 dir = ( a - p ) * R.inverted();
 
