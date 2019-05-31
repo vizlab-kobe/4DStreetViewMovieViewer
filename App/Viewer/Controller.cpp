@@ -73,6 +73,10 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_flip_camera_button( model, view ),
     m_check_box( model, view ),
     m_reverse_box( model, view ),
+    m_birds_eye_box( model, view ),
+    m_orientation_axis_box( model, view ),
+    m_birds_eye_widget( model, view ),
+    m_orientation_axis( &(view->movieScreen()), view->movieScreen().scene() ),
     m_timer( ::FrameRate2MSec( model->frameRate() ) ),
     widget_width(150),
     widget_height(30)
@@ -86,6 +90,9 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_flip_camera_button.setSize( widget_width, widget_height );
     m_check_box.setSize( widget_width / 2, widget_height );
     m_reverse_box.setSize( widget_width / 2, widget_height );
+    m_birds_eye_box.setSize( widget_width / 2, widget_height );
+    m_orientation_axis_box.setSize( widget_width / 2, widget_height );
+    m_birds_eye_widget.setSize( 300, 300 );
 
     this->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
 }
@@ -99,19 +106,48 @@ void Controller::showWidget( const int width, const int height )
     m_slider.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 4 - margin * 3 );
     m_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 3 - margin );
     m_flip_camera_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height - margin / 2 );
-    m_check_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 3 - margin );
-    m_reverse_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 2 - margin );
+    m_check_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 3 - margin / 2 );
+    m_reverse_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
+    m_birds_eye_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height - margin / 2 );
+    m_orientation_axis_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
+    m_birds_eye_widget.setPosition( 30, 182 );
+    m_birds_eye_widget.setBackgroundColor( kvs::RGBAColor( 0, 0, 0, 0.5 ) );
+    m_orientation_axis.setPosition( screen_width - widget_width / 2 - margin * 2, 30 );
+    m_orientation_axis.setBoxType( kvs::OrientationAxis::SolidBox );
 
     m_slider.show();
     m_button.show();
     m_flip_camera_button.show();
     m_check_box.show();
     m_reverse_box.show();
+    m_birds_eye_box.show();
+    m_orientation_axis_box.show();
+    if ( m_birds_eye_box.state() )
+    {
+        m_birds_eye_widget.show();
+    }
+    if ( m_orientation_axis_box.state() )
+    {
+        m_orientation_axis.show();
+    }
 }
 
 void Controller::resizeShow( const int width, const int height )
 {
+    m_birds_eye_widget.setSize( width - 212, width - 212 );
     this->showWidget( width, height );
+}
+
+void Controller::hideWidget()
+{
+    if ( !m_birds_eye_box.state() )
+    {
+        m_birds_eye_widget.hide();
+    }
+    if ( !m_orientation_axis_box.state() )
+    {
+        m_orientation_axis.hide();
+    }
 }
 
 } // end of namespace local

@@ -46,6 +46,22 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
     if ( m_enable_auto_play ) { renderer->enableAutoPlay(); }
+    if ( m_controller->birdsEyeBox().state() )
+    {
+        m_controller->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+    }
+    else
+    {
+        m_controller->hideWidget();
+    }
+    if ( m_controller->orientationAxisBox().state() )
+    {
+        m_controller->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+    }
+    else
+    {
+        m_controller->hideWidget();
+    }
 }
 
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )

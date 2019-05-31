@@ -42,4 +42,20 @@ void ReversePlayBox::stateChanged()
     renderer->setEnableReversePlay( this->state() );
 }
 
+BirdsEyeBox::BirdsEyeBox( local::Model* model, local::View* view ):
+    kvs::CheckBox( &(view->movieScreen()) ),
+    m_model( model ),
+    m_view( view )
+{
+    this->setCaption("Bird's Eye View");
+}
+
+OrientationAxisBox::OrientationAxisBox( local::Model* model, local::View* view ):
+    kvs::CheckBox( &(view->movieScreen()) ),
+    m_model( model ),
+    m_view( view )
+{
+    this->setCaption("Orientation Axis");
+}
+
 } // end of namespace local
