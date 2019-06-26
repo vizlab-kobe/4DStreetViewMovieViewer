@@ -58,4 +58,19 @@ OrientationAxisBox::OrientationAxisBox( local::Model* model, local::View* view )
     this->setCaption("Orientation Axis");
 }
 
+FocusModeBox::FocusModeBox( local::Model* model, local::View* view ):
+    kvs::CheckBox( &(view->movieScreen()) ),
+    m_model( model ),
+    m_view( view )
+{
+    this->setCaption("Focus Mode");
+}
+
+void FocusModeBox::stateChanged()
+{
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+    renderer->setEnableFocusMode( this->state() );
+}
+
 } // end of namespace local

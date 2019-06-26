@@ -25,6 +25,7 @@ private:
     local::ReversePlayBox m_reverse_box;
     local::BirdsEyeBox m_birds_eye_box;
     local::OrientationAxisBox m_orientation_axis_box;
+    local::FocusModeBox m_focus_mode_box;
     local::BirdsEyeWidget m_birds_eye_widget;
     kvs::OrientationAxis m_orientation_axis;
     local::Timer m_timer;
@@ -40,6 +41,7 @@ public:
     local::ReversePlayBox& reverseBox() { return m_reverse_box;}
     local::BirdsEyeBox& birdsEyeBox() { return m_birds_eye_box; }
     local::OrientationAxisBox& orientationAxisBox() { return m_orientation_axis_box; }
+    local::FocusModeBox& focusModeBox() { return m_focus_mode_box; }
     local::BirdsEyeWidget& birdsEyeWidget() { return m_birds_eye_widget; }
 
     void showWidget( const int width, const int height );

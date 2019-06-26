@@ -5,6 +5,7 @@
 #include "Program.h"
 #include <kvs/Timer>
 #include <kvs/Camera>
+#include <kvs/ObjectManager>
 #include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
 
 namespace local
@@ -15,7 +16,8 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
     m_view( view ),
     m_controller( controller ),
     m_enable_auto_play( false ),
-    m_enable_loop_play( false )
+    m_enable_loop_play( false ),
+    m_enable_focus_mode( false )
 {
     setEventType(
         kvs::EventBase::ResizeEvent |
@@ -24,6 +26,25 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
         kvs::EventBase::MouseReleaseEvent |
         kvs::EventBase::MouseDoubleClickEvent |
         kvs::EventBase::KeyPressEvent );
+}
+
+void Event::focusMode()
+{
+    m_view->movieScreen().scene()->objectManager()->resetXform();
+
+    const kvs::Vec3 eye = kvs::Vec3( m_model->cameraPosition() );
+    const kvs::Vec3 target = kvs::Vec3 ( 4.5, 4.5, 4.5 );
+    const kvs::Vec3 look_at = target - eye;
+    const kvs::Vec3 rev_ez = kvs::Vec3( 0, 0, -1 );
+
+    const kvs::Vec3 axis = rev_ez.cross( look_at );
+    const kvs::Vec3 n_look_at = look_at.normalized();
+    const float ang_rad = acos( n_look_at.dot( rev_ez )   );
+    const float ang_deg = kvs::Math::Rad2Deg( ang_rad );
+
+    kvs::Mat3 rot = kvs::Mat3::Rotation( axis, ang_deg );
+
+    m_view->movieScreen().scene()->objectManager()->rotate( rot );
 }
 
 void Event::mousePressEvent( kvs::MouseEvent* event )
@@ -84,6 +105,16 @@ void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
 
     kvs::Timer timer( kvs::Timer::Start );
     m_model->updateCameraPosition( pos + d );
+
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+    m_enable_focus_mode = renderer->isEnabledFocusMode();
+
+    if ( m_enable_focus_mode )
+    {
+        this->focusMode();
+    }
+
     timer.stop();
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
 
@@ -107,6 +138,16 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 
     kvs::Timer timer( kvs::Timer::Start );
     m_model->updateCameraPosition( pos + d );
+
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+    m_enable_focus_mode = renderer->isEnabledFocusMode();
+
+    if ( m_enable_focus_mode )
+    {
+        this->focusMode();
+    }
+
     timer.stop();
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
     m_view->movieScreen().update( m_model );
@@ -285,5 +326,6 @@ void Event::resizeEvent(int width, int height)
     m_view->movieScreen().resize( s_width , s_width );
     m_controller->resizeShow( s_width, s_width );
 }
+
 
 } // end of namespace local
