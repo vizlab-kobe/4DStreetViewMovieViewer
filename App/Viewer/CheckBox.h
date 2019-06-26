@@ -48,4 +48,15 @@ public:
     OrientationAxisBox( local::Model* model, local::View* view );
 };
 
+class FocusModeBox : public kvs::CheckBox
+{
+private:
+    local::Model* m_model;
+    local::View* m_view;
+
+public:
+    FocusModeBox( local::Model* model, local::View* view );
+    void stateChanged();
+};
+
 } // end of namespace local

@@ -18,11 +18,13 @@ private:
     local::Controller* m_controller;
     bool m_enable_auto_play;
     bool m_enable_loop_play;
+    bool m_enable_focus_mode;
 
 public:
     Event( local::Model* model, local::View* view, local::Controller* controller );
 
 private:
+    void focusMode();
     void mousePressEvent( kvs::MouseEvent* event );
     void mouseMoveEvent( kvs::MouseEvent* event );
     void mouseReleaseEvent( kvs::MouseEvent* event );

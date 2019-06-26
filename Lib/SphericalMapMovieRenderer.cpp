@@ -20,6 +20,7 @@ SphericalMapMovieRenderer::SphericalMapMovieRenderer( const SphericalMapMovieRen
     m_enable_auto_play( false ),
     m_enable_loop_play( false ),
     m_enable_reverse_play( false ),
+    m_enable_focus_mode( false ),
     m_frame_index( 0 ),
     m_current_frame_index( 0 )
 {
