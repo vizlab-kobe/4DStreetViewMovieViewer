@@ -1,17 +1,20 @@
 #!/bin/sh
 
-PNG_DIRNAME=~/Tools/Data/sgks_july08/png_sgks/
-BMP_DIRNAME=~/Tools/Data/sgks_july08/bmp_data/
-SPHERICAL_DIRNAME=~/Tools/Data/sgks_july08/spherical_data/
-MOVIES_DIRNAME=~/Tools/Data/sgks_july08/movies/
+PNG_DIRNAME=~/Work/DataGenerator/Data/sgks_july08/png_sgks/
+BMP_DIRNAME=~/Work/DataGenerator/Data/sgks_july08/bmp_data/
+#BMP_DIRNAME=~/../../Volumes/Samsung_T5/NewData/bmp_data/
+SPHERICAL_DIRNAME=~/Work/DataGenerator/Data/sgks_july08/spherical_data/
+#SPHERICAL_DIRNAME=~/../../Volumes/Samsung_T5/NewData/spherical_map/
+MOVIES_DIRNAME=~/Work/DataGenerator/Data/sgks_july08/movies/
+#MOVIES_DIRNAME=~/../../Volumes/Samsung_T5/NewData/movies/
 
 PROGRAM=${PWD##*/}
-TOP=.04
+FRONT=.00
 LEFT=.01
 RIGHT=.02
-BOTTOM=.05
 BACK=.03
-FRONT=.00
+TOP=.04
+BOTTOM=.05
 
 BMP_BASENAME="image"
 MP4_BASENAME="movies"
@@ -28,7 +31,7 @@ fi
 
 cd ${PNG_DIRNAME}
 mogrify -path ${BMP_DIRNAME} -format bmp "*.png"
-cd ~/Tools/
+cd ../
 
 # 全方位画像(bmp)を作成する
 if [ ! -e ${SPHERICAL_DIRNAME} ];then
@@ -45,7 +48,23 @@ do
             CAMERA=.00${CAM}
             FILENAME=${BMP_BASENAME}${PATTERN}${FRAME}${CAMERA}
        #Ex: FILENAME : imagev0001t000000020.00153
-            SPHERICALMAP=${BMP_BASENAME}${PATTERN}${CAMERA}${FRAME}
+            # フレーム番号を連番にする
+            if [ ${FRAME} = "t000000000" ];then
+                RE_FRAME=t000000001
+            elif [ ${FRAME} = "t000000020" ];then
+                RE_FRAME=t000000002
+            elif [ ${FRAME} = "t000000040" ];then
+                RE_FRAME=t000000003
+            elif [ ${FRAME} = "t000000060" ];then
+                RE_FRAME=t000000004
+            elif [ ${FRAME} = "t000000080" ];then
+                RE_FRAME=t000000005
+            elif [ ${FRAME} = "t000000100" ];then
+                RE_FRAME=t000000006
+            elif [ ${FRAME} = "t000000120" ];then
+                RE_FRAME=t000000007
+            fi
+            SPHERICALMAP=${BMP_BASENAME}${PATTERN}${CAMERA}${RE_FRAME}
        #Ex: SPHERICALMAP : imagev0001.000153t000000020
             ./${PROGRAM} -top ${BMP_DIRNAME}/${FILENAME}${TOP}.bmp -left ${BMP_DIRNAME}/${FILENAME}${LEFT}.bmp -right ${BMP_DIRNAME}/${FILENAME}${RIGHT}.bmp -bottom ${BMP_DIRNAME}/${FILENAME}${BOTTOM}.bmp -back ${BMP_DIRNAME}/${FILENAME}${BACK}.bmp -front ${BMP_DIRNAME}/${FILENAME}${FRONT}.bmp -output ${SPHERICAL_DIRNAME}/${SPHERICALMAP}.bmp
         done
@@ -53,6 +72,7 @@ do
 done 
 
 
+# 動画(mp4)を作成する
 if [ ! -e ${MOVIES_DIRNAME} ];then
     mkdir ${MOVIES_DIRNAME}
 fi
@@ -68,23 +88,18 @@ do
     for CAM in `seq -w 0 999`
     do
         CAMERA=.00${CAM}
-        for FRAME_NO in 000 020 040 060 080 100 120
-        do
-            FRAME_BASENAME=t000000
-            FRAME=${FRAME_BASENAME}${FRAME_NO}
-#            FRAME=${FRAME_BASENAME}"%01d""0"
+        FRAME_BASENAME=t00000000
+        FRAME=${FRAME_BASENAME}"%01d"
 
-            #input file name : imagev0001.00153t000000020.bmp
-            BMP_FILENAME=${BMP_BASENAME}${PATTERN}${CAMERA}${FRAME}.bmp
-            input="-i "${SPHERICAL_DIRNAME}${BMP_FILENAME}" "
+        #input file name : imagev0001.00153t000000020.bmp
+        BMP_FILE=${BMP_BASENAME}${PATTERN}${CAMERA}${FRAME}.bmp
+        input="-i "${SPHERICAL_DIRNAME}${BMP_FILE}" "
 
-            #output file name: moviesv000100153.mp4
-            MP4_FILENAME=${MP4_BASENAME}${PATTERN}"00"${CAM}.mp4
-            output=${MOVIES_DIRNAME}${PATTERN}"/"${MP4_FILENAME}
+        #output file name: moviesv000100153.mp4
+        MP4_FILENAME=${MP4_BASENAME}${PATTERN}"00"${CAM}.mp4
+        output=${MOVIES_DIRNAME}${PATTERN}"/"${MP4_FILENAME}
 
-            command=${command_name}${input_fps}${input}${option1}${option2}${output_fps}${output}
-            ${command}
-        done
+        command=${command_name}${input_fps}${input}${option1}${option2}${output_fps}${output}
+        ${command}
     done
 done
-
