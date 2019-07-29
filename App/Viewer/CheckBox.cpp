@@ -12,6 +12,7 @@ CheckBox::CheckBox( local::Model* model, local::View* view ):
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
 
+    BaseClass::painter().font().setColor( kvs::RGBColor::White() );
     this->setCaption("Loop");
     this->setState( renderer->isEnabledLoopPlay() );
 }
@@ -31,6 +32,7 @@ ReversePlayBox::ReversePlayBox( local::Model* model, local::View* view ):
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
 
+    BaseClass::painter().font().setColor( kvs::RGBColor::White() );
     this->setCaption("Reverse");
     this->setState( renderer->isEnabledReversePlay() );
 }
@@ -47,6 +49,7 @@ BirdsEyeBox::BirdsEyeBox( local::Model* model, local::View* view ):
     m_model( model ),
     m_view( view )
 {
+    BaseClass::painter().font().setColor( kvs::RGBColor::White() );
     this->setCaption("Bird's Eye View");
 }
 
@@ -55,6 +58,7 @@ OrientationAxisBox::OrientationAxisBox( local::Model* model, local::View* view )
     m_model( model ),
     m_view( view )
 {
+    BaseClass::painter().font().setColor( kvs::RGBColor::White() );
     this->setCaption("Orientation Axis");
 }
 
@@ -63,6 +67,7 @@ FocusModeBox::FocusModeBox( local::Model* model, local::View* view ):
     m_model( model ),
     m_view( view )
 {
+    BaseClass::painter().font().setColor( kvs::RGBColor::White() );
     this->setCaption("Focus Mode");
 }
 
