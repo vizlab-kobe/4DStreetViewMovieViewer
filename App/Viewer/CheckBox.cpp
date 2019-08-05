@@ -59,7 +59,7 @@ OrientationAxisBox::OrientationAxisBox( local::Model* model, local::View* view )
     m_view( view )
 {
     BaseClass::painter().font().setColor( kvs::RGBColor::White() );
-    this->setCaption("Orientation Axis");
+    this->setCaption("Orientation Axes");
 }
 
 FocusModeBox::FocusModeBox( local::Model* model, local::View* view ):

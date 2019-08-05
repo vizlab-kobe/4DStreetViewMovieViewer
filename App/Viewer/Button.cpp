@@ -1,5 +1,6 @@
 #include "Button.h"
 #include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
+#include <kvs/Directory>
 
 
 namespace local
@@ -29,26 +30,37 @@ void Button::pressed()
     }
 }
 
-FlipCameraButton::FlipCameraButton( local::Model* model, local::View* view ):
+FlipDataButton::FlipDataButton( local::Model* model, local::View* view ):
     kvs::PushButton( &(view->movieScreen()) ),
     m_model( model ),
     m_view( view )
 {
-    this->setCaption("Cameras ON");
+    if ( model->isDirectory() )
+    {
+        std::string path = m_model->directoryPath( m_model->flipData() );
+        kvs::Directory directory( path );
+        this->setCaption( directory.name() );
+    }
 }
 
-void FlipCameraButton::pressed()
+void FlipDataButton::pressed()
 {
     const kvs::Vec3i pos = m_model->cameraPosition();
-    if ( m_model->flipCameraOn() == false )
+
+    size_t number_of_directories = m_model->numberOfDirectories();
+    if ( m_model->flipData() == number_of_directories - 1 )
     {
-        m_model->setFlipCameraOn( true );
-        this->setCaption("Cameras OFF");
+        m_model->setFlipData( 0 );
+        kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+        this->setCaption( directory.name() );
     }
     else
     {
-        m_model->setFlipCameraOn( false );
-        this->setCaption("Cameras ON");
+        size_t flip_data = m_model->flipData();
+        flip_data++;
+        m_model->setFlipData( flip_data );
+        kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+        this->setCaption( directory.name() );
     }
 
     m_model->updateCameraPosition( pos);
