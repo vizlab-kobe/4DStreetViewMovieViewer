@@ -20,7 +20,7 @@ private:
     local::Event m_event;
     local::Slider m_slider;
     local::Button m_button;
-    local::FlipCameraButton m_flip_camera_button;
+    local::FlipDataButton m_flip_data_button;
     local::CheckBox m_check_box;
     local::ReversePlayBox m_reverse_box;
     local::BirdsEyeBox m_birds_eye_box;
@@ -36,7 +36,7 @@ public:
     Controller( local::Model* model, local::View* view );
     local::Slider& slider() { return m_slider; }
     local::Button& button() { return m_button; }
-    local::FlipCameraButton& flip_camera_button() { return m_flip_camera_button; }
+    local::FlipDataButton& flip_data_button() { return m_flip_data_button; }
     local::CheckBox& checkBox() { return m_check_box; }
     local::ReversePlayBox& reverseBox() { return m_reverse_box;}
     local::BirdsEyeBox& birdsEyeBox() { return m_birds_eye_box; }

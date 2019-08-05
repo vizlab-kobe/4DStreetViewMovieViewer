@@ -18,14 +18,14 @@ public:
     void pressed();
 };
 
-class FlipCameraButton : public kvs::PushButton
+class FlipDataButton : public kvs::PushButton
 {
 private:
     local::Model* m_model;
     local::View* m_view;
 
 public:
-    FlipCameraButton( local::Model* model, local::View* view );
+    FlipDataButton( local::Model* model, local::View* view );
     void pressed();
 };
 

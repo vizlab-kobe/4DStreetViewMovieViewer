@@ -70,7 +70,7 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_event( model, view, this ),
     m_slider( model, view ),
     m_button( model, view ),
-    m_flip_camera_button( model, view ),
+    m_flip_data_button( model, view ),
     m_check_box( model, view ),
     m_reverse_box( model, view ),
     m_birds_eye_box( model, view ),
@@ -88,7 +88,7 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_slider.setMargin( 0 );
     m_slider.setSize( widget_width, widget_height );
     m_button.setSize( widget_width / 2, widget_height * 2 );
-    m_flip_camera_button.setSize( widget_width, widget_height );
+    m_flip_data_button.setSize( widget_width, widget_height );
     m_check_box.setSize( widget_width / 2, widget_height );
     m_reverse_box.setSize( widget_width / 2, widget_height );
     m_birds_eye_box.setSize( widget_width / 2, widget_height );
@@ -107,7 +107,7 @@ void Controller::showWidget( const int width, const int height )
 
     m_slider.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 4 - margin * 3 );
     m_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 3 - margin );
-    m_flip_camera_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height - margin / 2 );
+    m_flip_data_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height - margin / 2 );
     m_check_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 3 - margin / 2 );
     m_reverse_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
     m_birds_eye_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
@@ -120,7 +120,15 @@ void Controller::showWidget( const int width, const int height )
 
     m_slider.show();
     m_button.show();
-    m_flip_camera_button.show();
+
+    if ( !m_model->isFile() )
+    {
+        if ( m_model->isDirectory() )
+        {
+            m_flip_data_button.show();
+        }
+    }
+
     m_check_box.show();
     m_reverse_box.show();
     m_birds_eye_box.show();

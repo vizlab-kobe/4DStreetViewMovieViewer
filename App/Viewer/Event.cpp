@@ -6,6 +6,7 @@
 #include <kvs/Timer>
 #include <kvs/Camera>
 #include <kvs/ObjectManager>
+#include <kvs/Directory>
 #include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
 
 namespace local
@@ -178,15 +179,21 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     case kvs::Key::c:
     {
         const kvs::Vec3i pos = m_model->cameraPosition();
-        if ( m_model->flipCameraOn() == false )
+
+        size_t number_of_directories = m_model->numberOfDirectories();
+        if ( m_model->flipData() == number_of_directories - 1 )
         {
-            m_model->setFlipCameraOn( true );
-            m_controller->flip_camera_button().setCaption("Cameras OFF");
+            m_model->setFlipData( 0 );
+            kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+            m_controller->flip_data_button().setCaption( directory.name() );
         }
         else
         {
-            m_model->setFlipCameraOn( false );
-            m_controller->flip_camera_button().setCaption("Cameras ON");
+            size_t flip_data = m_model->flipData();
+            flip_data++;
+            m_model->setFlipData( flip_data );
+            kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+            m_controller->flip_data_button().setCaption( directory.name() );
         }
 
         m_model->updateCameraPosition( pos );
