@@ -15,6 +15,7 @@ private:
 public:
     std::string dirname;
     kvs::Vec3i dimensions;
+    kvs::Vec3i minimums;
     std::string extension;
     kvs::Vec3i position;
     float frame_rate;

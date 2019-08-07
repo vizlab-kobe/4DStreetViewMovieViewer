@@ -103,6 +103,7 @@ Model::Model( const local::Input& input )
 
     m_camera_position = input.position;
     m_camera_array_dimensions = input.dimensions;
+    m_camera_array_minimums = input.minimums;
     m_frame_rate = input.frame_rate;
     m_flip_data = 0;
     this->setup_object( this->camera_position_index() );
@@ -134,9 +135,10 @@ Model::Object* Model::object() const
 void Model::updateCameraPosition( const kvs::Vec3i& position )
 {
     const kvs::Vec3i dims = m_camera_array_dimensions;
-    const int x = kvs::Math::Clamp( position.x(), 0, dims.x() - 1 );
-    const int y = kvs::Math::Clamp( position.y(), 0, dims.y() - 1 );
-    const int z = kvs::Math::Clamp( position.z(), 0, dims.z() - 1 );
+    const kvs::Vec3i& mins = m_camera_array_minimums;
+    const int x = kvs::Math::Clamp( position.x(), mins.x(), mins.x() + dims.x() - 1 );
+    const int y = kvs::Math::Clamp( position.y(), mins.y(), mins.y() + dims.y() - 1 );
+    const int z = kvs::Math::Clamp( position.z(), mins.z(), mins.z() + dims.z() - 1 );
     m_camera_position = kvs::Vec3i( x, y, z );
 
     this->setup_object( this->camera_position_index() );
@@ -166,7 +168,8 @@ size_t Model::camera_position_index() const
 {
     const kvs::Vec3i& dims = m_camera_array_dimensions;
     const kvs::Vec3i& pos = m_camera_position;
-    return pos.x() + dims.x() * pos.y() + dims.x() * dims.y() * pos.z();
+    const kvs::Vec3i& mins = m_camera_array_minimums;
+    return (pos.x() - mins.x()) + dims.x() * (pos.y() - mins.y()) + dims.x() * dims.y() * (pos.z() - mins.z());
 }
 
 } // end of namespace local

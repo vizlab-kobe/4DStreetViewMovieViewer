@@ -19,6 +19,7 @@ private:
     kvs::FileList m_files;
     kvs::Vec3i m_camera_position;
     kvs::Vec3i m_camera_array_dimensions;
+    kvs::Vec3i m_camera_array_minimums;
     ObjectPointer m_object_pointer;
     DirectoryList m_directories;
     FileLists m_file_lists;
