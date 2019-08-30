@@ -33,8 +33,13 @@ void Event::focusMode()
 {
     m_view->movieScreen().scene()->objectManager()->resetXform();
 
+    const kvs::Vec3i dimensions = m_model->cameraArrayDimensions();
+    float target_x = ( dimensions.x() - 1.0 ) / 2.0;
+    float target_y = ( dimensions.y() - 1.0 ) / 2.0;
+    float target_z = ( dimensions.z() - 1.0 ) / 2.0;
+
+    const kvs::Vec3 target = kvs::Vec3 ( target_x, target_y, target_z );
     const kvs::Vec3 eye = kvs::Vec3( m_model->cameraPosition() );
-    const kvs::Vec3 target = kvs::Vec3 ( 4.5, 4.5, 4.5 );
     const kvs::Vec3 look_at = target - eye;
     const kvs::Vec3 rev_ez = kvs::Vec3( 0, 0, -1 );
 
