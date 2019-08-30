@@ -77,7 +77,7 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_orientation_axis_box( model, view ),
     m_focus_mode_box( model, view ),
     m_birds_eye_widget( model, view ),
-    m_orientation_axis( &(view->movieScreen()), view->movieScreen().scene() ),
+    m_orientation_axes( model, view ),
     m_timer( ::FrameRate2MSec( model->frameRate() ) ),
     widget_width(150),
     widget_height(30)
@@ -95,6 +95,7 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_orientation_axis_box.setSize( widget_width / 2, widget_height );
     m_focus_mode_box.setSize( widget_width / 2, widget_height );
     m_birds_eye_widget.setSize( 300, 300 );
+    m_orientation_axes.setSize( 100, 100 );
 
     this->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
 }
@@ -115,8 +116,7 @@ void Controller::showWidget( const int width, const int height )
     m_focus_mode_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height - margin / 2 );
     m_birds_eye_widget.setPosition( 30, 182 );
     m_birds_eye_widget.setBackgroundColor( kvs::RGBAColor( 0, 0, 0, 0.5 ) );
-    m_orientation_axis.setPosition( screen_width - widget_width / 2 - margin * 2, 30 );
-    m_orientation_axis.setBoxType( kvs::OrientationAxis::SolidBox );
+    m_orientation_axes.setPosition( screen_width - widget_width, 60 );
 
     m_slider.show();
     m_button.show();
@@ -140,7 +140,7 @@ void Controller::showWidget( const int width, const int height )
     }
     if ( m_orientation_axis_box.state() )
     {
-        m_orientation_axis.show();
+        m_orientation_axes.show();
     }
 }
 
@@ -158,7 +158,7 @@ void Controller::hideWidget()
     }
     if ( !m_orientation_axis_box.state() )
     {
-        m_orientation_axis.hide();
+        m_orientation_axes.hide();
     }
 }
 

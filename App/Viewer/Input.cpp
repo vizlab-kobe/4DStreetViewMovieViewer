@@ -6,7 +6,6 @@ namespace local
 Input::Input( int argc, char** argv ):
     dirname( "" ),
     dimensions( 0, 0, 0 ),
-    minimums( 0, 0, 0 ),
     extension( "mp4" ),
     position( 0, 0, 0 ),
     frame_rate( 5.0f )
@@ -16,7 +15,6 @@ Input::Input( int argc, char** argv ):
     m_commandline.addOption( "dir","Directory name.", 1, true );
     m_commandline.addOption( "ext","File extension. (default: mp4)", 1, false );
     m_commandline.addOption( "dims","Dimension of camera array.", 3, true );
-    m_commandline.addOption( "mins","Minimum of camera array.", 3, true );
     m_commandline.addOption( "pos", "Initial camera position. (default: 0 0 0)", 3, false );
     m_commandline.addOption( "fps", "Frame rate [frames/second]. (default: 5)", 1, false );
 }
@@ -31,12 +29,6 @@ bool Input::parse()
         dimensions[0] = m_commandline.optionValue<int>("dims",0);
         dimensions[1] = m_commandline.optionValue<int>("dims",1);
         dimensions[2] = m_commandline.optionValue<int>("dims",2);
-    }
-    if ( m_commandline.hasOption("mins") )
-    {
-        minimums[0] = m_commandline.optionValue<int>("mins",0);
-        minimums[1] = m_commandline.optionValue<int>("mins",1);
-        minimums[2] = m_commandline.optionValue<int>("mins",2);
     }
     if ( m_commandline.hasOption("pos") )
     {
@@ -54,7 +46,6 @@ void Input::print( std::ostream& os, const kvs::Indent& indent ) const
     os << indent << "Directory name: " << dirname << std::endl;
     os << indent << "File extension: " << extension << std::endl;
     os << indent << "Dimension of camera array: " << dimensions << std::endl;
-    os << indent << "Minimum of camera array: " << minimums << std::endl;
     os << indent << "Initial camera position: " << position << std::endl;
     os << indent << "Frame rate: " << frame_rate << std::endl;
 }

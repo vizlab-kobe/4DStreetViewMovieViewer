@@ -6,7 +6,7 @@
 #include "Button.h"
 #include "CheckBox.h"
 #include "BirdsEyeWidget.h"
-#include <kvs/OrientationAxis>
+#include "OrientationAxes.h"
 #include "Timer.h"
 
 namespace local
@@ -27,7 +27,7 @@ private:
     local::OrientationAxisBox m_orientation_axis_box;
     local::FocusModeBox m_focus_mode_box;
     local::BirdsEyeWidget m_birds_eye_widget;
-    kvs::OrientationAxis m_orientation_axis;
+    local::OrientationAxes m_orientation_axes;
     local::Timer m_timer;
     const size_t widget_width;
     const size_t widget_height;
