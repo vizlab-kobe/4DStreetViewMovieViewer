@@ -41,14 +41,14 @@ void Event::focusMode()
     const kvs::Vec3 target = kvs::Vec3 ( target_x, target_y, target_z );
     const kvs::Vec3 eye = kvs::Vec3( m_model->cameraPosition() );
     const kvs::Vec3 look_at = target - eye;
-    const kvs::Vec3 rev_ez = kvs::Vec3( 0, 0, -1 );
-
-    const kvs::Vec3 axis = rev_ez.cross( look_at );
-    const kvs::Vec3 n_look_at = look_at.normalized();
-    const float ang_rad = acos( n_look_at.dot( rev_ez )   );
-    const float ang_deg = kvs::Math::Rad2Deg( ang_rad );
-
-    kvs::Mat3 rot = kvs::Mat3::Rotation( axis, ang_deg );
+    const kvs::Vec3 up = kvs::Vec3(0.0, 1.0, 0.0);
+    const kvs::Vec3 eye_x = look_at.cross(up);
+    const kvs::Vec3 eye_y = look_at.cross(eye_x);
+    const kvs::Vec3 eye_z = -look_at.normalized();
+    const kvs::Mat3 rot = kvs::Mat3(eye_x.x(), eye_y.x(), eye_z.x(),
+                                    eye_x.y(), eye_y.y(), eye_z.y(),
+                                    eye_x.z(), eye_y.z(), eye_z.z()
+        );
 
     m_view->movieScreen().scene()->objectManager()->rotate( rot );
 }
