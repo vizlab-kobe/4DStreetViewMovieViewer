@@ -1,52 +1,58 @@
 #pragma once
+#include <QWidget>
+#include <QPushButton>
+#include <QSlider>
+#include <QCheckBox>
 #include "Model.h"
 #include "View.h"
 #include "Event.h"
-#include "Slider.h"
-#include "Button.h"
-#include "CheckBox.h"
-#include "BirdsEyeWidget.h"
-#include "OrientationAxes.h"
 #include "Timer.h"
 
 namespace local
 {
-
-class Controller
+class Controller : public QWidget
 {
+    Q_OBJECT
+
 private:
     local::Model* m_model;
     local::View* m_view;
     local::Event m_event;
-    local::Slider m_slider;
-    local::Button m_button;
-    local::FlipDataButton m_flip_data_button;
-    local::CheckBox m_check_box;
-    local::ReversePlayBox m_reverse_box;
-    local::BirdsEyeBox m_birds_eye_box;
-    local::OrientationAxisBox m_orientation_axis_box;
-    local::FocusModeBox m_focus_mode_box;
-    local::BirdsEyeWidget m_birds_eye_widget;
-    local::OrientationAxes m_orientation_axes;
     local::Timer m_timer;
-    const size_t widget_width;
-    const size_t widget_height;
+
+    QPushButton *m_auto_button;
+    QPushButton *m_flip_data_button;
+    QSlider *m_slider;
+    QCheckBox *m_loop_box;
+    QCheckBox *m_reverse_box;
+    QCheckBox *m_orientation_axis_box;
+    QCheckBox *m_birds_eye_box;
+    QCheckBox *m_focus_mode_box;
 
 public:
     Controller( local::Model* model, local::View* view );
-    local::Slider& slider() { return m_slider; }
-    local::Button& button() { return m_button; }
-    local::FlipDataButton& flip_data_button() { return m_flip_data_button; }
-    local::CheckBox& checkBox() { return m_check_box; }
-    local::ReversePlayBox& reverseBox() { return m_reverse_box;}
-    local::BirdsEyeBox& birdsEyeBox() { return m_birds_eye_box; }
-    local::OrientationAxisBox& orientationAxisBox() { return m_orientation_axis_box; }
-    local::FocusModeBox& focusModeBox() { return m_focus_mode_box; }
-    local::BirdsEyeWidget& birdsEyeWidget() { return m_birds_eye_widget; }
+    QPushButton& autoButton() { return *m_auto_button; }
+    QPushButton& flipDataButton() { return *m_flip_data_button; }
+    QSlider& slider() { return *m_slider; }
+    QCheckBox& loopBox() { return *m_loop_box; }
+    QCheckBox& reverseBox() { return *m_reverse_box; }
+    QCheckBox& orientationAxisBox() { return *m_orientation_axis_box; }
+    QCheckBox& birdsEyeBox() { return *m_birds_eye_box; }
+    QCheckBox& focusModeBox() { return *m_focus_mode_box; }
 
-    void showWidget( const int width, const int height );
-    void resizeShow( const int width, const int height );
-    void hideWidget();
+    void showWidget();
+    void update();
+
+public slots:
+    void autoButtonPressed();
+    void flipDataButtonPressed();
+    void sliderValueChanged( int value );
+    void loopBoxStateChanged();
+    void reverseBoxStateChanged();
+    void orientationAxisBoxStateChanged();
+    void birdsEyeBoxStateChanged();
+    void focusModeBoxStateChanged();
+
 };
 
 } // end of namespace local
