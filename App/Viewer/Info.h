@@ -1,21 +1,64 @@
 #pragma once
 #include "Model.h"
 #include "Screen.h"
-#include <kvs/Label>
-
+#include <QWidget>
+#include <QTabWidget>
+#include <QLayout>
 
 namespace local
 {
+class CameraInfo : public QWidget
+{
+private:
+    local::Model* m_model;
+    local::Screen* m_screen;
 
-class Info : public kvs::Label
+    QLabel *m_title_filename;
+    QLabel *m_title_img_reso;
+    QLabel *m_title_cam_array;
+    QLabel *m_title_cam_pos;
+    QLabel *m_title_num_frames;
+    QLabel *m_title_frame_index;
+
+    QLabel *m_filename;
+    QLabel *m_img_reso;
+    QLabel *m_cam_array;
+    QLabel *m_cam_pos;
+    QLabel *m_num_frames;
+    QLabel *m_frame_index;
+
+public:
+    CameraInfo( local::Model* model, local::Screen* screen, QWidget *parent = nullptr );
+    void setup( local::Model* model ) { m_model = model; }
+    void update();
+};
+
+class DataInfo : public QWidget
 {
 private:
     local::Model* m_model;
 
+    QLabel *m_information; 
+
 public:
-    Info( local::Screen* screen );
-    void setup( local::Model* model ) { m_model = model; }
-    void screenUpdated();
+    DataInfo( local::Model* model, QWidget *parent = nullptr );
+    void setup( local::Model* model ){ m_model = model; }
+    void update();
 };
 
-} // end of namespace local
+class Info : public QWidget
+{
+private:
+    QTabWidget *tabWidget;
+    CameraInfo *m_camera_info;
+    DataInfo *m_data_info;
+
+    local::Model* m_model;
+
+public:
+    Info( local::Screen* screen, QWidget *parent = nullptr );
+    void setup( local::Model* model );
+    void update();
+};
+
+} //  end of namespace local

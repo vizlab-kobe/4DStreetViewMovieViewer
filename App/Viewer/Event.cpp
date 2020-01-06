@@ -1,6 +1,7 @@
 #include "Event.h"
 #include "Model.h"
 #include "View.h"
+#include "MainWindow.h"
 #include "Controller.h"
 #include "Program.h"
 #include <kvs/Timer>
@@ -41,14 +42,14 @@ void Event::focusMode()
     const kvs::Vec3 target = kvs::Vec3 ( target_x, target_y, target_z );
     const kvs::Vec3 eye = kvs::Vec3( m_model->cameraPosition() );
     const kvs::Vec3 look_at = target - eye;
-    const kvs::Vec3 rev_ez = kvs::Vec3( 0, 0, -1 );
-
-    const kvs::Vec3 axis = rev_ez.cross( look_at );
-    const kvs::Vec3 n_look_at = look_at.normalized();
-    const float ang_rad = acos( n_look_at.dot( rev_ez )   );
-    const float ang_deg = kvs::Math::Rad2Deg( ang_rad );
-
-    kvs::Mat3 rot = kvs::Mat3::Rotation( axis, ang_deg );
+    const kvs::Vec3 up = kvs::Vec3(0.0, 1.0, 0.0);
+    const kvs::Vec3 eye_x = look_at.cross(up);
+    const kvs::Vec3 eye_y = look_at.cross(eye_x);
+    const kvs::Vec3 eye_z = -look_at.normalized();
+    const kvs::Mat3 rot = kvs::Mat3(eye_x.x(), eye_y.x(), eye_z.x(),
+                                    eye_x.y(), eye_y.y(), eye_z.y(),
+                                    eye_x.z(), eye_y.z(), eye_z.z()
+        );
 
     m_view->movieScreen().scene()->objectManager()->rotate( rot );
 }
@@ -72,23 +73,25 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 {
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
     if ( m_enable_auto_play ) { renderer->enableAutoPlay(); }
-    if ( m_controller->birdsEyeBox().state() )
+
+    if ( m_controller->birdsEyeBox().isChecked() )
     {
-        m_controller->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+        qDebug() << "Bird's Eye View ";
     }
     else
     {
-        m_controller->hideWidget();
     }
-    if ( m_controller->orientationAxisBox().state() )
+
+    if ( m_controller->orientationAxisBox().isChecked() )
     {
-        m_controller->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+        m_controller->showWidget();
     }
     else
     {
-        m_controller->hideWidget();
     }
+
 }
 
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
@@ -157,12 +160,22 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     timer.stop();
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
     m_view->movieScreen().update( m_model );
+    m_view->info().update();
 
     switch ( event->key() )
     {
     case kvs::Key::Space:
     {
-        m_controller->button().pressed();
+        if ( renderer->isEnabledAutoPlay() )
+        {
+            renderer->setEnabledAutoPlay( false );
+            m_controller->autoButton().setText( "Play" );
+        }
+        else
+        {
+            renderer->setEnabledAutoPlay( true );
+            m_controller->autoButton().setText( "Stop" );
+        }
         m_view->movieScreen().update( m_model );
         break;
     }
@@ -171,7 +184,8 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     {
         const int index = 0;
         m_controller->slider().setValue( index );
-        m_controller->slider().sliderMoved();
+        renderer->setCurrentFrameIndex( index );
+        renderer->setFrameIndex( index );
         m_view->movieScreen().update( m_model, index );
         break;
     }
@@ -190,7 +204,8 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         {
             m_model->setFlipData( 0 );
             kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
-            m_controller->flip_data_button().setCaption( directory.name() );
+            QString directory_name( QString::fromStdString( directory.name() ) );
+            m_controller->flipDataButton().setText( directory_name );
         }
         else
         {
@@ -198,7 +213,8 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
             flip_data++;
             m_model->setFlipData( flip_data );
             kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
-            m_controller->flip_data_button().setCaption( directory.name() );
+            QString directory_name( QString::fromStdString( directory.name() ) );
+            m_controller->flipDataButton().setText( directory_name );
         }
 
         m_model->updateCameraPosition( pos );
@@ -210,39 +226,30 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     {
         const int index = m_model->objectPointer()->device().numberOfFrames() - 1;
         m_controller->slider().setValue( index );
-        m_controller->slider().sliderMoved();
+        renderer->setCurrentFrameIndex( index );
+        renderer->setFrameIndex( index );
         m_view->movieScreen().update( m_model, index );
         break;
     }
 
     case kvs::Key::i:
     {
-        if ( m_view->info().isShown() )
-        {
-            m_view->info().hide();
-        }
-        else
-        {
-            m_view->info().show();
-        }
-        m_view->movieScreen().update( m_model );
-        break;
     }
 
     case kvs::Key::l:
     {
-        const bool state = m_controller->checkBox().state();
-        m_controller->checkBox().setState( !state );
-        m_controller->checkBox().stateChanged();
+        const bool state = m_controller->loopBox().isChecked();
+        m_controller->loopBox().setChecked( !state );
+        renderer->setEnabledLoopPlay( !state );
         m_view->movieScreen().update( m_model );
         break;
     }
 
     case kvs::Key::r:
     {
-        const bool state = m_controller->reverseBox().state();
-        m_controller->reverseBox().setState( !state );
-        m_controller->reverseBox().stateChanged();
+        const bool state = m_controller->reverseBox().isChecked();
+        m_controller->reverseBox().setChecked( !state );
+        renderer->setEnableReversePlay( !state );
         m_view->movieScreen().update( m_model );
         break;
     }
@@ -292,7 +299,8 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         renderer->setFrameIndex( index );
         m_model->objectPointer()->device().setNextFrameIndex( index );
         m_controller->slider().setValue( index );   //sliderに今の位置を反映
-        m_controller->slider().sliderMoved();
+        renderer->setCurrentFrameIndex( index );
+        renderer->setFrameIndex( index );
         m_view->movieScreen().update( m_model, index );
         break;
     }
@@ -322,13 +330,14 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
         renderer->setFrameIndex( index );
         m_model->objectPointer()->device().setNextFrameIndex( index );
         m_controller->slider().setValue( index );
-        m_controller->slider().sliderMoved();
+        renderer->setCurrentFrameIndex( index );
+        renderer->setFrameIndex( index );
         m_view->movieScreen().update( m_model, index );
         break;
     }
 
     default: break;
-    }
+    }//end of switch( event->key() )
 }
 
 void Event::resizeEvent(int width, int height)
@@ -336,8 +345,6 @@ void Event::resizeEvent(int width, int height)
     int s_width = kvs::Math::Max( width, height );
 
     m_view->movieScreen().resize( s_width , s_width );
-    m_controller->resizeShow( s_width, s_width );
 }
-
 
 } // end of namespace local

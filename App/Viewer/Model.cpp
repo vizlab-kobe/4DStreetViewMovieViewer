@@ -10,7 +10,12 @@ namespace local
 
 Model::Model( const local::Input& input )
 {
-    std::string dirname = input.dirname;
+    this->load( input );
+}
+
+void Model::load( const local::Input& input )
+{
+    std::string dirname = input.dirname();
 
     kvs::Directory data_dir( dirname );
     if ( !data_dir.exists() ) { throw; }
@@ -75,7 +80,7 @@ Model::Model( const local::Input& input )
                 if ( !type_dir.exists() ) { throw; }
                 if ( !type_dir.isDirectory() ) { throw; }
 
-                const std::string ext = input.extension;
+                const std::string ext = input.extension();
                 const kvs::FileList& files = type_dir.fileList( true );
                 kvs::FileList file_list;
                 for ( size_t j = 0; j < files.size(); j++ )
@@ -91,7 +96,7 @@ Model::Model( const local::Input& input )
 
     if ( m_is_file )
     {
-        const std::string ext = input.extension;
+        const std::string ext = input.extension();
         for ( size_t i = 0; i < all_files.size(); i++ )
         {
             if ( all_files[i].extension() == ext )
@@ -101,11 +106,25 @@ Model::Model( const local::Input& input )
         }
     }
 
-    m_camera_position = input.position;
-    m_camera_array_dimensions = input.dimensions;
-    m_frame_rate = input.frame_rate;
+    m_camera_position = input.position();
+    m_camera_array_dimensions = input.dimensions();
+    m_frame_rate = input.frame_rate();
+    m_data_info = input.dataInfo();
     m_flip_data = 0;
     this->setup_object( this->camera_position_index() );
+}
+
+void Model::clear()
+{
+    m_file_lists.clear();
+    m_files.clear();
+    m_directories.clear();
+}
+
+void Model::update( const local::Input& input )
+{
+    this->clear();
+    this->load( input );
 }
 
 const  std::string Model::filename() const

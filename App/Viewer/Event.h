@@ -1,6 +1,4 @@
 #pragma once
-//#include "Model.h"
-//#include "View.h"
 #include <kvs/EventListener>
 
 namespace local

@@ -30,7 +30,7 @@ void View::layout()
 void View::show()
 {
     m_movie_screen.show();
-    m_info.show();
+    m_info.update();
 }
 
 } // end of namespace local

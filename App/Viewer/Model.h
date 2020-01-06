@@ -23,6 +23,7 @@ private:
     DirectoryList m_directories;
     FileLists m_file_lists;
     float m_frame_rate;
+    std::string m_data_info;
     size_t m_flip_data;
     bool m_is_directory;
     bool m_is_file;
@@ -42,8 +43,13 @@ public:
     const bool isFile() const { return m_is_file; }
     const std::string filename() const;
     float frameRate() const { return m_frame_rate; }
+    std::string dataInfo() const { return m_data_info; }
     Object* object() const;
     void updateCameraPosition( const kvs::Vec3i& position );
+
+    void load( const local::Input& input );
+    void clear();
+    void update( const local::Input& input );
 
 private:
     void setup_object( const size_t index );

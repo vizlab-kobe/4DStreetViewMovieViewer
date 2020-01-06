@@ -1,6 +1,10 @@
 #include "Controller.h"
 #include <kvs/TimerEventListener>
+#include <kvs/Directory>
 #include <4DStreetViewMovieViewer/Lib/SphericalMapMovieRenderer.h>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QString>
 
 namespace
 {
@@ -37,7 +41,7 @@ public:
                     {
                         renderer->disableAutoPlay();
                         renderer->setCurrentFrameIndex( index );
-                        m_controller->button().setCaption("Play");
+                        m_controller->autoButton().setText( "Play" );
                     }
                 }
                 else
@@ -46,11 +50,12 @@ public:
                     {
                         renderer->disableAutoPlay();
                         renderer->setCurrentFrameIndex( index );
-                        m_controller->button().setCaption("Play");
+                        m_controller->autoButton().setText( "Play" );
                     }
                 }
             }
         }
+        m_view->info().update();
     }
 };
 
@@ -68,98 +73,203 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_model( model ),
     m_view( view ),
     m_event( model, view, this ),
-    m_slider( model, view ),
-    m_button( model, view ),
-    m_flip_data_button( model, view ),
-    m_check_box( model, view ),
-    m_reverse_box( model, view ),
-    m_birds_eye_box( model, view ),
-    m_orientation_axis_box( model, view ),
-    m_focus_mode_box( model, view ),
-    m_birds_eye_widget( model, view ),
-    m_orientation_axes( model, view ),
-    m_timer( ::FrameRate2MSec( model->frameRate() ) ),
-    widget_width(150),
-    widget_height(30)
+    m_timer( ::FrameRate2MSec( model->frameRate() ) )
 {
-    m_view->movieScreen().addEvent( &m_event );
+    m_view->movieScreen().addEvent( &(m_event) );
     m_view->movieScreen().addTimerEvent( new ::TimerEvent( model, view, this ), &m_timer );
+    m_timer.start();
 
-    m_slider.setMargin( 0 );
-    m_slider.setSize( widget_width, widget_height );
-    m_button.setSize( widget_width / 2, widget_height * 2 );
-    m_flip_data_button.setSize( widget_width, widget_height );
-    m_check_box.setSize( widget_width / 2, widget_height );
-    m_reverse_box.setSize( widget_width / 2, widget_height );
-    m_birds_eye_box.setSize( widget_width / 2, widget_height );
-    m_orientation_axis_box.setSize( widget_width / 2, widget_height );
-    m_focus_mode_box.setSize( widget_width / 2, widget_height );
-    m_birds_eye_widget.setSize( 300, 300 );
-    m_orientation_axes.setSize( 100, 100 );
+    m_auto_button = new QPushButton( "Play" );
+    connect( m_auto_button, SIGNAL( clicked() ), this, SLOT( autoButtonPressed() ) );
 
-    this->showWidget( m_view->movieScreen().width(), m_view->movieScreen().height() );
+    m_flip_data_button = new QPushButton( " " );
+    if ( m_model->isDirectory() )
+    {
+        std::string path = m_model->directoryPath( m_model->flipData() );
+        kvs::Directory directory( path );
+        QString directory_name( QString::fromStdString( directory.name() ) );
+        m_flip_data_button->setText( directory_name );
+    }
+    if ( m_model->isFile() )
+    {
+        m_flip_data_button->setVisible( false );
+    }
+    connect( m_flip_data_button, SIGNAL( clicked() ), this, SLOT( flipDataButtonPressed() ) );
+
+    m_slider = new QSlider( Qt::Horizontal );
+    m_slider->setValue( 0 );
+    m_slider->setMaximum( m_model->objectPointer()->device().numberOfFrames() - 1 );
+    m_slider->setMinimum( 0 );
+    connect( m_slider, SIGNAL( valueChanged(int) ), this, SLOT( sliderValueChanged(int) ) );
+
+    m_loop_box = new QCheckBox( "&Loop" );
+    connect( m_loop_box, SIGNAL( toggled(bool) ), this, SLOT( loopBoxStateChanged() ) );
+
+    m_reverse_box = new QCheckBox( "Reverse" );
+    connect( m_reverse_box, SIGNAL( toggled(bool) ), this, SLOT( reverseBoxStateChanged() ) );
+
+    m_orientation_axis_box = new QCheckBox( "Orientation Axis" );
+    connect( m_orientation_axis_box, SIGNAL( toggled(bool) ), this, SLOT( orientationAxisBoxStateChanged() ) );
+
+    m_birds_eye_box = new QCheckBox( "Bird's Eye View" );
+    connect( m_birds_eye_box, SIGNAL( toggled(bool) ), this, SLOT( birdsEyeBoxStateChanged() ) );
+
+    m_focus_mode_box = new QCheckBox( "Focus Mode" );
+    connect( m_focus_mode_box, SIGNAL( toggled(bool) ), this, SLOT( focusModeBoxStateChanged() ) );
+
+    this->showWidget();
 }
 
-void Controller::showWidget( const int width, const int height )
+void Controller::showWidget()
 {
-    const size_t screen_width = width;
-    const size_t screen_height = height;
-    const size_t margin = 10;
+    QVBoxLayout *left_layout = new QVBoxLayout;
+    left_layout->addWidget( m_orientation_axis_box );
+    left_layout->addWidget( m_birds_eye_box );
+    left_layout->addWidget( m_focus_mode_box );
 
-    m_slider.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 4 - margin * 3 );
-    m_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height * 3 - margin );
-    m_flip_data_button.setPosition( screen_width - widget_width - margin, screen_height - widget_height - margin / 2 );
-    m_check_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 3 - margin / 2 );
-    m_reverse_box.setPosition( screen_width - widget_width / 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
-    m_birds_eye_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height * 2 - margin / 2 );
-    m_orientation_axis_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height * 3 - margin / 2 );
-    m_focus_mode_box.setPosition( screen_width - widget_width * 2 - margin / 5, screen_height - widget_height - margin / 2 );
-    m_birds_eye_widget.setPosition( 30, 182 );
-    m_birds_eye_widget.setBackgroundColor( kvs::RGBAColor( 0, 0, 0, 0.5 ) );
-    m_orientation_axes.setPosition( screen_width - widget_width, 60 );
+    QVBoxLayout *play_mode_layout = new QVBoxLayout;
+    play_mode_layout->addWidget( m_loop_box );
+    play_mode_layout->addWidget( m_reverse_box );
 
-    m_slider.show();
-    m_button.show();
+    QHBoxLayout *right_middle_layout = new QHBoxLayout;
+    right_middle_layout->addWidget( m_auto_button );
+    right_middle_layout->addLayout( play_mode_layout );
 
-    if ( !m_model->isFile() )
+    QVBoxLayout *right_layout = new QVBoxLayout;
+    right_layout->addWidget( m_slider );
+    right_layout->addLayout( right_middle_layout );
+    right_layout->addWidget( m_flip_data_button );
+
+    QHBoxLayout *main_layout = new QHBoxLayout;
+    main_layout->addLayout( left_layout );
+    main_layout->addLayout( right_layout );
+
+    setLayout( main_layout );
+}
+
+void Controller::update()
+{
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+    if ( renderer->isEnabledAutoPlay() )
     {
-        if ( m_model->isDirectory() )
-        {
-            m_flip_data_button.show();
-        }
+        m_auto_button->setText("Stop");
+    }
+    else
+    {
+        m_auto_button->setText("Play");
     }
 
-    m_check_box.show();
-    m_reverse_box.show();
-    m_birds_eye_box.show();
-    m_orientation_axis_box.show();
-    m_focus_mode_box.show();
-    if ( m_birds_eye_box.state() )
+    if ( m_model->isDirectory() )
     {
-        m_birds_eye_widget.show();
+        std::string path = m_model->directoryPath( m_model->flipData() );
+        kvs::Directory directory( path );
+        QString directory_name( QString::fromStdString( directory.name() ) );
+        m_flip_data_button->setText( directory_name );
+        m_flip_data_button->setVisible( true );
     }
-    if ( m_orientation_axis_box.state() )
+    if ( m_model->isFile() )
     {
-        m_orientation_axes.show();
+        m_flip_data_button->setVisible( false );
+    }
+
+    m_slider->setSliderPosition( 0 );
+    m_slider->setMaximum( m_model->objectPointer()->device().numberOfFrames() - 1 );
+    m_slider->setMinimum( 0 );
+
+}
+
+void Controller::autoButtonPressed()
+{
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+    if ( renderer->isEnabledAutoPlay() )
+    {
+        renderer->setEnabledAutoPlay( false ); // Stop
+        m_auto_button->setText("Play");
+    }
+    else
+    {
+        renderer->setEnabledAutoPlay( true ); // Play
+        m_auto_button->setText("Stop");
     }
 }
 
-void Controller::resizeShow( const int width, const int height )
+void Controller::flipDataButtonPressed()
 {
-    m_birds_eye_widget.setSize( width - 212, width - 212 );
-    this->showWidget( width, height );
+    const kvs::Vec3i pos = m_model->cameraPosition();
+
+    size_t number_of_directories = m_model->numberOfDirectories();
+    if ( m_model->flipData() == number_of_directories - 1 )
+    {
+        m_model->setFlipData( 0 );
+        kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+        m_flip_data_button->setText( QString::fromStdString( directory.name() ) );
+    }
+    else
+    {
+        size_t flip_data = m_model->flipData();
+        flip_data++;
+        m_model->setFlipData( flip_data );
+        kvs::Directory directory( m_model->directoryPath( m_model->flipData() ) );
+        m_flip_data_button->setText( QString::fromStdString( directory.name() ) );
+    }
+
+    m_model->updateCameraPosition( pos);
+    m_view->movieScreen().update( m_model );
 }
 
-void Controller::hideWidget()
+void Controller::sliderValueChanged( int value )
 {
-    if ( !m_birds_eye_box.state() )
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+    renderer->setCurrentFrameIndex( value );
+    renderer->setFrameIndex( value );
+}
+
+void Controller::loopBoxStateChanged()
+{
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+    if ( m_loop_box->checkState() == Qt::Checked )
     {
-        m_birds_eye_widget.hide();
+        renderer->setEnabledLoopPlay( true );
     }
-    if ( !m_orientation_axis_box.state() )
+    else
     {
-        m_orientation_axes.hide();
+        renderer->setEnabledLoopPlay( false );
     }
+}
+
+void Controller::reverseBoxStateChanged()
+{
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
+
+    if ( m_reverse_box->checkState() == Qt::Checked )
+    {
+        renderer->setEnableReversePlay( true );
+    }
+    else
+    {
+        renderer->setEnableReversePlay( false );
+    }
+}
+
+void Controller::orientationAxisBoxStateChanged()
+{
+}
+
+void Controller::birdsEyeBoxStateChanged()
+{
+}
+
+void Controller::focusModeBoxStateChanged()
+{
 }
 
 } // end of namespace local
