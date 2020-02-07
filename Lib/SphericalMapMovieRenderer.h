@@ -45,7 +45,6 @@ private:
     bool m_enable_auto_play;
     bool m_enable_loop_play;
     bool m_enable_reverse_play;
-    bool m_enable_focus_mode;
     int m_frame_index;
     int m_current_frame_index;
 
@@ -59,22 +58,18 @@ public:
     bool isEnabledAutoPlay() const { return m_enable_auto_play; }
     bool isEnabledLoopPlay() const { return m_enable_loop_play; }
     bool isEnabledReversePlay() const { return m_enable_reverse_play; }
-    bool isEnabledFocusMode() const { return  m_enable_focus_mode; }
 
     void setFrameIndex( const int index ) { m_frame_index = index; }
     void setCurrentFrameIndex( const int index ) { m_current_frame_index = index; }
     void setEnabledAutoPlay( const bool enable ) { m_enable_auto_play = enable; }
     void setEnabledLoopPlay( const bool enable ) { m_enable_loop_play = enable; }
     void setEnableReversePlay( const bool enable ) { m_enable_reverse_play = enable; }
-    void setEnableFocusMode( const bool enable ) { m_enable_focus_mode = enable; }
     void enableAutoPlay() { this->setEnabledAutoPlay( true ); }
     void enableLoopPlay() { this->setEnabledLoopPlay( true ); }
     void enableReversePlay() { this->setEnableReversePlay( true ); }
-    void enableFocusMode() { this->setEnableFocusMode( true ); }
     void disableAutoPlay() { this->setEnabledAutoPlay( false ); }
     void disableLoopPlay() { this->setEnabledLoopPlay( false ); }
     void disableReversePlay() { this->setEnableReversePlay( false ); }
-    void disableFocusMode() { this->setEnableFocusMode( false ); }
 
 private:
     void create_shader_program();

@@ -21,8 +21,9 @@ private:
 public:
     Event( local::Model* model, local::View* view, local::Controller* controller );
 
-private:
     void focusMode();
+
+private:
     void mousePressEvent( kvs::MouseEvent* event );
     void mouseMoveEvent( kvs::MouseEvent* event );
     void mouseReleaseEvent( kvs::MouseEvent* event );

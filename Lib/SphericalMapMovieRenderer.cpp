@@ -20,7 +20,6 @@ SphericalMapMovieRenderer::SphericalMapMovieRenderer( const SphericalMapMovieRen
     m_enable_auto_play( false ),
     m_enable_loop_play( false ),
     m_enable_reverse_play( false ),
-    m_enable_focus_mode( false ),
     m_frame_index( 0 ),
     m_current_frame_index( 0 )
 {
@@ -158,7 +157,6 @@ void SphericalMapMovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* came
         const int index = kvs::Math::Clamp( m_frame_index, 0, (int)video->device().numberOfFrames() - 1 );
         video->device().setNextFrameIndex( index );
     }
-
     BaseClass::stopTimer();
 }
 

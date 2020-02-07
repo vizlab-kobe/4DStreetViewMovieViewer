@@ -16,16 +16,12 @@ private:
     QLabel *m_title_filename;
     QLabel *m_title_img_reso;
     QLabel *m_title_cam_array;
-    QLabel *m_title_cam_pos;
     QLabel *m_title_num_frames;
-    QLabel *m_title_frame_index;
 
     QLabel *m_filename;
     QLabel *m_img_reso;
     QLabel *m_cam_array;
-    QLabel *m_cam_pos;
     QLabel *m_num_frames;
-    QLabel *m_frame_index;
 
 public:
     CameraInfo( local::Model* model, local::Screen* screen, QWidget *parent = nullptr );

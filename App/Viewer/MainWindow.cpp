@@ -1,5 +1,6 @@
 #include "MainWindow.h"
 #include <QDockWidget>
+#include <QSizePolicy>
 
 namespace
 {
@@ -32,12 +33,14 @@ MainWindow::MainWindow( local::Input& input, local::Model& model, local::View& v
     int w0 = 512;
     int h0 = 512;
     int w1 = 400;
-    int h1 = h0 * 3 / 5;
-    int h2 = h0 * 2 / 5;
+    int h1 = h0 * 2 / 5;
+    int h2 = h0 * 3 / 5;
     int width = w0 + w1;
     int height = h0; 
     
     this->resize( width, height );
+    this->setMinimumSize( width, height );
+    this->setSizePolicy( QSizePolicy::Minimum, QSizePolicy::Minimum);
 
     createActions();
     createMenus();
@@ -49,8 +52,9 @@ MainWindow::MainWindow( local::Input& input, local::Model& model, local::View& v
 
     this->addDockWidget( Qt::RightDockWidgetArea, info_area );
     this->addDockWidget( Qt::RightDockWidgetArea, button_area );
+
+    this->setWindowTitle( "4DStreetViewMovieViewer" );
     this->setCentralWidget( &( m_view.movieScreen() ) );
-    std::cout << "This is Qt Version." << std::endl;
 }
 
 void MainWindow::open()
@@ -60,11 +64,24 @@ void MainWindow::open()
     {
         std::string filename = fileName.toUtf8().toStdString();
         m_input.read( filename );
-        m_model.update( m_input );
+        if ( !( m_model.isSet() ) )
+        {
+            m_model.update();
+            m_view.setup();
+            m_controller.loopBox().setCheckable( true );
+            m_controller.reverseBox().setCheckable( true );
+            m_controller.orientationAxisBox().setCheckable( true );
+            m_controller.birdsEyeBox().setCheckable( true );
+            m_controller.focusModeBox().setCheckable( true );
+        }
+        else
+        {
+            m_model.update();
+        }
         m_view.movieScreen().update( &( m_model ) );
         m_model.objectPointer()->device().setNextFrameIndex( 0.0 );
         m_view.info().update();
-        m_controller.update();
+        m_controller.show();
     }
 }
 
@@ -79,6 +96,5 @@ void MainWindow::createMenus()
     fileMenu = menuBar()->addMenu( "File" );
     fileMenu->addAction( openAct );
 }
-
 
 }//end of namespace local

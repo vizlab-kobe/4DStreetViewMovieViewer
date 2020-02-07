@@ -8,7 +8,6 @@ namespace local
 MovieScreen::MovieScreen( local::Application* app ):
     local::Screen( app )
 {
-    this->setTitle( "4D Street Viewer" );
     scene()->camera()->setFieldOfView(90);
 }
 
