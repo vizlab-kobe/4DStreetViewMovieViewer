@@ -40,3 +40,4 @@ App/Viewer/Viewer
 .qmake.stash
 moc_*
 Makefile
+*.swp

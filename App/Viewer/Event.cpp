@@ -56,21 +56,29 @@ void Event::focusMode()
 
 void Event::mousePressEvent( kvs::MouseEvent* event )
 {
+    if ( m_model->isSet() )
+    {
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
     m_enable_auto_play = renderer->isEnabledAutoPlay();
     if ( m_enable_auto_play ) { renderer->disableAutoPlay(); }
+    }
 }
 
 void Event::mouseMoveEvent( kvs::MouseEvent* event )
 {
+    if ( m_model->isSet() )
+    {
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
     local::Program::Logger().pushRayChangeTime( renderer->timer().msec() );
+    }
 }
 
 void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 {
+    if ( m_model->isSet() )
+    {
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
     Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
 
@@ -78,7 +86,6 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 
     if ( m_controller->birdsEyeBox().isChecked() )
     {
-        qDebug() << "Bird's Eye View ";
     }
     else
     {
@@ -92,10 +99,13 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
     {
     }
 
+    }
 }
 
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
 {
+    if ( m_model->isSet() )
+    {
     const kvs::Vec3 p = kvs::Vec3( 0, 0, 0 );
     const kvs::Vec3 a = kvs::Vec3( 0, 0, -1 );
     const kvs::Mat3 R = m_view->movieScreen().scene()->object()->xform().rotation();
@@ -115,11 +125,7 @@ void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
     kvs::Timer timer( kvs::Timer::Start );
     m_model->updateCameraPosition( pos + d );
 
-    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
-    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
-    m_enable_focus_mode = renderer->isEnabledFocusMode();
-
-    if ( m_enable_focus_mode )
+    if ( m_controller->focusModeBox().checkState() == Qt::Checked )
     {
         this->focusMode();
     }
@@ -128,10 +134,13 @@ void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
 
     m_view->movieScreen().update( m_model );
+    }
 }
 
 void Event::keyPressEvent( kvs::KeyEvent* event )
 {
+    if ( m_model->isSet() )
+    {
     const kvs::Vec3i& pos = m_model->cameraPosition();
     kvs::Vec3i d( 0, 0, 0 );
     switch ( event->key() )
@@ -147,12 +156,9 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 
     kvs::Timer timer( kvs::Timer::Start );
     m_model->updateCameraPosition( pos + d );
+    m_controller->cameraPositionChanged();
 
-    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
-    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
-    m_enable_focus_mode = renderer->isEnabledFocusMode();
-
-    if ( m_enable_focus_mode )
+    if ( m_controller->focusModeBox().checkState() == Qt::Checked )
     {
         this->focusMode();
     }
@@ -160,8 +166,9 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     timer.stop();
     local::Program::Logger().pushPositionChangeTime( timer.msec() );
     m_view->movieScreen().update( m_model );
-    m_view->info().update();
 
+    typedef lib4dsv::SphericalMapMovieRenderer Renderer;
+    Renderer* renderer = Renderer::DownCast( m_view->movieScreen().scene()->renderer("Renderer") );
     switch ( event->key() )
     {
     case kvs::Key::Space:
@@ -338,6 +345,7 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 
     default: break;
     }//end of switch( event->key() )
+    }//end of if( m_model->isSet() )
 }
 
 void Event::resizeEvent(int width, int height)

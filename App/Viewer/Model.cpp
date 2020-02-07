@@ -8,14 +8,14 @@
 namespace local
 {
 
-Model::Model( const local::Input& input )
-{
-    this->load( input );
-}
+Model::Model( local::Input* input ):
+    m_input( input ),
+    m_is_set( false )
+{}
 
-void Model::load( const local::Input& input )
+void Model::load()
 {
-    std::string dirname = input.dirname();
+    std::string dirname = m_input->dirname();
 
     kvs::Directory data_dir( dirname );
     if ( !data_dir.exists() ) { throw; }
@@ -80,7 +80,7 @@ void Model::load( const local::Input& input )
                 if ( !type_dir.exists() ) { throw; }
                 if ( !type_dir.isDirectory() ) { throw; }
 
-                const std::string ext = input.extension();
+                const std::string ext = m_input->extension();
                 const kvs::FileList& files = type_dir.fileList( true );
                 kvs::FileList file_list;
                 for ( size_t j = 0; j < files.size(); j++ )
@@ -96,7 +96,7 @@ void Model::load( const local::Input& input )
 
     if ( m_is_file )
     {
-        const std::string ext = input.extension();
+        const std::string ext = m_input->extension();
         for ( size_t i = 0; i < all_files.size(); i++ )
         {
             if ( all_files[i].extension() == ext )
@@ -106,10 +106,10 @@ void Model::load( const local::Input& input )
         }
     }
 
-    m_camera_position = input.position();
-    m_camera_array_dimensions = input.dimensions();
-    m_frame_rate = input.frame_rate();
-    m_data_info = input.dataInfo();
+    m_camera_position = m_input->position();
+    m_camera_array_dimensions = m_input->dimensions();
+    m_frame_rate = m_input->frame_rate();
+    m_data_info = m_input->dataInfo();
     m_flip_data = 0;
     this->setup_object( this->camera_position_index() );
 }
@@ -121,10 +121,10 @@ void Model::clear()
     m_directories.clear();
 }
 
-void Model::update( const local::Input& input )
+void Model::update()
 {
     this->clear();
-    this->load( input );
+    this->load();
 }
 
 const  std::string Model::filename() const
@@ -179,6 +179,7 @@ void Model::setup_object( const size_t index )
 
     const std::string filename = file.filePath();
     m_object_pointer = ObjectPointer( new Object( filename ) );
+    m_is_set = true;
 }
 
 size_t Model::camera_position_index() const

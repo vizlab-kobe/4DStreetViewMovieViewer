@@ -20,9 +20,8 @@ public:
     View( local::Application* app, local::Model* model );
     local::MovieScreen& movieScreen() { return m_movie_screen; }
     local::Info& info() { return m_info; }
+
     void setup();
-    void layout();
-    void show();
 };
 
 } // end of namespace local
