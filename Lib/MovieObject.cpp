@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file MovieObject.cpp
+* @brief MovieObjectクラスの実装
+*/
+/* ***************************************************************************/
 #include "MovieObject.h"
 
 
@@ -43,6 +49,12 @@ kvs::ObjectBase::ObjectType MovieObject::objectType() const
     return kvs::ObjectBase::Image;
 }
 
+/*===========================================================================*/
+/**
+* @brief Copy the movie object ( shallow copy )
+* @param other [in] MovieObject
+*/
+/*===========================================================================*/
 void MovieObject::shallowCopy( const MovieObject& other )
 {
     BaseClass::operator=( other );

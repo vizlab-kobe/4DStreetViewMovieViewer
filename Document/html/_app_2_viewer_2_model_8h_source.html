@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: App/Viewer/Model.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a class="el" href="dir_4abe69781dacbbcd37b586b1f1f9d58f.html">Viewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Model.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_app_2_viewer_2_model_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file Model.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief Modelクラスの定義</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_input_8h.html">Input.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;kvs/SharedPointer&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;kvs/FileList&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_movie_object_8h.html">4DStreetViewMovieViewer/Lib/MovieObject.h</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">* @brief インプット情報からモデルを取得するModelクラスの定義</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlocal_1_1_model.html">Model</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#aa1cc5f9fd12950b9dab95aa007436674">   24</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> <a class="code" href="classlocal_1_1_model.html#aa1cc5f9fd12950b9dab95aa007436674">Object</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#af0109c13da514d04dbd9211bc85adc7a">   25</a></span>&#160;    <span class="keyword">typedef</span> kvs::SharedPointer&lt;Object&gt; <a class="code" href="classlocal_1_1_model.html#af0109c13da514d04dbd9211bc85adc7a">ObjectPointer</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#aebd349530f3a4345f24d42178d0643de">   26</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;std::string&gt; <a class="code" href="classlocal_1_1_model.html#aebd349530f3a4345f24d42178d0643de">DirectoryList</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a1064e2859e1e05ded4c19de179ce5807">   27</a></span>&#160;    <span class="keyword">typedef</span> std::vector&lt;kvs::FileList&gt; <a class="code" href="classlocal_1_1_model.html#a1064e2859e1e05ded4c19de179ce5807">FileLists</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#aac6ece04acd1f385c9fd62570b0499d7">   30</a></span>&#160;    <a class="code" href="structlocal_1_1_input.html">local::Input</a>* <a class="code" href="classlocal_1_1_model.html#aac6ece04acd1f385c9fd62570b0499d7">m_input</a>; <span class="comment">///&lt; pointer to the input</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#aae540c914bfbb716637d34b19d9958d8">   32</a></span>&#160;    kvs::Vec3i <a class="code" href="classlocal_1_1_model.html#aae540c914bfbb716637d34b19d9958d8">m_camera_position</a>; <span class="comment">///&lt; カメラ位置( x, y, z )</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#ac1c06ed07920cd255832400c4e623d91">   33</a></span>&#160;<span class="comment"></span>    kvs::Vec3i <a class="code" href="classlocal_1_1_model.html#ac1c06ed07920cd255832400c4e623d91">m_camera_array_dimensions</a>; <span class="comment">///&lt; カメラ位置の範囲( x × y × z )</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a67a223832d9f410a2494187e31eea702">   34</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">float</span> <a class="code" href="classlocal_1_1_model.html#a67a223832d9f410a2494187e31eea702">m_frame_rate</a>; <span class="comment">///&lt; フレームレート</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a4621705b66b0ec424a6043326513bd0b">   35</a></span>&#160;<span class="comment"></span>    std::string <a class="code" href="classlocal_1_1_model.html#a4621705b66b0ec424a6043326513bd0b">m_data_info</a>; <span class="comment">///&lt; データ情報</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a6d267b7c39cfd65e513246d5f4674bc7">   36</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_model.html#af0109c13da514d04dbd9211bc85adc7a">ObjectPointer</a> <a class="code" href="classlocal_1_1_model.html#a6d267b7c39cfd65e513246d5f4674bc7">m_object_pointer</a>; <span class="comment">///&lt; オブジェクトのポインタ</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a057b02060b2ebffb9c7264c58b9e5d8b">   37</a></span>&#160;<span class="comment"></span>    kvs::FileList <a class="code" href="classlocal_1_1_model.html#a057b02060b2ebffb9c7264c58b9e5d8b">m_files</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下がファイルだった場合のファイルリスト</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a438caa5b13a61b91deb3c7c8a971d7a1">   38</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_model.html#aebd349530f3a4345f24d42178d0643de">DirectoryList</a> <a class="code" href="classlocal_1_1_model.html#a438caa5b13a61b91deb3c7c8a971d7a1">m_directories</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下のファイルのディレクトリリスト</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a3962306e20f41e89326e8ca18c5a4109">   39</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_model.html#a1064e2859e1e05ded4c19de179ce5807">FileLists</a> <a class="code" href="classlocal_1_1_model.html#a3962306e20f41e89326e8ca18c5a4109">m_file_lists</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下がフォルダの場合のファイルリスト</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a3e9a1dd4a1b7271d8ca1428fb64afc32">   40</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> <a class="code" href="classlocal_1_1_model.html#a3e9a1dd4a1b7271d8ca1428fb64afc32">m_flip_data</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下にあるフォルダを切り替えるための配列の番号</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a954f645f0c5e523ab7b370f9caa9101d">   41</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="classlocal_1_1_model.html#a954f645f0c5e523ab7b370f9caa9101d">m_is_directory</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下のフォルダの有無のフラグ</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a66fad00ff509605427c8d280480ed221">   42</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="classlocal_1_1_model.html#a66fad00ff509605427c8d280480ed221">m_is_file</a>; <span class="comment">///&lt; インプットで得たディレクトリ以下のファイルの有無のフラグ</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a7cb84fafdbbd506b978764328d61c106">   43</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">bool</span> <a class="code" href="classlocal_1_1_model.html#a7cb84fafdbbd506b978764328d61c106">m_is_set</a>; <span class="comment">///&lt; モデルの有無のフラグ</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classlocal_1_1_model.html#a7591a8474ea715b6db5476acc88c26b1">Model</a>( <a class="code" href="structlocal_1_1_input.html">local::Input</a>* input );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">    * @brief カメラ位置に該当するファイルを取得する関数</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#a7e152d1c456a6867c7bea21ce7217389">   51</a></span>&#160;    <span class="keyword">const</span> kvs::File&amp; <a class="code" href="classlocal_1_1_model.html#a7e152d1c456a6867c7bea21ce7217389">file</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a057b02060b2ebffb9c7264c58b9e5d8b">m_files</a>[this-&gt;<a class="code" href="classlocal_1_1_model.html#afd00749f9713cbbb4e4a9fa90395b9b8">camera_position_index</a>()]; }<span class="comment"></span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">    /**</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    * @brief m_directoriesから指定のインデックスのディレクトリパスを取得する関数</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">    * @param dir_index ディレクトリの配列のインデックス</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classlocal_1_1_model.html#ab3ebad9649f1ff60c3e9079f4abb8b1c">   56</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="classlocal_1_1_model.html#ab3ebad9649f1ff60c3e9079f4abb8b1c">directoryPath</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> dir_index )<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a438caa5b13a61b91deb3c7c8a971d7a1">m_directories</a>[ dir_index ]; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> kvs::Vec3i&amp; cameraPosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#aae540c914bfbb716637d34b19d9958d8">m_camera_position</a>; } <span class="comment">///&lt; m_camera_positionのgetter</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> kvs::Vec3i&amp; cameraArrayDimensions()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#ac1c06ed07920cd255832400c4e623d91">m_camera_array_dimensions</a>; } <span class="comment">///&lt; m_camera_array_dimensionsのgetter</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <a class="code" href="classlocal_1_1_model.html#af0109c13da514d04dbd9211bc85adc7a">ObjectPointer</a>&amp; <a class="code" href="classlocal_1_1_model.html#a0d7b4d78abf5e4fb1deed00c0bf309cc">objectPointer</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a6d267b7c39cfd65e513246d5f4674bc7">m_object_pointer</a>; } <span class="comment">///&lt; m_object_pointerのgetter</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> numberOfDirectories()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a438caa5b13a61b91deb3c7c8a971d7a1">m_directories</a>.size(); } <span class="comment">///&lt; m_directoriesの配列の数を取得する関数</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment"></span>    <span class="keywordtype">float</span> frameRate()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a67a223832d9f410a2494187e31eea702">m_frame_rate</a>; } <span class="comment">///&lt; m_frame_rateのgetter</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span>    std::string dataInfo()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a4621705b66b0ec424a6043326513bd0b">m_data_info</a>; } <span class="comment">///&lt; m_data_infoのgetter</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">size_t</span> flipData()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a3e9a1dd4a1b7271d8ca1428fb64afc32">m_flip_data</a>; } <span class="comment">///&lt; m_flip_dataのgetter</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setFlipData( <span class="keyword">const</span> <span class="keywordtype">size_t</span> num ) { <a class="code" href="classlocal_1_1_model.html#a3e9a1dd4a1b7271d8ca1428fb64afc32">m_flip_data</a> = num; } <span class="comment">///&lt; m_flip_dataに指定の番号をセットする関数</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a954f645f0c5e523ab7b370f9caa9101d">m_is_directory</a>; } <span class="comment">///&lt; m_is_directoryのgetter</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a66fad00ff509605427c8d280480ed221">m_is_file</a>; } <span class="comment">///&lt; m_is_fileのgetter</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isSet()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_model.html#a7cb84fafdbbd506b978764328d61c106">m_is_set</a>; } <span class="comment">///&lt; m_is_setのgetter</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_model.html#ab9347bab69ba1171b94d4d396c167f86">load</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_model.html#abac090f71335ddf8b427fe03c2da6a25">clear</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_model.html#a58a449f424f193702f861e9f9d663abe">update</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="classlocal_1_1_model.html#ad3bbfc6b2b7e45bd14ac99964982a818">filename</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classlocal_1_1_model.html#aa1cc5f9fd12950b9dab95aa007436674">Object</a>* <a class="code" href="classlocal_1_1_model.html#a7934e4d1cc688a9a03c8eae0fb58b226">object</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_model.html#a52fac66bfd97a6373076531ff802fab8">updateCameraPosition</a>( <span class="keyword">const</span> kvs::Vec3i&amp; position );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_model.html#af8296f4c9d0e007f1e3ef96d54252ec5">setup_object</a>( <span class="keyword">const</span> <span class="keywordtype">size_t</span> index );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classlocal_1_1_model.html#afd00749f9713cbbb4e4a9fa90395b9b8">camera_position_index</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslocal_1_1_model_html_a58a449f424f193702f861e9f9d663abe"><div class="ttname"><a href="classlocal_1_1_model.html#a58a449f424f193702f861e9f9d663abe">local::Model::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">モデルの情報を更新する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00160">Model.cpp:160</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_ab9347bab69ba1171b94d4d396c167f86"><div class="ttname"><a href="classlocal_1_1_model.html#ab9347bab69ba1171b94d4d396c167f86">local::Model::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">インプット情報からモデルを読み込む処理を行う関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00038">Model.cpp:38</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_aac6ece04acd1f385c9fd62570b0499d7"><div class="ttname"><a href="classlocal_1_1_model.html#aac6ece04acd1f385c9fd62570b0499d7">local::Model::m_input</a></div><div class="ttdeci">local::Input * m_input</div><div class="ttdoc">pointer to the input</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00030">Model.h:30</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a67a223832d9f410a2494187e31eea702"><div class="ttname"><a href="classlocal_1_1_model.html#a67a223832d9f410a2494187e31eea702">local::Model::m_frame_rate</a></div><div class="ttdeci">float m_frame_rate</div><div class="ttdoc">フレームレート</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00034">Model.h:34</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a66fad00ff509605427c8d280480ed221"><div class="ttname"><a href="classlocal_1_1_model.html#a66fad00ff509605427c8d280480ed221">local::Model::m_is_file</a></div><div class="ttdeci">bool m_is_file</div><div class="ttdoc">インプットで得たディレクトリ以下のファイルの有無のフラグ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00042">Model.h:42</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_input_8h_html"><div class="ttname"><a href="_app_2_viewer_2_input_8h.html">Input.h</a></div><div class="ttdoc">Inputクラスの定義</div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a954f645f0c5e523ab7b370f9caa9101d"><div class="ttname"><a href="classlocal_1_1_model.html#a954f645f0c5e523ab7b370f9caa9101d">local::Model::m_is_directory</a></div><div class="ttdeci">bool m_is_directory</div><div class="ttdoc">インプットで得たディレクトリ以下のフォルダの有無のフラグ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00041">Model.h:41</a></div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a0d7b4d78abf5e4fb1deed00c0bf309cc"><div class="ttname"><a href="classlocal_1_1_model.html#a0d7b4d78abf5e4fb1deed00c0bf309cc">local::Model::objectPointer</a></div><div class="ttdeci">const ObjectPointer &amp; objectPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_model_8h_source.html#l00023">Model.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a7cb84fafdbbd506b978764328d61c106"><div class="ttname"><a href="classlocal_1_1_model.html#a7cb84fafdbbd506b978764328d61c106">local::Model::m_is_set</a></div><div class="ttdeci">bool m_is_set</div><div class="ttdoc">モデルの有無のフラグ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00043">Model.h:43</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_aae540c914bfbb716637d34b19d9958d8"><div class="ttname"><a href="classlocal_1_1_model.html#aae540c914bfbb716637d34b19d9958d8">local::Model::m_camera_position</a></div><div class="ttdeci">kvs::Vec3i m_camera_position</div><div class="ttdoc">カメラ位置( x, y, z )</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00032">Model.h:32</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a7934e4d1cc688a9a03c8eae0fb58b226"><div class="ttname"><a href="classlocal_1_1_model.html#a7934e4d1cc688a9a03c8eae0fb58b226">local::Model::object</a></div><div class="ttdeci">Object * object() const</div><div class="ttdoc">表示するオブジェクトのポインタを取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00194">Model.cpp:194</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_ac1c06ed07920cd255832400c4e623d91"><div class="ttname"><a href="classlocal_1_1_model.html#ac1c06ed07920cd255832400c4e623d91">local::Model::m_camera_array_dimensions</a></div><div class="ttdeci">kvs::Vec3i m_camera_array_dimensions</div><div class="ttdoc">カメラ位置の範囲( x × y × z )</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00033">Model.h:33</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a438caa5b13a61b91deb3c7c8a971d7a1"><div class="ttname"><a href="classlocal_1_1_model.html#a438caa5b13a61b91deb3c7c8a971d7a1">local::Model::m_directories</a></div><div class="ttdeci">DirectoryList m_directories</div><div class="ttdoc">インプットで得たディレクトリ以下のファイルのディレクトリリスト</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00038">Model.h:38</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a52fac66bfd97a6373076531ff802fab8"><div class="ttname"><a href="classlocal_1_1_model.html#a52fac66bfd97a6373076531ff802fab8">local::Model::updateCameraPosition</a></div><div class="ttdeci">void updateCameraPosition(const kvs::Vec3i &amp;position)</div><div class="ttdoc">表示オブジェクトを指定のカメラ位置に該当するオブジェクトに変更する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00207">Model.cpp:207</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_aebd349530f3a4345f24d42178d0643de"><div class="ttname"><a href="classlocal_1_1_model.html#aebd349530f3a4345f24d42178d0643de">local::Model::DirectoryList</a></div><div class="ttdeci">std::vector&lt; std::string &gt; DirectoryList</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00026">Model.h:26</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a1064e2859e1e05ded4c19de179ce5807"><div class="ttname"><a href="classlocal_1_1_model.html#a1064e2859e1e05ded4c19de179ce5807">local::Model::FileLists</a></div><div class="ttdeci">std::vector&lt; kvs::FileList &gt; FileLists</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00027">Model.h:27</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_abac090f71335ddf8b427fe03c2da6a25"><div class="ttname"><a href="classlocal_1_1_model.html#abac090f71335ddf8b427fe03c2da6a25">local::Model::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">各ファイルリストの中身を削除する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00147">Model.cpp:147</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a6d267b7c39cfd65e513246d5f4674bc7"><div class="ttname"><a href="classlocal_1_1_model.html#a6d267b7c39cfd65e513246d5f4674bc7">local::Model::m_object_pointer</a></div><div class="ttdeci">ObjectPointer m_object_pointer</div><div class="ttdoc">オブジェクトのポインタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00036">Model.h:36</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_af8296f4c9d0e007f1e3ef96d54252ec5"><div class="ttname"><a href="classlocal_1_1_model.html#af8296f4c9d0e007f1e3ef96d54252ec5">local::Model::setup_object</a></div><div class="ttdeci">void setup_object(const size_t index)</div><div class="ttdoc">ファイルリストから指定の配列番号のデータを取得し、表示オブジェクトとして登録する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00224">Model.cpp:224</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html"><div class="ttname"><a href="structlocal_1_1_input.html">local::Input</a></div><div class="ttdoc">設定ファイル(**.4dsv)からの情報を読み込むInputクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00019">Input.h:19</a></div></div>
+<div class="ttc" id="a_movie_object_8h_html"><div class="ttname"><a href="_movie_object_8h.html">MovieObject.h</a></div><div class="ttdoc">MovieObjectクラスの定義</div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_ad3bbfc6b2b7e45bd14ac99964982a818"><div class="ttname"><a href="classlocal_1_1_model.html#ad3bbfc6b2b7e45bd14ac99964982a818">local::Model::filename</a></div><div class="ttdeci">const std::string filename() const</div><div class="ttdoc">ファイル名を取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00172">Model.cpp:172</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a7e152d1c456a6867c7bea21ce7217389"><div class="ttname"><a href="classlocal_1_1_model.html#a7e152d1c456a6867c7bea21ce7217389">local::Model::file</a></div><div class="ttdeci">const kvs::File &amp; file() const</div><div class="ttdoc">カメラ位置に該当するファイルを取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00051">Model.h:51</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_af0109c13da514d04dbd9211bc85adc7a"><div class="ttname"><a href="classlocal_1_1_model.html#af0109c13da514d04dbd9211bc85adc7a">local::Model::ObjectPointer</a></div><div class="ttdeci">kvs::SharedPointer&lt; Object &gt; ObjectPointer</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00025">Model.h:25</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a3962306e20f41e89326e8ca18c5a4109"><div class="ttname"><a href="classlocal_1_1_model.html#a3962306e20f41e89326e8ca18c5a4109">local::Model::m_file_lists</a></div><div class="ttdeci">FileLists m_file_lists</div><div class="ttdoc">インプットで得たディレクトリ以下がフォルダの場合のファイルリスト</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00039">Model.h:39</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a7591a8474ea715b6db5476acc88c26b1"><div class="ttname"><a href="classlocal_1_1_model.html#a7591a8474ea715b6db5476acc88c26b1">local::Model::Model</a></div><div class="ttdeci">Model(local::Input *input)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00024">Model.cpp:24</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a057b02060b2ebffb9c7264c58b9e5d8b"><div class="ttname"><a href="classlocal_1_1_model.html#a057b02060b2ebffb9c7264c58b9e5d8b">local::Model::m_files</a></div><div class="ttdeci">kvs::FileList m_files</div><div class="ttdoc">インプットで得たディレクトリ以下がファイルだった場合のファイルリスト</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00037">Model.h:37</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_afd00749f9713cbbb4e4a9fa90395b9b8"><div class="ttname"><a href="classlocal_1_1_model.html#afd00749f9713cbbb4e4a9fa90395b9b8">local::Model::camera_position_index</a></div><div class="ttdeci">size_t camera_position_index() const</div><div class="ttdoc">カメラ位置座標からそのファイルデータのインデックスを算出する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00250">Model.cpp:250</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a></div><div class="ttdoc">Movie object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00023">MovieObject.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_ab3ebad9649f1ff60c3e9079f4abb8b1c"><div class="ttname"><a href="classlocal_1_1_model.html#ab3ebad9649f1ff60c3e9079f4abb8b1c">local::Model::directoryPath</a></div><div class="ttdeci">const std::string &amp; directoryPath(const size_t dir_index) const</div><div class="ttdoc">m_directoriesから指定のインデックスのディレクトリパスを取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00056">Model.h:56</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a4621705b66b0ec424a6043326513bd0b"><div class="ttname"><a href="classlocal_1_1_model.html#a4621705b66b0ec424a6043326513bd0b">local::Model::m_data_info</a></div><div class="ttdeci">std::string m_data_info</div><div class="ttdoc">データ情報</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00035">Model.h:35</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_aa1cc5f9fd12950b9dab95aa007436674"><div class="ttname"><a href="classlocal_1_1_model.html#aa1cc5f9fd12950b9dab95aa007436674">local::Model::Object</a></div><div class="ttdeci">lib4dsv::MovieObject Object</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00024">Model.h:24</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a3e9a1dd4a1b7271d8ca1428fb64afc32"><div class="ttname"><a href="classlocal_1_1_model.html#a3e9a1dd4a1b7271d8ca1428fb64afc32">local::Model::m_flip_data</a></div><div class="ttdeci">size_t m_flip_data</div><div class="ttdoc">インプットで得たディレクトリ以下にあるフォルダを切り替えるための配列の番号</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00040">Model.h:40</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

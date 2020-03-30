@@ -1,0 +1,1219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: lib4dsv::SphericalMapMovieRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacelib4dsv.html">lib4dsv</a></li><li class="navelem"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">SphericalMapMovieRenderer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classlib4dsv_1_1_spherical_map_movie_renderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">lib4dsv::SphericalMapMovieRenderer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a>&gt;</code></p>
+<div class="dynheader">
+lib4dsv::SphericalMapMovieRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classlib4dsv_1_1_spherical_map_movie_renderer__inherit__graph.png" border="0" usemap="#lib4dsv_1_1_spherical_map_movie_renderer_inherit__map" alt="Inheritance graph"/></div>
+<map name="lib4dsv_1_1_spherical_map_movie_renderer_inherit__map" id="lib4dsv_1_1_spherical_map_movie_renderer_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,79,193,117"/>
+<area shape="rect" title=" " alt="" coords="32,5,166,31"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a2ce6b3ba9bd36f034d840434b2cb5e6b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">Type</a> { <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6ba1a1c4685964b157a5774ec865b56ac3c">Stretching</a> = 0, 
+<a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6ba09e3eb7830e429c546af5953c6a7c347">Centering</a> = 1
+ }</td></tr>
+<tr class="separator:a2ce6b3ba9bd36f034d840434b2cb5e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a65be092b1b7cc226b735755d09965ab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a65be092b1b7cc226b735755d09965ab7">disableAutoPlay</a> ()</td></tr>
+<tr class="separator:a65be092b1b7cc226b735755d09965ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12566e8d0297bc5bc0075fcbbcc43b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a12566e8d0297bc5bc0075fcbbcc43b98">disableLoopPlay</a> ()</td></tr>
+<tr class="separator:a12566e8d0297bc5bc0075fcbbcc43b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c793586a74a6cd9bc0c21c4602473d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a5c793586a74a6cd9bc0c21c4602473d5">disableReversePlay</a> ()</td></tr>
+<tr class="separator:a5c793586a74a6cd9bc0c21c4602473d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa24ffea63eed9701050c6a3897a8adf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#afa24ffea63eed9701050c6a3897a8adf">enableAutoPlay</a> ()</td></tr>
+<tr class="separator:afa24ffea63eed9701050c6a3897a8adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a082a523bc5c936b22df1f00bdd293f5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a082a523bc5c936b22df1f00bdd293f5d">enableLoopPlay</a> ()</td></tr>
+<tr class="separator:a082a523bc5c936b22df1f00bdd293f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09eea9aacb5f70b913b50da7545f0d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a09eea9aacb5f70b913b50da7545f0d76">enableReversePlay</a> ()</td></tr>
+<tr class="separator:a09eea9aacb5f70b913b50da7545f0d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36075ebdabdf1c5c815eb46064c521e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a36075ebdabdf1c5c815eb46064c521e5">exec</a> (kvs::ObjectBase *object, kvs::Camera *camera, kvs::Light *light)</td></tr>
+<tr class="memdesc:a36075ebdabdf1c5c815eb46064c521e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the rendering process.  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a36075ebdabdf1c5c815eb46064c521e5">[詳解]</a><br /></td></tr>
+<tr class="separator:a36075ebdabdf1c5c815eb46064c521e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b99b41f53a91cac8ae4e6e4c8b291fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a9b99b41f53a91cac8ae4e6e4c8b291fb">setCurrentFrameIndex</a> (const int index)</td></tr>
+<tr class="separator:a9b99b41f53a91cac8ae4e6e4c8b291fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e47e65d3ed5cf189dd8f6c92e2a23d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a61e47e65d3ed5cf189dd8f6c92e2a23d">setEnabledAutoPlay</a> (const bool enable)</td></tr>
+<tr class="separator:a61e47e65d3ed5cf189dd8f6c92e2a23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540257d99fd5a27da1d8b5732ed7327e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a540257d99fd5a27da1d8b5732ed7327e">setEnabledLoopPlay</a> (const bool enable)</td></tr>
+<tr class="separator:a540257d99fd5a27da1d8b5732ed7327e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90556ab9645c9b07d3000d4f6568a15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#aa90556ab9645c9b07d3000d4f6568a15">setEnableReversePlay</a> (const bool enable)</td></tr>
+<tr class="separator:aa90556ab9645c9b07d3000d4f6568a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c891234b6bfdb0f3bd4eb36c96eed0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a31c891234b6bfdb0f3bd4eb36c96eed0">setFrameIndex</a> (const int index)</td></tr>
+<tr class="separator:a31c891234b6bfdb0f3bd4eb36c96eed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac9927afae2e358e79ae89f3b4403da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#acac9927afae2e358e79ae89f3b4403da">SphericalMapMovieRenderer</a> (const <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">Type</a> &amp;type=<a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6ba09e3eb7830e429c546af5953c6a7c347">SphericalMapMovieRenderer::Centering</a>)</td></tr>
+<tr class="memdesc:acac9927afae2e358e79ae89f3b4403da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">SphericalMapMovieRenderer</a> class.  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#acac9927afae2e358e79ae89f3b4403da">[詳解]</a><br /></td></tr>
+<tr class="separator:acac9927afae2e358e79ae89f3b4403da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd86c7b5d17d9c42ed731eaa5504d4f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6dd86c7b5d17d9c42ed731eaa5504d4f">~SphericalMapMovieRenderer</a> ()</td></tr>
+<tr class="memdesc:a6dd86c7b5d17d9c42ed731eaa5504d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct the <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">SphericalMapMovieRenderer</a> class.  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6dd86c7b5d17d9c42ed731eaa5504d4f">[詳解]</a><br /></td></tr>
+<tr class="separator:a6dd86c7b5d17d9c42ed731eaa5504d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a44c9c9ad043c5d419f41dd44062cc9b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a44c9c9ad043c5d419f41dd44062cc9b7">center_alignment</a> (const double width, const double height)</td></tr>
+<tr class="memdesc:a44c9c9ad043c5d419f41dd44062cc9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates centering parameters.  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a44c9c9ad043c5d419f41dd44062cc9b7">[詳解]</a><br /></td></tr>
+<tr class="separator:a44c9c9ad043c5d419f41dd44062cc9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d2b34d5ac23daf7b0997d01df23d241"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">create_shader_program</a> ()</td></tr>
+<tr class="memdesc:a8d2b34d5ac23daf7b0997d01df23d241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the shader program  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">[詳解]</a><br /></td></tr>
+<tr class="separator:a8d2b34d5ac23daf7b0997d01df23d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f848f8edc8a306249f1094392e5b87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">create_texture</a> (const <a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> *movie)</td></tr>
+<tr class="memdesc:a20f848f8edc8a306249f1094392e5b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the texture region on the GPU.  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">[詳解]</a><br /></td></tr>
+<tr class="separator:a20f848f8edc8a306249f1094392e5b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7dd5dbe8c07ee01ccfaab14981dcd6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae7dd5dbe8c07ee01ccfaab14981dcd6b">kvsModule</a> (<a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">lib4dsv::SphericalMapMovieRenderer</a>, Renderer)</td></tr>
+<tr class="separator:ae7dd5dbe8c07ee01ccfaab14981dcd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5242bfee78da79948023934e17c8982"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac5242bfee78da79948023934e17c8982">kvsModuleBaseClass</a> (kvs::RendererBase)</td></tr>
+<tr class="separator:ac5242bfee78da79948023934e17c8982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ae68909f5f49e1c4e506ea1c30c7b1c60"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">m_bottom</a></td></tr>
+<tr class="memdesc:ae68909f5f49e1c4e506ea1c30c7b1c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen bottom position  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">[詳解]</a><br /></td></tr>
+<tr class="separator:ae68909f5f49e1c4e506ea1c30c7b1c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78779913c07f0d46e56b2c9e4015b05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac78779913c07f0d46e56b2c9e4015b05">m_current_frame_index</a></td></tr>
+<tr class="memdesc:ac78779913c07f0d46e56b2c9e4015b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在表示中のFrame Index  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac78779913c07f0d46e56b2c9e4015b05">[詳解]</a><br /></td></tr>
+<tr class="separator:ac78779913c07f0d46e56b2c9e4015b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fb28d42957c5cc11f1429cbbad9f54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a72fb28d42957c5cc11f1429cbbad9f54">m_enable_auto_play</a></td></tr>
+<tr class="memdesc:a72fb28d42957c5cc11f1429cbbad9f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">AutoPlay ON/OFF  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a72fb28d42957c5cc11f1429cbbad9f54">[詳解]</a><br /></td></tr>
+<tr class="separator:a72fb28d42957c5cc11f1429cbbad9f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c03d05459bc155e989552020b2c93e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1c03d05459bc155e989552020b2c93e1">m_enable_loop_play</a></td></tr>
+<tr class="memdesc:a1c03d05459bc155e989552020b2c93e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoopPlay ON/OFF  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1c03d05459bc155e989552020b2c93e1">[詳解]</a><br /></td></tr>
+<tr class="separator:a1c03d05459bc155e989552020b2c93e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9ecf63eca0b5d11e75ab29a5f6e4880"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae9ecf63eca0b5d11e75ab29a5f6e4880">m_enable_reverse_play</a></td></tr>
+<tr class="memdesc:ae9ecf63eca0b5d11e75ab29a5f6e4880"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReversePlay ON/OFF  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae9ecf63eca0b5d11e75ab29a5f6e4880">[詳解]</a><br /></td></tr>
+<tr class="separator:ae9ecf63eca0b5d11e75ab29a5f6e4880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27fe07c05bdf3f7e7603122cb2e19f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a></td></tr>
+<tr class="memdesc:ab27fe07c05bdf3f7e7603122cb2e19f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame Index  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">[詳解]</a><br /></td></tr>
+<tr class="separator:ab27fe07c05bdf3f7e7603122cb2e19f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a186d4d1cb8b55d8972e06e3763b18d50"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a186d4d1cb8b55d8972e06e3763b18d50">m_initial_aspect_ratio</a></td></tr>
+<tr class="memdesc:a186d4d1cb8b55d8972e06e3763b18d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial aspect ratio  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a186d4d1cb8b55d8972e06e3763b18d50">[詳解]</a><br /></td></tr>
+<tr class="separator:a186d4d1cb8b55d8972e06e3763b18d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d426e15b0fbdb99b659a67231606ca7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">m_left</a></td></tr>
+<tr class="memdesc:a1d426e15b0fbdb99b659a67231606ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen left position  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">[詳解]</a><br /></td></tr>
+<tr class="separator:a1d426e15b0fbdb99b659a67231606ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac489d0394bc8cb1854ce28224301075a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">m_right</a></td></tr>
+<tr class="memdesc:ac489d0394bc8cb1854ce28224301075a"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen right position  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">[詳解]</a><br /></td></tr>
+<tr class="separator:ac489d0394bc8cb1854ce28224301075a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f74f8b449b02c3088d915843541bdf9"><td class="memItemLeft" align="right" valign="top">kvs::ProgramObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a></td></tr>
+<tr class="memdesc:a6f74f8b449b02c3088d915843541bdf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">shader program  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">[詳解]</a><br /></td></tr>
+<tr class="separator:a6f74f8b449b02c3088d915843541bdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a249f7f6793e2bfaed582999569f0d27c"><td class="memItemLeft" align="right" valign="top">kvs::Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a></td></tr>
+<tr class="memdesc:a249f7f6793e2bfaed582999569f0d27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">texture image  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">[詳解]</a><br /></td></tr>
+<tr class="separator:a249f7f6793e2bfaed582999569f0d27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a364d25dd18c9cbe2f2d9a0eed3f91b4c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">m_top</a></td></tr>
+<tr class="memdesc:a364d25dd18c9cbe2f2d9a0eed3f91b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen top position  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">[詳解]</a><br /></td></tr>
+<tr class="separator:a364d25dd18c9cbe2f2d9a0eed3f91b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9258d6ecd8099f0ffc597e020c02a13f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a9258d6ecd8099f0ffc597e020c02a13f">m_type</a></td></tr>
+<tr class="memdesc:a9258d6ecd8099f0ffc597e020c02a13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">rendering type  <a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a9258d6ecd8099f0ffc597e020c02a13f">[詳解]</a><br /></td></tr>
+<tr class="separator:a9258d6ecd8099f0ffc597e020c02a13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Image renderer class. </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a2ce6b3ba9bd36f034d840434b2cb5e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce6b3ba9bd36f034d840434b2cb5e6b">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">lib4dsv::SphericalMapMovieRenderer::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a2ce6b3ba9bd36f034d840434b2cb5e6ba1a1c4685964b157a5774ec865b56ac3c"></a>Stretching&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2ce6b3ba9bd36f034d840434b2cb5e6ba09e3eb7830e429c546af5953c6a7c347"></a>Centering&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="acac9927afae2e358e79ae89f3b4403da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac9927afae2e358e79ae89f3b4403da">&#9670;&nbsp;</a></span>SphericalMapMovieRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapMovieRenderer::SphericalMapMovieRenderer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6ba09e3eb7830e429c546af5953c6a7c347">SphericalMapMovieRenderer::Centering</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">SphericalMapMovieRenderer</a> class. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>[in] rendering type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00048">m_type</a>.</p>
+
+</div>
+</div>
+<a id="a6dd86c7b5d17d9c42ed731eaa5504d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd86c7b5d17d9c42ed731eaa5504d4f">&#9670;&nbsp;</a></span>~SphericalMapMovieRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapMovieRenderer::~SphericalMapMovieRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruct the <a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">SphericalMapMovieRenderer</a> class. </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a44c9c9ad043c5d419f41dd44062cc9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c9c9ad043c5d419f41dd44062cc9b7">&#9670;&nbsp;</a></span>center_alignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::center_alignment </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates centering parameters. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>[in] image width </td></tr>
+    <tr><td class="paramname">height</td><td>[in] image height </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">239</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00046">m_bottom</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00043">m_initial_aspect_ratio</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00044">m_left</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00045">m_right</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00047">m_top</a>.</p>
+
+</div>
+</div>
+<a id="a8d2b34d5ac23daf7b0997d01df23d241"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d2b34d5ac23daf7b0997d01df23d241">&#9670;&nbsp;</a></span>create_shader_program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::create_shader_program </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create the shader program </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00181">181</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00050">m_shader_program</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a20f848f8edc8a306249f1094392e5b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f848f8edc8a306249f1094392e5b87">&#9670;&nbsp;</a></span>create_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::create_texture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> *&#160;</td>
+          <td class="paramname"><em>movie</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the texture region on the GPU. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>[in] pointer to the image object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">194</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_object_8h_source.html#l00035">lib4dsv::MovieObject::Color24</a>, <a class="el" href="_movie_object_8h_source.html#l00034">lib4dsv::MovieObject::Gray8</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00046">m_bottom</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00043">m_initial_aspect_ratio</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00044">m_left</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00045">m_right</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00049">m_texture</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00047">m_top</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a65be092b1b7cc226b735755d09965ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65be092b1b7cc226b735755d09965ab7">&#9670;&nbsp;</a></span>disableAutoPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::disableAutoPlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00076">76</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00070">setEnabledAutoPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a12566e8d0297bc5bc0075fcbbcc43b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12566e8d0297bc5bc0075fcbbcc43b98">&#9670;&nbsp;</a></span>disableLoopPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::disableLoopPlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00077">77</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00071">setEnabledLoopPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a5c793586a74a6cd9bc0c21c4602473d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c793586a74a6cd9bc0c21c4602473d5">&#9670;&nbsp;</a></span>disableReversePlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::disableReversePlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00078">78</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00072">setEnableReversePlay()</a>.</p>
+
+</div>
+</div>
+<a id="afa24ffea63eed9701050c6a3897a8adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa24ffea63eed9701050c6a3897a8adf">&#9670;&nbsp;</a></span>enableAutoPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::enableAutoPlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00073">73</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00070">setEnabledAutoPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a082a523bc5c936b22df1f00bdd293f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082a523bc5c936b22df1f00bdd293f5d">&#9670;&nbsp;</a></span>enableLoopPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::enableLoopPlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00074">74</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00071">setEnabledLoopPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a09eea9aacb5f70b913b50da7545f0d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09eea9aacb5f70b913b50da7545f0d76">&#9670;&nbsp;</a></span>enableReversePlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::enableReversePlay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00075">75</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00072">setEnableReversePlay()</a>.</p>
+
+</div>
+</div>
+<a id="a36075ebdabdf1c5c815eb46064c521e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36075ebdabdf1c5c815eb46064c521e5">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::exec </td>
+          <td>(</td>
+          <td class="paramtype">kvs::ObjectBase *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Camera *&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Light *&#160;</td>
+          <td class="paramname"><em>light</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the rendering process. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>[in] pointer to the object </td></tr>
+    <tr><td class="paramname">camera</td><td>[in] pointer to the camera </td></tr>
+    <tr><td class="paramname">light</td><td>[in] pointer to the light</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Create texture.</p>
+<p>Create shader program.</p>
+<p>OpenGL関連の設定</p>
+<p>ファイルから表示するfile/frameを取り出し、描画する画像を切出し/貼付けをする</p>
+<p>次回表示する画像のframeIndex等の処理を行う </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a> の <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00181">create_shader_program()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00046">m_bottom</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00055">m_current_frame_index</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00051">m_enable_auto_play</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00052">m_enable_loop_play</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00053">m_enable_reverse_play</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00054">m_frame_index</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00044">m_left</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00045">m_right</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00050">m_shader_program</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00049">m_texture</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00047">m_top</a>.</p>
+
+</div>
+</div>
+<a id="ae7dd5dbe8c07ee01ccfaab14981dcd6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7dd5dbe8c07ee01ccfaab14981dcd6b">&#9670;&nbsp;</a></span>kvsModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapMovieRenderer::kvsModule </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html">lib4dsv::SphericalMapMovieRenderer</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Renderer&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5242bfee78da79948023934e17c8982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5242bfee78da79948023934e17c8982">&#9670;&nbsp;</a></span>kvsModuleBaseClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapMovieRenderer::kvsModuleBaseClass </td>
+          <td>(</td>
+          <td class="paramtype">kvs::RendererBase&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b99b41f53a91cac8ae4e6e4c8b291fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b99b41f53a91cac8ae4e6e4c8b291fb">&#9670;&nbsp;</a></span>setCurrentFrameIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::setCurrentFrameIndex </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00069">69</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00055">m_current_frame_index</a>.</p>
+
+</div>
+</div>
+<a id="a61e47e65d3ed5cf189dd8f6c92e2a23d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e47e65d3ed5cf189dd8f6c92e2a23d">&#9670;&nbsp;</a></span>setEnabledAutoPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::setEnabledAutoPlay </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00070">70</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00051">m_enable_auto_play</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00076">disableAutoPlay()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00073">enableAutoPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a540257d99fd5a27da1d8b5732ed7327e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a540257d99fd5a27da1d8b5732ed7327e">&#9670;&nbsp;</a></span>setEnabledLoopPlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::setEnabledLoopPlay </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00071">71</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00052">m_enable_loop_play</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00077">disableLoopPlay()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00074">enableLoopPlay()</a>.</p>
+
+</div>
+</div>
+<a id="aa90556ab9645c9b07d3000d4f6568a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90556ab9645c9b07d3000d4f6568a15">&#9670;&nbsp;</a></span>setEnableReversePlay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::setEnableReversePlay </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00072">72</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00053">m_enable_reverse_play</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00078">disableReversePlay()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00075">enableReversePlay()</a>.</p>
+
+</div>
+</div>
+<a id="a31c891234b6bfdb0f3bd4eb36c96eed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c891234b6bfdb0f3bd4eb36c96eed0">&#9670;&nbsp;</a></span>setFrameIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapMovieRenderer::setFrameIndex </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00068">68</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00054">m_frame_index</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ae68909f5f49e1c4e506ea1c30c7b1c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68909f5f49e1c4e506ea1c30c7b1c60">&#9670;&nbsp;</a></span>m_bottom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapMovieRenderer::m_bottom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen bottom position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00046">46</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">center_alignment()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ac78779913c07f0d46e56b2c9e4015b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78779913c07f0d46e56b2c9e4015b05">&#9670;&nbsp;</a></span>m_current_frame_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lib4dsv::SphericalMapMovieRenderer::m_current_frame_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>現在表示中のFrame Index </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00055">55</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00069">setCurrentFrameIndex()</a>.</p>
+
+</div>
+</div>
+<a id="a72fb28d42957c5cc11f1429cbbad9f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fb28d42957c5cc11f1429cbbad9f54">&#9670;&nbsp;</a></span>m_enable_auto_play</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib4dsv::SphericalMapMovieRenderer::m_enable_auto_play</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>AutoPlay ON/OFF </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00051">51</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00070">setEnabledAutoPlay()</a>.</p>
+
+</div>
+</div>
+<a id="a1c03d05459bc155e989552020b2c93e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c03d05459bc155e989552020b2c93e1">&#9670;&nbsp;</a></span>m_enable_loop_play</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib4dsv::SphericalMapMovieRenderer::m_enable_loop_play</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>LoopPlay ON/OFF </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00071">setEnabledLoopPlay()</a>.</p>
+
+</div>
+</div>
+<a id="ae9ecf63eca0b5d11e75ab29a5f6e4880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9ecf63eca0b5d11e75ab29a5f6e4880">&#9670;&nbsp;</a></span>m_enable_reverse_play</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lib4dsv::SphericalMapMovieRenderer::m_enable_reverse_play</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>ReversePlay ON/OFF </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00072">setEnableReversePlay()</a>.</p>
+
+</div>
+</div>
+<a id="ab27fe07c05bdf3f7e7603122cb2e19f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27fe07c05bdf3f7e7603122cb2e19f3">&#9670;&nbsp;</a></span>m_frame_index</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lib4dsv::SphericalMapMovieRenderer::m_frame_index</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Frame Index </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00054">54</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>, <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00068">setFrameIndex()</a>.</p>
+
+</div>
+</div>
+<a id="a186d4d1cb8b55d8972e06e3763b18d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186d4d1cb8b55d8972e06e3763b18d50">&#9670;&nbsp;</a></span>m_initial_aspect_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapMovieRenderer::m_initial_aspect_ratio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initial aspect ratio </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">center_alignment()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>.</p>
+
+</div>
+</div>
+<a id="a1d426e15b0fbdb99b659a67231606ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d426e15b0fbdb99b659a67231606ca7">&#9670;&nbsp;</a></span>m_left</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapMovieRenderer::m_left</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen left position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">center_alignment()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ac489d0394bc8cb1854ce28224301075a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac489d0394bc8cb1854ce28224301075a">&#9670;&nbsp;</a></span>m_right</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapMovieRenderer::m_right</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen right position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00045">45</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">center_alignment()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a6f74f8b449b02c3088d915843541bdf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f74f8b449b02c3088d915843541bdf9">&#9670;&nbsp;</a></span>m_shader_program</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::ProgramObject lib4dsv::SphericalMapMovieRenderer::m_shader_program</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shader program </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00050">50</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00181">create_shader_program()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a249f7f6793e2bfaed582999569f0d27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a249f7f6793e2bfaed582999569f0d27c">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::Texture2D lib4dsv::SphericalMapMovieRenderer::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>texture image </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00049">49</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a364d25dd18c9cbe2f2d9a0eed3f91b4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a364d25dd18c9cbe2f2d9a0eed3f91b4c">&#9670;&nbsp;</a></span>m_top</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapMovieRenderer::m_top</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen top position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00239">center_alignment()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00194">create_texture()</a>, <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00057">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a9258d6ecd8099f0ffc597e020c02a13f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9258d6ecd8099f0ffc597e020c02a13f">&#9670;&nbsp;</a></span>m_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">Type</a> lib4dsv::SphericalMapMovieRenderer::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rendering type </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a> の <a class="el" href="_spherical_map_movie_renderer_8h_source.html#l00048">48</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_movie_renderer_8cpp_source.html#l00025">SphericalMapMovieRenderer()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Lib/<a class="el" href="_spherical_map_movie_renderer_8h_source.html">SphericalMapMovieRenderer.h</a></li>
+<li>Lib/<a class="el" href="_spherical_map_movie_renderer_8cpp_source.html">SphericalMapMovieRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: App/Viewer/MovieScreen.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a class="el" href="dir_4abe69781dacbbcd37b586b1f1f9d58f.html">Viewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MovieScreen.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_movie_screen_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file MovieScreen.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief MovieScreenクラスの定義</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_application_8h.html">Application.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_screen_8h.html">Screen.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_model_8h.html">Model.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">* @brief 動画を表示するMovieScreenクラスの定義</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classlocal_1_1_movie_screen.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlocal_1_1_movie_screen.html">MovieScreen</a> : <span class="keyword">public</span> <a class="code" href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classlocal_1_1_movie_screen.html#ab952d762c75f64f3aa209a4089e8d720">MovieScreen</a>( <a class="code" href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a>* app );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_movie_screen.html#a28e407535d168478ed18ddd21f8c61a4">setup</a>( <a class="code" href="classlocal_1_1_model.html">local::Model</a>* model );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_movie_screen.html#a3f55ccc82b44a2f624923f2dd7086f1b">update</a>( <a class="code" href="classlocal_1_1_model.html">local::Model</a>* model );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_movie_screen.html#a3f55ccc82b44a2f624923f2dd7086f1b">update</a>( <a class="code" href="classlocal_1_1_model.html">local::Model</a>* model, <span class="keyword">const</span> <span class="keywordtype">int</span> index );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_app_2_viewer_2_model_8h_html"><div class="ttname"><a href="_app_2_viewer_2_model_8h.html">Model.h</a></div><div class="ttdoc">Modelクラスの定義</div></div>
+<div class="ttc" id="anamespacelocal_html_a41aac936d9cc4deda112305aa30113e0"><div class="ttname"><a href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a></div><div class="ttdeci">kvs::qt::Application Application</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_movie_screen_html_a28e407535d168478ed18ddd21f8c61a4"><div class="ttname"><a href="classlocal_1_1_movie_screen.html#a28e407535d168478ed18ddd21f8c61a4">local::MovieScreen::setup</a></div><div class="ttdeci">void setup(local::Model *model)</div><div class="ttdoc">動画を表示するためのセットアップを行う関数</div><div class="ttdef"><b>Definition:</b> <a href="_movie_screen_8cpp_source.html#l00035">MovieScreen.cpp:35</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_movie_screen_html"><div class="ttname"><a href="classlocal_1_1_movie_screen.html">local::MovieScreen</a></div><div class="ttdoc">動画を表示するMovieScreenクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_movie_screen_8h_source.html#l00020">MovieScreen.h:20</a></div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_movie_screen_html_ab952d762c75f64f3aa209a4089e8d720"><div class="ttname"><a href="classlocal_1_1_movie_screen.html#ab952d762c75f64f3aa209a4089e8d720">local::MovieScreen::MovieScreen</a></div><div class="ttdeci">MovieScreen(local::Application *app)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="_movie_screen_8cpp_source.html#l00021">MovieScreen.cpp:21</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_application_8h_html"><div class="ttname"><a href="_app_2_viewer_2_application_8h.html">Application.h</a></div><div class="ttdoc">Applicationクラスのtypedef宣言</div></div>
+<div class="ttc" id="a_app_2_viewer_2_screen_8h_html"><div class="ttname"><a href="_app_2_viewer_2_screen_8h.html">Screen.h</a></div><div class="ttdoc">Screenクラスのtypedef宣言</div></div>
+<div class="ttc" id="aclasslocal_1_1_movie_screen_html_a3f55ccc82b44a2f624923f2dd7086f1b"><div class="ttname"><a href="classlocal_1_1_movie_screen.html#a3f55ccc82b44a2f624923f2dd7086f1b">local::MovieScreen::update</a></div><div class="ttdeci">void update(local::Model *model)</div><div class="ttdoc">動画を表示するオブジェクトの更新をする関数</div><div class="ttdef"><b>Definition:</b> <a href="_movie_screen_8cpp_source.html#l00062">MovieScreen.cpp:62</a></div></div>
+<div class="ttc" id="anamespacelocal_html_a3b75bd59a85ae7a81e308c79b4ed2402"><div class="ttname"><a href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a></div><div class="ttdeci">kvs::qt::Screen Screen</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_screen_8h_source.html#l00010">Screen.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

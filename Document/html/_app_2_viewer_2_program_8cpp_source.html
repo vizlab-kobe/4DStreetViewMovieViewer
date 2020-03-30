@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: App/Viewer/Program.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a class="el" href="dir_4abe69781dacbbcd37b586b1f1f9d58f.html">Viewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Program.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_app_2_viewer_2_program_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/****************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file Program.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief Programクラスの実装</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/****************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_program_8h.html">Program.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_input_8h.html">Input.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_model_8h.html">Model.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_view_8h.html">View.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_main_window_8h.html">MainWindow.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controller_8h.html">Controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">* @brief 通常の方法で終了する際に呼ばれる関数の定義</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">* @details ログを書く</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> Exit()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classlocal_1_1_program.html#ad946045a5750315d3cf5a2891e34c08d">local::Program::Logger</a>().<a class="code" href="classlocal_1_1_logger.html#aaf7ef3d454ea982d46b0bacfabedba11">write</a>(<span class="stringliteral">&quot;log&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="classlocal_1_1_logger.html">local::Logger</a> <a class="code" href="classlocal_1_1_program.html#a184e35f582990520fa6540d80cdf9b7a">Program::m_logger</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">* @brief コンストラクタ</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">* @details 通常の方法で終了する際に呼ばれる関数の登録</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classlocal_1_1_program.html#aa15ec917e399b7ae62b2f0ceea2d4171">   42</a></span>&#160;<a class="code" href="classlocal_1_1_program.html#aa15ec917e399b7ae62b2f0ceea2d4171">Program::Program</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    atexit( ::Exit );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">* @brief プログラムの実行</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">* @param argc 引数の数</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">* @param argv 引数の値の配列</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">* @return リターンコード</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">* @details 4DStreetViewMovieViewerの各オブジェクトの生成</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">* @details MainWindowウィジェットの設定・表示</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classlocal_1_1_program.html#a75bb784b3a09db33f5efd944d1ae299c">   57</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classlocal_1_1_program.html#a75bb784b3a09db33f5efd944d1ae299c">Program::exec</a>( <span class="keywordtype">int</span> <a class="code" href="namespacekvsmake.html#ae5f8f1202e02e8ab9f051e4590d7b05d">argc</a>, <span class="keywordtype">char</span>** <a class="code" href="namespacekvsmake.html#a2e05309fff86c14920352c97ede37f82">argv</a> )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a> app( <a class="code" href="namespacekvsmake.html#ae5f8f1202e02e8ab9f051e4590d7b05d">argc</a>, <a class="code" href="namespacekvsmake.html#a2e05309fff86c14920352c97ede37f82">argv</a> );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="structlocal_1_1_input.html">local::Input</a> input;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classlocal_1_1_model.html">local::Model</a> model( &amp;input );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classlocal_1_1_view.html">local::View</a> view( &amp;app, &amp;model );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classlocal_1_1_controller.html">local::Controller</a> controller( &amp;model, &amp;view );</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classlocal_1_1_main_window.html">local::MainWindow</a> main_window( input, model, view, controller );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    main_window.setAttribute( Qt::WA_DeleteOnClose ); <span class="comment">// ウィジェットが閉じられると自動でdelete</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    main_window.show(); <span class="comment">// ウィジェットを表示する</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    main_window.raise(); <span class="comment">// ウィジェットを一番前に表示する</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> app.run();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_app_2_viewer_2_model_8h_html"><div class="ttname"><a href="_app_2_viewer_2_model_8h.html">Model.h</a></div><div class="ttdoc">Modelクラスの定義</div></div>
+<div class="ttc" id="aclasslocal_1_1_logger_html"><div class="ttname"><a href="classlocal_1_1_logger.html">local::Logger</a></div><div class="ttdoc">Logを記録するLoggerクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8h_source.html#l00020">Logger.h:20</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_program_html_a184e35f582990520fa6540d80cdf9b7a"><div class="ttname"><a href="classlocal_1_1_program.html#a184e35f582990520fa6540d80cdf9b7a">local::Program::m_logger</a></div><div class="ttdeci">static local::Logger m_logger</div><div class="ttdoc">Loggerクラスのm_loggerの宣言</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_program_8h_source.html#l00021">Program.h:21</a></div></div>
+<div class="ttc" id="anamespacelocal_html_a41aac936d9cc4deda112305aa30113e0"><div class="ttname"><a href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a></div><div class="ttdeci">kvs::qt::Application Application</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_input_8h_html"><div class="ttname"><a href="_app_2_viewer_2_input_8h.html">Input.h</a></div><div class="ttdoc">Inputクラスの定義</div></div>
+<div class="ttc" id="a_controller_8h_html"><div class="ttname"><a href="_controller_8h.html">Controller.h</a></div><div class="ttdoc">Controllerクラスの定義</div></div>
+<div class="ttc" id="a_app_2_viewer_2_program_8h_html"><div class="ttname"><a href="_app_2_viewer_2_program_8h.html">Program.h</a></div><div class="ttdoc">Programクラスの定義</div></div>
+<div class="ttc" id="a_main_window_8h_html"><div class="ttname"><a href="_main_window_8h.html">MainWindow.h</a></div><div class="ttdoc">MainWindowクラスの定義</div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_logger_html_aaf7ef3d454ea982d46b0bacfabedba11"><div class="ttname"><a href="classlocal_1_1_logger.html#aaf7ef3d454ea982d46b0bacfabedba11">local::Logger::write</a></div><div class="ttdeci">void write(const std::string &amp;basename=&quot;log&quot;) const</div><div class="ttdoc">カメラ位置変更時間及びカメラアングル変更時間をCSVファイルに書き出す関数</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00053">Logger.cpp:53</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html"><div class="ttname"><a href="classlocal_1_1_main_window.html">local::MainWindow</a></div><div class="ttdoc">メイン画面を構成するMainWindowクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00024">MainWindow.h:24</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html"><div class="ttname"><a href="classlocal_1_1_view.html">local::View</a></div><div class="ttdoc">画像や情報を表示するためのViewクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8h_source.html#l00023">View.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_program_html_aa15ec917e399b7ae62b2f0ceea2d4171"><div class="ttname"><a href="classlocal_1_1_program.html#aa15ec917e399b7ae62b2f0ceea2d4171">local::Program::Program</a></div><div class="ttdeci">Program()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_program_8cpp_source.html#l00042">Program.cpp:42</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_controller_html"><div class="ttname"><a href="classlocal_1_1_controller.html">local::Controller</a></div><div class="ttdoc">表示画像を操作するControllerクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8h_source.html#l00026">Controller.h:26</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html"><div class="ttname"><a href="structlocal_1_1_input.html">local::Input</a></div><div class="ttdoc">設定ファイル(**.4dsv)からの情報を読み込むInputクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00019">Input.h:19</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_view_8h_html"><div class="ttname"><a href="_app_2_viewer_2_view_8h.html">View.h</a></div><div class="ttdoc">Viewクラスの定義</div></div>
+<div class="ttc" id="anamespacekvsmake_html_ae5f8f1202e02e8ab9f051e4590d7b05d"><div class="ttname"><a href="namespacekvsmake.html#ae5f8f1202e02e8ab9f051e4590d7b05d">kvsmake.argc</a></div><div class="ttdeci">argc</div><div class="ttdef"><b>Definition:</b> <a href="kvsmake_8py_source.html#l00037">kvsmake.py:37</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_program_html_ad946045a5750315d3cf5a2891e34c08d"><div class="ttname"><a href="classlocal_1_1_program.html#ad946045a5750315d3cf5a2891e34c08d">local::Program::Logger</a></div><div class="ttdeci">static local::Logger &amp; Logger()</div><div class="ttdoc">m_loggerのgetter</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_program_8h_source.html#l00027">Program.h:27</a></div></div>
+<div class="ttc" id="anamespacekvsmake_html_a2e05309fff86c14920352c97ede37f82"><div class="ttname"><a href="namespacekvsmake.html#a2e05309fff86c14920352c97ede37f82">kvsmake.argv</a></div><div class="ttdeci">argv</div><div class="ttdef"><b>Definition:</b> <a href="kvsmake_8py_source.html#l00038">kvsmake.py:38</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_program_html_a75bb784b3a09db33f5efd944d1ae299c"><div class="ttname"><a href="classlocal_1_1_program.html#a75bb784b3a09db33f5efd944d1ae299c">local::Program::exec</a></div><div class="ttdeci">int exec(int argc, char **argv)</div><div class="ttdoc">プログラムの実行</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_program_8cpp_source.html#l00057">Program.cpp:57</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

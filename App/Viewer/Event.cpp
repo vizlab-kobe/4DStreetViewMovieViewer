@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file Event.cpp
+* @brief Eventクラスの実装
+*/
+/* ***************************************************************************/
 #include "Event.h"
 #include "Model.h"
 #include "View.h"
@@ -13,6 +19,14 @@
 namespace local
 {
 
+/*==========================================================================*/
+/**
+* @brief コンストラクタ
+* @param model Modelへのポインタ
+* @param view Viewへのポインタ
+* @param controller Controllerへのポインタ
+*/
+/*==========================================================================*/
 Event::Event( local::Model* model, local::View* view, local::Controller* controller ):
     m_model( model ),
     m_view( view ),
@@ -30,6 +44,12 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
         kvs::EventBase::KeyPressEvent );
 }
 
+/*==========================================================================*/
+/**
+* @brief FocusMode時に実行する関数
+* @bug FocusMode実行時、挙動が少しおかしい気がする。要確認。
+*/
+/*==========================================================================*/
 void Event::focusMode()
 {
     m_view->movieScreen().scene()->objectManager()->resetXform();
@@ -54,6 +74,13 @@ void Event::focusMode()
     m_view->movieScreen().scene()->objectManager()->rotate( rot );
 }
 
+/*==========================================================================*/
+/**
+* @brief マウスが押された時に実行する関数
+* @param event MouseEventへのポインタ
+* @details AutoPlayを一旦中断する
+*/
+/*==========================================================================*/
 void Event::mousePressEvent( kvs::MouseEvent* event )
 {
     if ( m_model->isSet() )
@@ -65,6 +92,12 @@ void Event::mousePressEvent( kvs::MouseEvent* event )
     }
 }
 
+/*==========================================================================*/
+/**
+* @brief マウスがドラッグされた時に実行する関数
+* @param event MouseEventへのポインタ
+*/
+/*==========================================================================*/
 void Event::mouseMoveEvent( kvs::MouseEvent* event )
 {
     if ( m_model->isSet() )
@@ -75,6 +108,14 @@ void Event::mouseMoveEvent( kvs::MouseEvent* event )
     }
 }
 
+/*==========================================================================*/
+/**
+* @brief マウスが離された時に実行する関数
+* @param event MouseEventへのポインタ
+* @details 一旦中断していたAutoPlayを再開する
+* @note Bird'sEyeView / OrientationAxis Modeは未実装
+*/
+/*==========================================================================*/
 void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 {
     if ( m_model->isSet() )
@@ -102,6 +143,13 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
     }
 }
 
+/*==========================================================================*/
+/**
+* @brief マウスがダブルクリックされた時に実行する関数
+* @param event MouseEventへのポインタ
+* @details 視線方向に一番近いカメラ位置へ移動する
+*/
+/*==========================================================================*/
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
 {
     if ( m_model->isSet() )
@@ -137,6 +185,27 @@ void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
     }
 }
 
+/*==========================================================================*/
+/**
+* @brief キーが押された時に実行する関数
+* @param event KeyEventへのポインタ
+* @details → / ← / ↑ / ↓ / PageUp / PageDown ：カメラ位置をx,y,z方向に±1移動する
+* @details Space：AutoPlay ButtonのON/OFFを切替える
+* @details a：FrameIndexを一番最初に戻す ( FrameIndex = 0 )
+* @details b：（空）
+* @details c：物理量データ表示切替
+* @details e：FrameIndexを一番最後にする ( FrameIndex = 総フレーム数 - 1 )
+* @details i：（空）
+* @details l：LoopPlayのON/OFFを切替える
+* @details r：ReversePlayのON/OFFを切替える
+* @details s：スクリーンサイズを今より50大きくする
+* @details S：スクリーンサイズを今より50小さくする
+* @details t：FrameIndexを1つ前に進める
+* @details T：FrameIndexを1つ戻す
+* @bug s / Sキーのスクリーンサイズを変更する機能の中身は、GLUT版のままであり、
+*      Qt版としては変更していないため、動作がおかしい。要確認。
+*/
+/*==========================================================================*/
 void Event::keyPressEvent( kvs::KeyEvent* event )
 {
     if ( m_model->isSet() )
@@ -348,6 +417,14 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
     }//end of if( m_model->isSet() )
 }
 
+/*==========================================================================*/
+/**
+* @brief Resize Eventが発生した時に実行する関数
+* @param width スクリーンの幅
+* @param height スクリーンの高さ
+* @bug ここも上記s / Sキーと同様、GLUT版からQt版へ移行時未修正のため、要見直し。
+*/
+/*==========================================================================*/
 void Event::resizeEvent(int width, int height)
 {
     int s_width = kvs::Math::Max( width, height );

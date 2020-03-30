@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Lib/MovieObject.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8f3de2ae926fecfe6abd5379fd2b6eb1.html">Lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MovieObject.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_movie_object_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file MovieObject.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief MovieObjectクラスの定義</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;kvs/ObjectBase&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;kvs/Module&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;kvs/SharedPointer&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;kvs/opencv/CaptureDevice&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelib4dsv.html">lib4dsv</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *  @brief  Movie object.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlib4dsv_1_1_movie_object.html">MovieObject</a> : <span class="keyword">public</span> kvs::ObjectBase</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a1d35e4eba22fc89a93ffeab8583813c4">kvsModuleName</a>( <a class="code" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> );</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a968793a88ff3d2235ae00eb7d7b050d1">kvsModuleCategory</a>( Object );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a5c1b4467f1c0469aa647792153a9961a">kvsModuleBaseClass</a>( kvs::ObjectBase );</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">   30</a></span>&#160;    <span class="keyword">typedef</span> kvs::SharedPointer&lt;kvs::opencv::CaptureDevice&gt; <a class="code" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">   32</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">   34</a></span>&#160;        <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">Gray8</a> = 8, <span class="comment">///&lt; 8 bit gray pixel</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">   35</a></span>&#160;<span class="comment"></span>        <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">Color24</a> = 24  <span class="comment">///&lt; 24 bit RGB color pixel (8x8x8 bits)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span>    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">m_device_id</a>; <span class="comment">///&lt; capture device ID</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">   40</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a> <a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a>; <span class="comment">///&lt; video capture device</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">   41</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a> <a class="code" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a>; <span class="comment">///&lt; pixel type</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">   42</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a>; <span class="comment">///&lt; capture width</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">   43</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a>; <span class="comment">///&lt; capture height</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">   44</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a>; <span class="comment">///&lt; number of channels</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">MovieObject</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">MovieObject</a>( <span class="keyword">const</span> std::string&amp; filename );</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a5ca809f4aef036261924028b23d07675">   49</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a5ca809f4aef036261924028b23d07675">~MovieObject</a>() {}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    ObjectType <a class="code" href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">objectType</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">shallowCopy</a>( <span class="keyword">const</span> <a class="code" href="classlib4dsv_1_1_movie_object.html">MovieObject</a>&amp; other );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> deviceID()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">m_device_id</a>; } <span class="comment">///&lt; getter for the m_device_id</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> kvs::opencv::CaptureDevice&amp; device()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *( <a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a>.get() ); } <span class="comment">///&lt; getter for the video capture device</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span>    <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a> type()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a>; } <span class="comment">///&lt; getter for the m_type</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> width()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a>; } <span class="comment">///&lt; getter for the m_width</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> height()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a>; } <span class="comment">///&lt; getter for the m_height</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span>    <span class="keywordtype">size_t</span> nchannels()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a>; } <span class="comment">///&lt; getter for the m_nchannels</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">initialize</a>( <span class="keyword">const</span> std::string&amp; filename );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// end of namespace lib4dsv</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a2d55793821b5db5e1c356d092632b25d"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">lib4dsv::MovieObject::m_device_id</a></div><div class="ttdeci">int m_device_id</div><div class="ttdoc">capture device ID</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00039">MovieObject.h:39</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">lib4dsv::MovieObject::Color24</a></div><div class="ttdeci">@ Color24</div><div class="ttdoc">24 bit RGB color pixel (8x8x8 bits)</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00035">MovieObject.h:35</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_ad3b58b67c482b1626d82cb5f9b425de9"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">lib4dsv::MovieObject::m_nchannels</a></div><div class="ttdeci">size_t m_nchannels</div><div class="ttdoc">number of channels</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00044">MovieObject.h:44</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a9711eb8d14c17219138b1301a36ba9d2"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">lib4dsv::MovieObject::m_height</a></div><div class="ttdeci">size_t m_height</div><div class="ttdoc">capture height</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00043">MovieObject.h:43</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_ab14a0b87d98ca75df679ef03f2b1209b"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">lib4dsv::MovieObject::m_type</a></div><div class="ttdeci">PixelType m_type</div><div class="ttdoc">pixel type</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00041">MovieObject.h:41</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a880e6ab8cc952531bd6b69cc5ad886be"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">lib4dsv::MovieObject::m_width</a></div><div class="ttdeci">size_t m_width</div><div class="ttdoc">capture width</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00042">MovieObject.h:42</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a5ca809f4aef036261924028b23d07675"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a5ca809f4aef036261924028b23d07675">lib4dsv::MovieObject::~MovieObject</a></div><div class="ttdeci">virtual ~MovieObject()</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00049">MovieObject.h:49</a></div></div>
+<div class="ttc" id="anamespacelib4dsv_html"><div class="ttname"><a href="namespacelib4dsv.html">lib4dsv</a></div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00010">MovieObject.cpp:10</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a9bf387417d94d922a220259b9961417e"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">lib4dsv::MovieObject::MovieObject</a></div><div class="ttdeci">MovieObject()</div><div class="ttdoc">Constructs a new MovieObject class.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00018">MovieObject.cpp:18</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a1d35e4eba22fc89a93ffeab8583813c4"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a1d35e4eba22fc89a93ffeab8583813c4">lib4dsv::MovieObject::kvsModuleName</a></div><div class="ttdeci">kvsModuleName(lib4dsv::MovieObject)</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_af60860f2e31b81fe71d47813d0d03ce5"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">lib4dsv::MovieObject::CaptureDevice</a></div><div class="ttdeci">kvs::SharedPointer&lt; kvs::opencv::CaptureDevice &gt; CaptureDevice</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00030">MovieObject.h:30</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_afcdda2be93caa1c5a836d8e317405afd"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">lib4dsv::MovieObject::initialize</a></div><div class="ttdeci">const bool initialize(const std::string &amp;filename)</div><div class="ttdoc">Initialize the video object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00076">MovieObject.cpp:76</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_acd6164cf9e6baaa0d3ea63f5a14d589e"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">lib4dsv::MovieObject::objectType</a></div><div class="ttdeci">ObjectType objectType() const</div><div class="ttdoc">Returns the object type.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00047">MovieObject.cpp:47</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a634524a3e6e9391606e17a93308fcca9"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">lib4dsv::MovieObject::m_device</a></div><div class="ttdeci">CaptureDevice m_device</div><div class="ttdoc">video capture device</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00040">MovieObject.h:40</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a5c1b4467f1c0469aa647792153a9961a"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a5c1b4467f1c0469aa647792153a9961a">lib4dsv::MovieObject::kvsModuleBaseClass</a></div><div class="ttdeci">kvsModuleBaseClass(kvs::ObjectBase)</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">lib4dsv::MovieObject::Gray8</a></div><div class="ttdeci">@ Gray8</div><div class="ttdoc">8 bit gray pixel</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00034">MovieObject.h:34</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adea"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">lib4dsv::MovieObject::PixelType</a></div><div class="ttdeci">PixelType</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00032">MovieObject.h:32</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a></div><div class="ttdoc">Movie object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00023">MovieObject.h:23</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a1f75c96aeb047efadab6bcd852e800b1"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">lib4dsv::MovieObject::shallowCopy</a></div><div class="ttdeci">void shallowCopy(const MovieObject &amp;other)</div><div class="ttdoc">Copy the movie object ( shallow copy )</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00058">MovieObject.cpp:58</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a968793a88ff3d2235ae00eb7d7b050d1"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a968793a88ff3d2235ae00eb7d7b050d1">lib4dsv::MovieObject::kvsModuleCategory</a></div><div class="ttdeci">kvsModuleCategory(Object)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

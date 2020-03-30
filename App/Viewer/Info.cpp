@@ -1,7 +1,22 @@
+/* ***************************************************************************/
+/**
+* @file Info.cpp
+* @brief Infoクラスの実装
+*/
+/* ***************************************************************************/
 #include "Info.h"
 
 namespace local
 {
+
+/*==========================================================================*/
+/**
+* @brief コンストラクタ
+* @param model Modelへのポインタ
+* @param screen Screenへのポインタ
+* @param parent 親クラスへのポインタ
+*/
+/*==========================================================================*/
 CameraInfo::CameraInfo( local::Model* model, local::Screen* screen, QWidget *parent ):
     m_model( model ),
     m_screen( screen ),
@@ -42,6 +57,11 @@ CameraInfo::CameraInfo( local::Model* model, local::Screen* screen, QWidget *par
     setLayout( main_layout );
 }
 
+/*==========================================================================*/
+/**
+* @brief CameraInfoの内容を更新する関数
+*/
+/*==========================================================================*/
 void CameraInfo::update()
 {
     const int width = m_screen->width();
@@ -73,6 +93,13 @@ void CameraInfo::update()
     m_num_frames->setText( qt_number_of_frames );
 }
 
+/*==========================================================================*/
+/**
+* @brief コンストラクタ
+* @param model Modelへのポインタ
+* @param parent 親クラスへのポインタ
+*/
+/*==========================================================================*/
 DataInfo::DataInfo( local::Model* model, QWidget *parent ):
     m_model( model ),
     QWidget(parent)
@@ -83,18 +110,29 @@ DataInfo::DataInfo( local::Model* model, QWidget *parent ):
     layout->addWidget( m_information );
     setLayout(layout);
 
-    m_information->setWordWrap(true);
+    m_information->setWordWrap(true); // Window幅に合わせて改行する設定
 }
 
+/*==========================================================================*/
+/**
+* @brief DataInfo内の内容を更新する関数
+*/
+/*==========================================================================*/
 void DataInfo::update()
 {
-
     const std::string std_information( m_model->dataInfo().c_str() );
     const QString qt_data_info( QString::fromStdString( std_information ) );
 
     m_information->setText( qt_data_info );
 }
 
+/*==========================================================================*/
+/**
+* @brief コンストラクタ
+* @param screenへのポインタ
+* @param parent 親クラスへのポインタ
+*/
+/*==========================================================================*/
 Info::Info( local::Screen* screen, QWidget *parent ):
     m_model( NULL ),
     QWidget(parent)
@@ -112,7 +150,12 @@ Info::Info( local::Screen* screen, QWidget *parent ):
     setLayout( mainLayout );
 }
 
-
+/*==========================================================================*/
+/**
+* @brief 各クラスにmodelを設定する関数
+* @param model Modelへのポインタ
+*/
+/*==========================================================================*/
 void Info::setup( local::Model* model )
 {
     m_model = model;
@@ -120,6 +163,11 @@ void Info::setup( local::Model* model )
     m_data_info->setup( model );
 }
 
+/*==========================================================================*/
+/**
+* @brief Info内の情報を更新する関数
+*/
+/*==========================================================================*/
 void Info::update()
 {
     if ( m_model->isSet() )

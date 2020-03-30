@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: App/Viewer/Input.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a class="el" href="dir_4abe69781dacbbcd37b586b1f1f9d58f.html">Viewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Input.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_app_2_viewer_2_input_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file Input.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief Inputクラスの定義</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;kvs/Vector3&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">* @brief 設定ファイル(**.4dsv)からの情報を読み込むInputクラスの定義</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structlocal_1_1_input.html">Input</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#a058b3cf919a74eccbbe1b8b4eca9bf45">   22</a></span>&#160;    std::string <a class="code" href="structlocal_1_1_input.html#a058b3cf919a74eccbbe1b8b4eca9bf45">m_dirname</a>; <span class="comment">///&lt; データのディレクトリ名</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#a511eeccadd03b5e7841535cfb08316a4">   23</a></span>&#160;<span class="comment"></span>    std::string <a class="code" href="structlocal_1_1_input.html#a511eeccadd03b5e7841535cfb08316a4">m_extension</a>; <span class="comment">///&lt; データの拡張子</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#a5f71d02c985b27ed18fbd21e01b26416">   24</a></span>&#160;<span class="comment"></span>    kvs::Vec3i <a class="code" href="structlocal_1_1_input.html#a5f71d02c985b27ed18fbd21e01b26416">m_dimensions</a>; <span class="comment">///&lt; データの数( x × y × z )</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#a4f98aed39afa7153643cbf21d55c50c4">   25</a></span>&#160;<span class="comment"></span>    kvs::Vec3i <a class="code" href="structlocal_1_1_input.html#a4f98aed39afa7153643cbf21d55c50c4">m_position</a>; <span class="comment">///&lt; 最初のカメラ位置( x, y, z )</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#adc0f7d0cbce1e10d7109e5e3e08b0c79">   26</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">float</span> <a class="code" href="structlocal_1_1_input.html#adc0f7d0cbce1e10d7109e5e3e08b0c79">m_frame_rate</a>; <span class="comment">///&lt; フレームレート</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structlocal_1_1_input.html#a5ef5c3a2fd57d9f36c6bd25a07e55c69">   27</a></span>&#160;<span class="comment"></span>    std::string <a class="code" href="structlocal_1_1_input.html#a5ef5c3a2fd57d9f36c6bd25a07e55c69">m_data_info</a>; <span class="comment">///&lt; データについての情報</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="structlocal_1_1_input.html#ade6e2c54a2bd707966ac2fa8811ffe38">Input</a>() {} <span class="comment">///&lt; コンストラクタ</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span>    <a class="code" href="structlocal_1_1_input.html#ade6e2c54a2bd707966ac2fa8811ffe38">Input</a>( <span class="keyword">const</span> std::string&amp; <a class="code" href="structlocal_1_1_input.html#acd173db5538cdf2242f70f03e88a7c00">filename</a> );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> std::string&amp; dirname()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#a058b3cf919a74eccbbe1b8b4eca9bf45">m_dirname</a>; } <span class="comment">///&lt; m_dirnameのgetter</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> std::string&amp; extension()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#a511eeccadd03b5e7841535cfb08316a4">m_extension</a>; } <span class="comment">///&lt; m_extensionのgetter</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> kvs::Vec3i&amp; dimensions()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#a5f71d02c985b27ed18fbd21e01b26416">m_dimensions</a>; } <span class="comment">///&lt; m_dimensionsのgetter</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> kvs::Vec3i&amp; position()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#a4f98aed39afa7153643cbf21d55c50c4">m_position</a>; } <span class="comment">///&lt; m_positionのgetter</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> <span class="keywordtype">float</span> frame_rate()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#adc0f7d0cbce1e10d7109e5e3e08b0c79">m_frame_rate</a>;} <span class="comment">///&lt; m_frame_rateのgetter</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span>    <span class="keyword">const</span> std::string&amp; dataInfo()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="structlocal_1_1_input.html#a5ef5c3a2fd57d9f36c6bd25a07e55c69">m_data_info</a>; } <span class="comment">///&lt; m_data_infoのgetter</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structlocal_1_1_input.html#a2b46699b548e85ea0a747929ba76b516">read</a>( <span class="keyword">const</span> std::string&amp; <a class="code" href="structlocal_1_1_input.html#acd173db5538cdf2242f70f03e88a7c00">filename</a> );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructlocal_1_1_input_html_adc0f7d0cbce1e10d7109e5e3e08b0c79"><div class="ttname"><a href="structlocal_1_1_input.html#adc0f7d0cbce1e10d7109e5e3e08b0c79">local::Input::m_frame_rate</a></div><div class="ttdeci">float m_frame_rate</div><div class="ttdoc">フレームレート</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00026">Input.h:26</a></div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a511eeccadd03b5e7841535cfb08316a4"><div class="ttname"><a href="structlocal_1_1_input.html#a511eeccadd03b5e7841535cfb08316a4">local::Input::m_extension</a></div><div class="ttdeci">std::string m_extension</div><div class="ttdoc">データの拡張子</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00023">Input.h:23</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a2b46699b548e85ea0a747929ba76b516"><div class="ttname"><a href="structlocal_1_1_input.html#a2b46699b548e85ea0a747929ba76b516">local::Input::read</a></div><div class="ttdeci">bool read(const std::string &amp;filename)</div><div class="ttdoc">設定ファイルの読み込みを行う関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8cpp_source.html#l00032">Input.cpp:32</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_acd173db5538cdf2242f70f03e88a7c00"><div class="ttname"><a href="structlocal_1_1_input.html#acd173db5538cdf2242f70f03e88a7c00">local::Input::filename</a></div><div class="ttdeci">std::string filename</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_input_8h_source.html#l00015">Input.h:15</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a4f98aed39afa7153643cbf21d55c50c4"><div class="ttname"><a href="structlocal_1_1_input.html#a4f98aed39afa7153643cbf21d55c50c4">local::Input::m_position</a></div><div class="ttdeci">kvs::Vec3i m_position</div><div class="ttdoc">最初のカメラ位置( x, y, z )</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00025">Input.h:25</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a058b3cf919a74eccbbe1b8b4eca9bf45"><div class="ttname"><a href="structlocal_1_1_input.html#a058b3cf919a74eccbbe1b8b4eca9bf45">local::Input::m_dirname</a></div><div class="ttdeci">std::string m_dirname</div><div class="ttdoc">データのディレクトリ名</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00022">Input.h:22</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html"><div class="ttname"><a href="structlocal_1_1_input.html">local::Input</a></div><div class="ttdoc">設定ファイル(**.4dsv)からの情報を読み込むInputクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00019">Input.h:19</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a5f71d02c985b27ed18fbd21e01b26416"><div class="ttname"><a href="structlocal_1_1_input.html#a5f71d02c985b27ed18fbd21e01b26416">local::Input::m_dimensions</a></div><div class="ttdeci">kvs::Vec3i m_dimensions</div><div class="ttdoc">データの数( x × y × z )</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00024">Input.h:24</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_ade6e2c54a2bd707966ac2fa8811ffe38"><div class="ttname"><a href="structlocal_1_1_input.html#ade6e2c54a2bd707966ac2fa8811ffe38">local::Input::Input</a></div><div class="ttdeci">Input(const std::string &amp;filename)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8cpp_source.html#l00020">Input.cpp:20</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html_a5ef5c3a2fd57d9f36c6bd25a07e55c69"><div class="ttname"><a href="structlocal_1_1_input.html#a5ef5c3a2fd57d9f36c6bd25a07e55c69">local::Input::m_data_info</a></div><div class="ttdeci">std::string m_data_info</div><div class="ttdoc">データについての情報</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00027">Input.h:27</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

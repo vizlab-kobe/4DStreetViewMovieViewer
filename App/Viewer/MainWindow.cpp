@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file MainWindow.cpp
+* @brief MainWindowクラスの実装
+*/
+/* ***************************************************************************/
 #include "MainWindow.h"
 #include <QDockWidget>
 #include <QSizePolicy>
@@ -5,9 +11,23 @@
 namespace
 {
 
+/*==========================================================================*/
+/**
+* @brief Dockクラスの定義
+*/
+/*==========================================================================*/
 class Dock : public QDockWidget
 {
 public:
+    /*==========================================================================*/
+    /**
+    * @brief コンストラクタ
+    * @param parent 親クラスへのポインタ
+    * @param widget ウィジェットへのポインタ
+    * @param width Dockウィジェットの幅
+    * @param height Dockウィジェットの高さ
+    */
+    /*==========================================================================*/
     Dock( QWidget* parent, QWidget* widget, int width, int height )
         :QDockWidget( parent )
     {
@@ -24,6 +44,19 @@ public:
 namespace local
 {
 
+/*==========================================================================*/
+/**
+* @brief コンストラクタ
+* @param input Inputのアドレス
+* @param model Modelのアドレス
+* @param view Viewのアドレス
+* @param controller Controllerのアドレス
+* @details メインウィンドウのサイズ設定
+* @details アクションの作成
+* @details メニューバーの作成
+* @details Dockウィジェットの設定
+*/
+/*==========================================================================*/
 MainWindow::MainWindow( local::Input& input, local::Model& model, local::View& view, local::Controller& controller ):
     m_input( input ),
     m_model( model ),
@@ -57,6 +90,13 @@ MainWindow::MainWindow( local::Input& input, local::Model& model, local::View& v
     this->setCentralWidget( &( m_view.movieScreen() ) );
 }
 
+/*==========================================================================*/
+/**
+* @brief メニューバーでFile Openした場合に実行される関数
+* @details FileDialogを開き、**.4dsvのファイルのみ選択できるように設定
+* @details 選択されたファイルを読み込み、modelのupdateを行う
+*/
+/*==========================================================================*/
 void MainWindow::open()
 {
     QString fileName = QFileDialog::getOpenFileName( this, "Open Config file", ".", "4DSV files (*.4dsv)" );
@@ -85,12 +125,22 @@ void MainWindow::open()
     }
 }
 
+/*==========================================================================*/
+/**
+* @brief アクションを作成する関数
+*/
+/*==========================================================================*/
 void MainWindow::createActions()
 {
     openAct = new QAction( "Open", this );
     connect( openAct, SIGNAL( triggered() ), this, SLOT( open() ) ); 
 }
 
+/*==========================================================================*/
+/**
+* @brief メニューバーを作成する関数
+*/
+/*==========================================================================*/
 void MainWindow::createMenus()
 {
     fileMenu = menuBar()->addMenu( "File" );

@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file SphericalMapMovieRenderer.h
+* @brief SphericalMapMovieRendererクラスの定義
+*/
+/* ***************************************************************************/
 #pragma once
 #include <kvs/RendererBase>
 #include <kvs/Texture2D>
@@ -42,22 +48,22 @@ private:
     Type m_type; ///< rendering type
     kvs::Texture2D m_texture; ///< texture image
     kvs::ProgramObject m_shader_program; ///< shader program
-    bool m_enable_auto_play;
-    bool m_enable_loop_play;
-    bool m_enable_reverse_play;
-    int m_frame_index;
-    int m_current_frame_index;
+    bool m_enable_auto_play; ///< AutoPlay ON/OFF
+    bool m_enable_loop_play; ///< LoopPlay ON/OFF
+    bool m_enable_reverse_play; ///< ReversePlay ON/OFF
+    int m_frame_index; ///< Frame Index
+    int m_current_frame_index; ///< 現在表示中のFrame Index
 
 public:
     SphericalMapMovieRenderer( const Type& type = SphericalMapMovieRenderer::Centering );
     virtual ~SphericalMapMovieRenderer();
     void exec( kvs::ObjectBase* object, kvs::Camera* camera, kvs::Light* light );
 
-    int frameIndex() const { return m_frame_index; }
-    int currentFrameIndex() const { return m_current_frame_index; }
-    bool isEnabledAutoPlay() const { return m_enable_auto_play; }
-    bool isEnabledLoopPlay() const { return m_enable_loop_play; }
-    bool isEnabledReversePlay() const { return m_enable_reverse_play; }
+    int frameIndex() const { return m_frame_index; } ///< getter for m_frame_index
+    int currentFrameIndex() const { return m_current_frame_index; } ///< getter for m_current_frame_index
+    bool isEnabledAutoPlay() const { return m_enable_auto_play; } ///< getter for m_enable_auto_play
+    bool isEnabledLoopPlay() const { return m_enable_loop_play; } ///< getter for m_enable_loop_play
+    bool isEnabledReversePlay() const { return m_enable_reverse_play; } ///< getter for m_enable_reverse_play
 
     void setFrameIndex( const int index ) { m_frame_index = index; }
     void setCurrentFrameIndex( const int index ) { m_current_frame_index = index; }
