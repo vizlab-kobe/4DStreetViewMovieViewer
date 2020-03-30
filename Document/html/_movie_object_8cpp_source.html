@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Lib/MovieObject.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8f3de2ae926fecfe6abd5379fd2b6eb1.html">Lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MovieObject.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_movie_object_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file MovieObject.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief MovieObjectクラスの実装</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_movie_object_8h.html">MovieObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacelib4dsv.html">   10</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelib4dsv.html">lib4dsv</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  @brief  Constructs a new MovieObject class.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">   18</a></span>&#160;<a class="code" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">MovieObject::MovieObject</a>():</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    m_device_id( CV_CAP_ANY ),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    m_device( new <a class="code" href="namespacekvs.html">kvs</a>::opencv::<a class="code" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a>() ),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    m_type( <a class="code" href="namespacelib4dsv.html">lib4dsv</a>::<a class="code" href="classlib4dsv_1_1_movie_object.html">MovieObject</a>::Color24 )</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  @brief  Constructs a new MovieObject class.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  @param  filename [in] filename</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a290988e8b61c4390c0fd673c26aef3bb">   31</a></span>&#160;<a class="code" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">MovieObject::MovieObject</a>( <span class="keyword">const</span> std::string&amp; filename ):</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    m_device_id( CV_CAP_ANY ),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    m_device( new <a class="code" href="namespacekvs.html">kvs</a>::opencv::<a class="code" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a>() )</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> ( !this-&gt;<a class="code" href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">initialize</a>( filename ) )</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        kvsMessageError(<span class="stringliteral">&quot;Cannot initialize a capture device for s.&quot;</span>, filename.c_str() );</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> *  @brief  Returns the object type.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> *  @return object type</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">   47</a></span>&#160;kvs::ObjectBase::ObjectType <a class="code" href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">MovieObject::objectType</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> kvs::ObjectBase::Image;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">* @brief Copy the movie object ( shallow copy )</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">* @param other [in] MovieObject</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">   58</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">MovieObject::shallowCopy</a>( <span class="keyword">const</span> <a class="code" href="classlib4dsv_1_1_movie_object.html">MovieObject</a>&amp; other )</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    BaseClass::operator=( other );</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">m_device_id</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">m_device_id</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a> = other.<a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">/*===========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> *  @brief  Initialize the video object.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> *  @param  device_id [in] device ID</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> *  @return true, if the video object is initialized successfully</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">   76</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code" href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">MovieObject::initialize</a>( <span class="keyword">const</span> std::string&amp; filename )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> ( !<a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a>-&gt;create( filename ) )</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        kvsMessageError(<span class="stringliteral">&quot;Cannot create a capture device for %s.&quot;</span>, filename.c_str() );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">const</span> IplImage* frame = <a class="code" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a>-&gt;queryFrame();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( !frame )</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        kvsMessageError(<span class="stringliteral">&quot;Cannot query a new frame from the capture device.&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>( frame-&gt;width );</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>( frame-&gt;height );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>( frame-&gt;nChannels );</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> depth = frame-&gt;depth;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> ( depth != IPL_DEPTH_8U )</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        kvsMessageError(<span class="stringliteral">&quot;The depth of the grabbed image isn&#39;t &#39;IPL_DEPTH_8U&#39;.&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a> = <a class="code" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a> == 1 ? <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">Gray8</a> : <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">Color24</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// end of namespace lib4dsv</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a2d55793821b5db5e1c356d092632b25d"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">lib4dsv::MovieObject::m_device_id</a></div><div class="ttdeci">int m_device_id</div><div class="ttdoc">capture device ID</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00039">MovieObject.h:39</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">lib4dsv::MovieObject::Color24</a></div><div class="ttdeci">@ Color24</div><div class="ttdoc">24 bit RGB color pixel (8x8x8 bits)</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00035">MovieObject.h:35</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_ad3b58b67c482b1626d82cb5f9b425de9"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">lib4dsv::MovieObject::m_nchannels</a></div><div class="ttdeci">size_t m_nchannels</div><div class="ttdoc">number of channels</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00044">MovieObject.h:44</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a9711eb8d14c17219138b1301a36ba9d2"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">lib4dsv::MovieObject::m_height</a></div><div class="ttdeci">size_t m_height</div><div class="ttdoc">capture height</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00043">MovieObject.h:43</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_ab14a0b87d98ca75df679ef03f2b1209b"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">lib4dsv::MovieObject::m_type</a></div><div class="ttdeci">PixelType m_type</div><div class="ttdoc">pixel type</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00041">MovieObject.h:41</a></div></div>
+<div class="ttc" id="anamespacekvs_html"><div class="ttname"><a href="namespacekvs.html">kvs</a></div><div class="ttdef"><b>Definition:</b> <a href="_movie_renderer_8h_source.html#l00007">MovieRenderer.h:7</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a880e6ab8cc952531bd6b69cc5ad886be"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">lib4dsv::MovieObject::m_width</a></div><div class="ttdeci">size_t m_width</div><div class="ttdoc">capture width</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00042">MovieObject.h:42</a></div></div>
+<div class="ttc" id="anamespacelib4dsv_html"><div class="ttname"><a href="namespacelib4dsv.html">lib4dsv</a></div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00010">MovieObject.cpp:10</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a9bf387417d94d922a220259b9961417e"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">lib4dsv::MovieObject::MovieObject</a></div><div class="ttdeci">MovieObject()</div><div class="ttdoc">Constructs a new MovieObject class.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00018">MovieObject.cpp:18</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_af60860f2e31b81fe71d47813d0d03ce5"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">lib4dsv::MovieObject::CaptureDevice</a></div><div class="ttdeci">kvs::SharedPointer&lt; kvs::opencv::CaptureDevice &gt; CaptureDevice</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00030">MovieObject.h:30</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_afcdda2be93caa1c5a836d8e317405afd"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">lib4dsv::MovieObject::initialize</a></div><div class="ttdeci">const bool initialize(const std::string &amp;filename)</div><div class="ttdoc">Initialize the video object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00076">MovieObject.cpp:76</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_acd6164cf9e6baaa0d3ea63f5a14d589e"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">lib4dsv::MovieObject::objectType</a></div><div class="ttdeci">ObjectType objectType() const</div><div class="ttdoc">Returns the object type.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00047">MovieObject.cpp:47</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a634524a3e6e9391606e17a93308fcca9"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">lib4dsv::MovieObject::m_device</a></div><div class="ttdeci">CaptureDevice m_device</div><div class="ttdoc">video capture device</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00040">MovieObject.h:40</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">lib4dsv::MovieObject::Gray8</a></div><div class="ttdeci">@ Gray8</div><div class="ttdoc">8 bit gray pixel</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00034">MovieObject.h:34</a></div></div>
+<div class="ttc" id="a_movie_object_8h_html"><div class="ttname"><a href="_movie_object_8h.html">MovieObject.h</a></div><div class="ttdoc">MovieObjectクラスの定義</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a></div><div class="ttdoc">Movie object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00023">MovieObject.h:23</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a1f75c96aeb047efadab6bcd852e800b1"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">lib4dsv::MovieObject::shallowCopy</a></div><div class="ttdeci">void shallowCopy(const MovieObject &amp;other)</div><div class="ttdoc">Copy the movie object ( shallow copy )</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00058">MovieObject.cpp:58</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

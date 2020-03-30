@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: App/Viewer/MainWindow.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_b1617d756d2224e91d37255e84e89ba2.html">App</a></li><li class="navelem"><a class="el" href="dir_4abe69781dacbbcd37b586b1f1f9d58f.html">Viewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MainWindow.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_main_window_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file MainWindow.h</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief MainWindowクラスの定義</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QMenu&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QAction&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_input_8h.html">Input.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_model_8h.html">Model.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_app_2_viewer_2_view_8h.html">View.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controller_8h.html">Controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">* @brief メイン画面を構成するMainWindowクラスの定義</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlocal_1_1_main_window.html">MainWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#ac1304fd4c33c9c838d098eb835c695e2">   29</a></span>&#160;    <a class="code" href="structlocal_1_1_input.html">local::Input</a>&amp; <a class="code" href="classlocal_1_1_main_window.html#ac1304fd4c33c9c838d098eb835c695e2">m_input</a>; <span class="comment">///&lt; address to the input</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#a1aa87e44c1e26a4b9c520ee2c6acab99">   30</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_model.html">local::Model</a>&amp; <a class="code" href="classlocal_1_1_main_window.html#a1aa87e44c1e26a4b9c520ee2c6acab99">m_model</a>; <span class="comment">///&lt; address to the model</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#a9c98298216191c471ab756186832f0b6">   31</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_view.html">local::View</a>&amp; <a class="code" href="classlocal_1_1_main_window.html#a9c98298216191c471ab756186832f0b6">m_view</a>; <span class="comment">///&lt; address to the view</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#aa5af12f417e3139047f0976e3d7ed966">   32</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlocal_1_1_controller.html">local::Controller</a>&amp; <a class="code" href="classlocal_1_1_main_window.html#aa5af12f417e3139047f0976e3d7ed966">m_controller</a>; <span class="comment">///&lt; address to the controller</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classlocal_1_1_main_window.html#ad43edd69edb9403e8f88f98098c40067">MainWindow</a>( <a class="code" href="structlocal_1_1_input.html">local::Input</a>&amp; input, <a class="code" href="classlocal_1_1_model.html">local::Model</a>&amp; model, <a class="code" href="classlocal_1_1_view.html">local::View</a>&amp; view, <a class="code" href="classlocal_1_1_controller.html">local::Controller</a>&amp; controller );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_main_window.html#ab757dcdfc313ab8d8a287bec3e268841">open</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_main_window.html#a3c54512940c704cd013c194f15b91a10">createActions</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_main_window.html#addc7a298f78642998f40ff303b567f23">createMenus</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#a313faa069e472c48a33b78086cc9def6">   44</a></span>&#160;    QMenu *<a class="code" href="classlocal_1_1_main_window.html#a313faa069e472c48a33b78086cc9def6">fileMenu</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classlocal_1_1_main_window.html#a12077ff2ce696a2e360d830050d1469a">   45</a></span>&#160;    QAction *<a class="code" href="classlocal_1_1_main_window.html#a12077ff2ce696a2e360d830050d1469a">openAct</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}<span class="comment">//end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslocal_1_1_main_window_html_addc7a298f78642998f40ff303b567f23"><div class="ttname"><a href="classlocal_1_1_main_window.html#addc7a298f78642998f40ff303b567f23">local::MainWindow::createMenus</a></div><div class="ttdeci">void createMenus()</div><div class="ttdoc">メニューバーを作成する関数</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8cpp_source.html#l00144">MainWindow.cpp:144</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_model_8h_html"><div class="ttname"><a href="_app_2_viewer_2_model_8h.html">Model.h</a></div><div class="ttdoc">Modelクラスの定義</div></div>
+<div class="ttc" id="a_app_2_viewer_2_input_8h_html"><div class="ttname"><a href="_app_2_viewer_2_input_8h.html">Input.h</a></div><div class="ttdoc">Inputクラスの定義</div></div>
+<div class="ttc" id="a_controller_8h_html"><div class="ttname"><a href="_controller_8h.html">Controller.h</a></div><div class="ttdoc">Controllerクラスの定義</div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_ac1304fd4c33c9c838d098eb835c695e2"><div class="ttname"><a href="classlocal_1_1_main_window.html#ac1304fd4c33c9c838d098eb835c695e2">local::MainWindow::m_input</a></div><div class="ttdeci">local::Input &amp; m_input</div><div class="ttdoc">address to the input</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00029">MainWindow.h:29</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html"><div class="ttname"><a href="classlocal_1_1_main_window.html">local::MainWindow</a></div><div class="ttdoc">メイン画面を構成するMainWindowクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00024">MainWindow.h:24</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html"><div class="ttname"><a href="classlocal_1_1_view.html">local::View</a></div><div class="ttdoc">画像や情報を表示するためのViewクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8h_source.html#l00023">View.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_ad43edd69edb9403e8f88f98098c40067"><div class="ttname"><a href="classlocal_1_1_main_window.html#ad43edd69edb9403e8f88f98098c40067">local::MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(local::Input &amp;input, local::Model &amp;model, local::View &amp;view, local::Controller &amp;controller)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8cpp_source.html#l00060">MainWindow.cpp:60</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_controller_html"><div class="ttname"><a href="classlocal_1_1_controller.html">local::Controller</a></div><div class="ttdoc">表示画像を操作するControllerクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8h_source.html#l00026">Controller.h:26</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_a1aa87e44c1e26a4b9c520ee2c6acab99"><div class="ttname"><a href="classlocal_1_1_main_window.html#a1aa87e44c1e26a4b9c520ee2c6acab99">local::MainWindow::m_model</a></div><div class="ttdeci">local::Model &amp; m_model</div><div class="ttdoc">address to the model</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00030">MainWindow.h:30</a></div></div>
+<div class="ttc" id="astructlocal_1_1_input_html"><div class="ttname"><a href="structlocal_1_1_input.html">local::Input</a></div><div class="ttdoc">設定ファイル(**.4dsv)からの情報を読み込むInputクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_input_8h_source.html#l00019">Input.h:19</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_ab757dcdfc313ab8d8a287bec3e268841"><div class="ttname"><a href="classlocal_1_1_main_window.html#ab757dcdfc313ab8d8a287bec3e268841">local::MainWindow::open</a></div><div class="ttdeci">void open()</div><div class="ttdoc">メニューバーでFile Openした場合に実行される関数</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8cpp_source.html#l00100">MainWindow.cpp:100</a></div></div>
+<div class="ttc" id="a_app_2_viewer_2_view_8h_html"><div class="ttname"><a href="_app_2_viewer_2_view_8h.html">View.h</a></div><div class="ttdoc">Viewクラスの定義</div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_a313faa069e472c48a33b78086cc9def6"><div class="ttname"><a href="classlocal_1_1_main_window.html#a313faa069e472c48a33b78086cc9def6">local::MainWindow::fileMenu</a></div><div class="ttdeci">QMenu * fileMenu</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00044">MainWindow.h:44</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_a12077ff2ce696a2e360d830050d1469a"><div class="ttname"><a href="classlocal_1_1_main_window.html#a12077ff2ce696a2e360d830050d1469a">local::MainWindow::openAct</a></div><div class="ttdeci">QAction * openAct</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00045">MainWindow.h:45</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_a3c54512940c704cd013c194f15b91a10"><div class="ttname"><a href="classlocal_1_1_main_window.html#a3c54512940c704cd013c194f15b91a10">local::MainWindow::createActions</a></div><div class="ttdeci">void createActions()</div><div class="ttdoc">アクションを作成する関数</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8cpp_source.html#l00133">MainWindow.cpp:133</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_a9c98298216191c471ab756186832f0b6"><div class="ttname"><a href="classlocal_1_1_main_window.html#a9c98298216191c471ab756186832f0b6">local::MainWindow::m_view</a></div><div class="ttdeci">local::View &amp; m_view</div><div class="ttdoc">address to the view</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00031">MainWindow.h:31</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_main_window_html_aa5af12f417e3139047f0976e3d7ed966"><div class="ttname"><a href="classlocal_1_1_main_window.html#aa5af12f417e3139047f0976e3d7ed966">local::MainWindow::m_controller</a></div><div class="ttdeci">local::Controller &amp; m_controller</div><div class="ttdoc">address to the controller</div><div class="ttdef"><b>Definition:</b> <a href="_main_window_8h_source.html#l00032">MainWindow.h:32</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

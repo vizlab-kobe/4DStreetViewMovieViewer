@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file Logger.cpp
+* @brief Loggerクラス実装
+*/
+/* ***************************************************************************/
 #include "Logger.h"
 #include <iostream>
 #include <fstream>
@@ -6,6 +12,13 @@
 namespace
 {
 
+/*==========================================================================*/
+/**
+* @brief CSVファイルに書き出す関数
+* @param filename ファイル名
+* @param values 書き出す数値の配列
+*/
+/*==========================================================================*/
 float WriteCSV( const std::string& filename, const std::vector<float>& values )
 {
     std::ofstream ofs( filename.c_str() );
@@ -31,6 +44,12 @@ float WriteCSV( const std::string& filename, const std::vector<float>& values )
 namespace local
 {
 
+/*==========================================================================*/
+/**
+* @brief カメラ位置変更時間及びカメラアングル変更時間をCSVファイルに書き出す関数
+* @param basename ベース名
+*/
+/*==========================================================================*/
 void Logger::write( const std::string& basename ) const
 {
     const float t_position = ::WriteCSV( basename + "_position_change_time.csv", m_position_change_times );

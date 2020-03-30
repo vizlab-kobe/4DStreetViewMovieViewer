@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: lib4dsv::MovieRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacelib4dsv.html">lib4dsv</a></li><li class="navelem"><a class="el" href="classlib4dsv_1_1_movie_renderer.html">MovieRenderer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classlib4dsv_1_1_movie_renderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">lib4dsv::MovieRenderer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Movie renderer.  
+ <a href="classlib4dsv_1_1_movie_renderer.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a>&gt;</code></p>
+<div class="dynheader">
+lib4dsv::MovieRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classlib4dsv_1_1_movie_renderer__inherit__graph.png" border="0" usemap="#lib4dsv_1_1_movie_renderer_inherit__map" alt="Inheritance graph"/></div>
+<map name="lib4dsv_1_1_movie_renderer_inherit__map" id="lib4dsv_1_1_movie_renderer_inherit__map">
+<area shape="rect" title="Movie renderer." alt="" coords="5,79,167,104"/>
+<area shape="rect" title=" " alt="" coords="32,5,140,31"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a7362f2d1ca409d8b8ed8bc43b407c582"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">Type</a> { <a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582ab07ed02545bdca288f647b7f40f679e1">Stretching</a> = 0, 
+<a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582ae3844b9a0270572344f4e9942af69b63">Centering</a> = 1
+ }</td></tr>
+<tr class="separator:a7362f2d1ca409d8b8ed8bc43b407c582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ab8e6f65c23d1bbbdc190ce9942ce78a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#ab8e6f65c23d1bbbdc190ce9942ce78a5">exec</a> (kvs::ObjectBase *object, kvs::Camera *camera, kvs::Light *light)</td></tr>
+<tr class="memdesc:ab8e6f65c23d1bbbdc190ce9942ce78a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the grabbed frame.  <a href="classlib4dsv_1_1_movie_renderer.html#ab8e6f65c23d1bbbdc190ce9942ce78a5">[詳解]</a><br /></td></tr>
+<tr class="separator:ab8e6f65c23d1bbbdc190ce9942ce78a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea8974736cb8b22976e9d1afdc5d254"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a1ea8974736cb8b22976e9d1afdc5d254">MovieRenderer</a> (const <a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">Type</a> type=<a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582ae3844b9a0270572344f4e9942af69b63">MovieRenderer::Centering</a>)</td></tr>
+<tr class="memdesc:a1ea8974736cb8b22976e9d1afdc5d254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classlib4dsv_1_1_movie_renderer.html" title="Movie renderer.">MovieRenderer</a> class.  <a href="classlib4dsv_1_1_movie_renderer.html#a1ea8974736cb8b22976e9d1afdc5d254">[詳解]</a><br /></td></tr>
+<tr class="separator:a1ea8974736cb8b22976e9d1afdc5d254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ab8bc693aea8b346d93f00aac35a58"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a16ab8bc693aea8b346d93f00aac35a58">~MovieRenderer</a> ()</td></tr>
+<tr class="memdesc:a16ab8bc693aea8b346d93f00aac35a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructs the <a class="el" href="classlib4dsv_1_1_movie_renderer.html" title="Movie renderer.">MovieRenderer</a> class.  <a href="classlib4dsv_1_1_movie_renderer.html#a16ab8bc693aea8b346d93f00aac35a58">[詳解]</a><br /></td></tr>
+<tr class="separator:a16ab8bc693aea8b346d93f00aac35a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0410c671ca9d776b200b3b732417dc2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a0410c671ca9d776b200b3b732417dc2d">centering</a> (const double width, const double height)</td></tr>
+<tr class="memdesc:a0410c671ca9d776b200b3b732417dc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the grabbed frame in the center of the window.  <a href="classlib4dsv_1_1_movie_renderer.html#a0410c671ca9d776b200b3b732417dc2d">[詳解]</a><br /></td></tr>
+<tr class="separator:a0410c671ca9d776b200b3b732417dc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb275fd3acb9e98ab12509bdd72a7871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#adb275fd3acb9e98ab12509bdd72a7871">create_texture</a> (const <a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> *movie)</td></tr>
+<tr class="memdesc:adb275fd3acb9e98ab12509bdd72a7871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create texture.  <a href="classlib4dsv_1_1_movie_renderer.html#adb275fd3acb9e98ab12509bdd72a7871">[詳解]</a><br /></td></tr>
+<tr class="separator:adb275fd3acb9e98ab12509bdd72a7871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aee1901d2d6721879fddbe253dd3fc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a2aee1901d2d6721879fddbe253dd3fc0">kvsModuleBaseClass</a> (kvs::RendererBase)</td></tr>
+<tr class="separator:a2aee1901d2d6721879fddbe253dd3fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed15d99d1500f191fb55928c65699c8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#aed15d99d1500f191fb55928c65699c8d">kvsModuleCategory</a> (Renderer)</td></tr>
+<tr class="separator:aed15d99d1500f191fb55928c65699c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c2a95f52efb2c82f3e4cc3be34a29c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#af8c2a95f52efb2c82f3e4cc3be34a29c">kvsModuleName</a> (<a class="el" href="classlib4dsv_1_1_movie_renderer.html">lib4dsv::MovieRenderer</a>)</td></tr>
+<tr class="separator:af8c2a95f52efb2c82f3e4cc3be34a29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a35bf74f63e84ff148d3dd4725c04fe6f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a35bf74f63e84ff148d3dd4725c04fe6f">m_bottom</a></td></tr>
+<tr class="memdesc:a35bf74f63e84ff148d3dd4725c04fe6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen bottom position  <a href="classlib4dsv_1_1_movie_renderer.html#a35bf74f63e84ff148d3dd4725c04fe6f">[詳解]</a><br /></td></tr>
+<tr class="separator:a35bf74f63e84ff148d3dd4725c04fe6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55009f9a2cc53c69ac06737c0a355a3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#ae55009f9a2cc53c69ac06737c0a355a3">m_initial_aspect_ratio</a></td></tr>
+<tr class="memdesc:ae55009f9a2cc53c69ac06737c0a355a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial aspect ratio  <a href="classlib4dsv_1_1_movie_renderer.html#ae55009f9a2cc53c69ac06737c0a355a3">[詳解]</a><br /></td></tr>
+<tr class="separator:ae55009f9a2cc53c69ac06737c0a355a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8ee2c236329636a4a00e30b1b650083"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#af8ee2c236329636a4a00e30b1b650083">m_left</a></td></tr>
+<tr class="memdesc:af8ee2c236329636a4a00e30b1b650083"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen left position  <a href="classlib4dsv_1_1_movie_renderer.html#af8ee2c236329636a4a00e30b1b650083">[詳解]</a><br /></td></tr>
+<tr class="separator:af8ee2c236329636a4a00e30b1b650083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3f8d1aadfa24e69eb9896b333a7ebb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7a3f8d1aadfa24e69eb9896b333a7ebb">m_right</a></td></tr>
+<tr class="memdesc:a7a3f8d1aadfa24e69eb9896b333a7ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen right position  <a href="classlib4dsv_1_1_movie_renderer.html#a7a3f8d1aadfa24e69eb9896b333a7ebb">[詳解]</a><br /></td></tr>
+<tr class="separator:a7a3f8d1aadfa24e69eb9896b333a7ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cdb8900b55d4485a76afb82f199a415"><td class="memItemLeft" align="right" valign="top">kvs::Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a9cdb8900b55d4485a76afb82f199a415">m_texture</a></td></tr>
+<tr class="memdesc:a9cdb8900b55d4485a76afb82f199a415"><td class="mdescLeft">&#160;</td><td class="mdescRight">texture image  <a href="classlib4dsv_1_1_movie_renderer.html#a9cdb8900b55d4485a76afb82f199a415">[詳解]</a><br /></td></tr>
+<tr class="separator:a9cdb8900b55d4485a76afb82f199a415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e5f9cb7ba81826931ce44104bba78d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#aa2e5f9cb7ba81826931ce44104bba78d">m_top</a></td></tr>
+<tr class="memdesc:aa2e5f9cb7ba81826931ce44104bba78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen top position  <a href="classlib4dsv_1_1_movie_renderer.html#aa2e5f9cb7ba81826931ce44104bba78d">[詳解]</a><br /></td></tr>
+<tr class="separator:aa2e5f9cb7ba81826931ce44104bba78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c0c8bfecffdf7cec22e47668610f18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a25c0c8bfecffdf7cec22e47668610f18">m_type</a></td></tr>
+<tr class="memdesc:a25c0c8bfecffdf7cec22e47668610f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">rendering type  <a href="classlib4dsv_1_1_movie_renderer.html#a25c0c8bfecffdf7cec22e47668610f18">[詳解]</a><br /></td></tr>
+<tr class="separator:a25c0c8bfecffdf7cec22e47668610f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Movie renderer. </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00022">22</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a7362f2d1ca409d8b8ed8bc43b407c582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7362f2d1ca409d8b8ed8bc43b407c582">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">lib4dsv::MovieRenderer::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a7362f2d1ca409d8b8ed8bc43b407c582ab07ed02545bdca288f647b7f40f679e1"></a>Stretching&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7362f2d1ca409d8b8ed8bc43b407c582ae3844b9a0270572344f4e9942af69b63"></a>Centering&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a1ea8974736cb8b22976e9d1afdc5d254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea8974736cb8b22976e9d1afdc5d254">&#9670;&nbsp;</a></span>MovieRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieRenderer::MovieRenderer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">Type</a>&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582ae3844b9a0270572344f4e9942af69b63">MovieRenderer::Centering</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classlib4dsv_1_1_movie_renderer.html" title="Movie renderer.">MovieRenderer</a> class. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>[in] video type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a> の <a class="el" href="_movie_renderer_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a16ab8bc693aea8b346d93f00aac35a58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ab8bc693aea8b346d93f00aac35a58">&#9670;&nbsp;</a></span>~MovieRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieRenderer::~MovieRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructs the <a class="el" href="classlib4dsv_1_1_movie_renderer.html" title="Movie renderer.">MovieRenderer</a> class. </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a> の <a class="el" href="_movie_renderer_8cpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a0410c671ca9d776b200b3b732417dc2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0410c671ca9d776b200b3b732417dc2d">&#9670;&nbsp;</a></span>centering()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::MovieRenderer::centering </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renders the grabbed frame in the center of the window. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>[in] window width </td></tr>
+    <tr><td class="paramname">height</td><td>[in] window height </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a> の <a class="el" href="_movie_renderer_8cpp_source.html#l00159">159</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_renderer_8h_source.html#l00039">m_bottom</a>, <a class="el" href="_movie_renderer_8h_source.html#l00036">m_initial_aspect_ratio</a>, <a class="el" href="_movie_renderer_8h_source.html#l00037">m_left</a>, <a class="el" href="_movie_renderer_8h_source.html#l00038">m_right</a>, <a class="el" href="_movie_renderer_8h_source.html#l00040">m_top</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="adb275fd3acb9e98ab12509bdd72a7871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb275fd3acb9e98ab12509bdd72a7871">&#9670;&nbsp;</a></span>create_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::MovieRenderer::create_texture </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a> *&#160;</td>
+          <td class="paramname"><em>movie</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create texture. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">video</td><td>[in] pointer to the video object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a> の <a class="el" href="_movie_renderer_8cpp_source.html#l00121">121</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_object_8h_source.html#l00035">lib4dsv::MovieObject::Color24</a>, <a class="el" href="_movie_object_8h_source.html#l00034">lib4dsv::MovieObject::Gray8</a>, <a class="el" href="_movie_renderer_8h_source.html#l00039">m_bottom</a>, <a class="el" href="_movie_renderer_8h_source.html#l00036">m_initial_aspect_ratio</a>, <a class="el" href="_movie_renderer_8h_source.html#l00037">m_left</a>, <a class="el" href="_movie_renderer_8h_source.html#l00038">m_right</a>, <a class="el" href="_movie_renderer_8h_source.html#l00042">m_texture</a>, <a class="el" href="_movie_renderer_8h_source.html#l00040">m_top</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ab8e6f65c23d1bbbdc190ce9942ce78a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e6f65c23d1bbbdc190ce9942ce78a5">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::MovieRenderer::exec </td>
+          <td>(</td>
+          <td class="paramtype">kvs::ObjectBase *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Camera *&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Light *&#160;</td>
+          <td class="paramname"><em>light</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders the grabbed frame. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>[in] pointer to the video object </td></tr>
+    <tr><td class="paramname">camera</td><td>[in] pointer to the camera in KVS </td></tr>
+    <tr><td class="paramname">light</td><td>[in] pointer to the light </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a> の <a class="el" href="_movie_renderer_8cpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_renderer_8h_source.html#l00032">Centering</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8h_source.html#l00039">m_bottom</a>, <a class="el" href="_movie_renderer_8h_source.html#l00037">m_left</a>, <a class="el" href="_movie_renderer_8h_source.html#l00038">m_right</a>, <a class="el" href="_movie_renderer_8h_source.html#l00042">m_texture</a>, <a class="el" href="_movie_renderer_8h_source.html#l00040">m_top</a>, <a class="el" href="_movie_renderer_8h_source.html#l00041">m_type</a>.</p>
+
+</div>
+</div>
+<a id="a2aee1901d2d6721879fddbe253dd3fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aee1901d2d6721879fddbe253dd3fc0">&#9670;&nbsp;</a></span>kvsModuleBaseClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieRenderer::kvsModuleBaseClass </td>
+          <td>(</td>
+          <td class="paramtype">kvs::RendererBase&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed15d99d1500f191fb55928c65699c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed15d99d1500f191fb55928c65699c8d">&#9670;&nbsp;</a></span>kvsModuleCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieRenderer::kvsModuleCategory </td>
+          <td>(</td>
+          <td class="paramtype">Renderer&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af8c2a95f52efb2c82f3e4cc3be34a29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c2a95f52efb2c82f3e4cc3be34a29c">&#9670;&nbsp;</a></span>kvsModuleName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieRenderer::kvsModuleName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib4dsv_1_1_movie_renderer.html">lib4dsv::MovieRenderer</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a35bf74f63e84ff148d3dd4725c04fe6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35bf74f63e84ff148d3dd4725c04fe6f">&#9670;&nbsp;</a></span>m_bottom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::MovieRenderer::m_bottom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen bottom position </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ae55009f9a2cc53c69ac06737c0a355a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55009f9a2cc53c69ac06737c0a355a3">&#9670;&nbsp;</a></span>m_initial_aspect_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::MovieRenderer::m_initial_aspect_ratio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initial aspect ratio </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>.</p>
+
+</div>
+</div>
+<a id="af8ee2c236329636a4a00e30b1b650083"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8ee2c236329636a4a00e30b1b650083">&#9670;&nbsp;</a></span>m_left</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::MovieRenderer::m_left</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen left position </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3f8d1aadfa24e69eb9896b333a7ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3f8d1aadfa24e69eb9896b333a7ebb">&#9670;&nbsp;</a></span>m_right</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::MovieRenderer::m_right</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen right position </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a9cdb8900b55d4485a76afb82f199a415"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cdb8900b55d4485a76afb82f199a415">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::Texture2D lib4dsv::MovieRenderer::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>texture image </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="aa2e5f9cb7ba81826931ce44104bba78d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e5f9cb7ba81826931ce44104bba78d">&#9670;&nbsp;</a></span>m_top</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::MovieRenderer::m_top</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen top position </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00159">centering()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00121">create_texture()</a>, <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a25c0c8bfecffdf7cec22e47668610f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c0c8bfecffdf7cec22e47668610f18">&#9670;&nbsp;</a></span>m_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib4dsv_1_1_movie_renderer.html#a7362f2d1ca409d8b8ed8bc43b407c582">Type</a> lib4dsv::MovieRenderer::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rendering type </p>
+
+<p class="definition"> <a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a> の <a class="el" href="_movie_renderer_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_renderer_8cpp_source.html#l00040">exec()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Lib/<a class="el" href="_movie_renderer_8h_source.html">MovieRenderer.h</a></li>
+<li>Lib/<a class="el" href="_movie_renderer_8cpp_source.html">MovieRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

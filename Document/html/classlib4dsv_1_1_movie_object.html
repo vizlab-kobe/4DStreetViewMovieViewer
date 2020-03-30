@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: lib4dsv::MovieObject クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacelib4dsv.html">lib4dsv</a></li><li class="navelem"><a class="el" href="classlib4dsv_1_1_movie_object.html">MovieObject</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classlib4dsv_1_1_movie_object-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">lib4dsv::MovieObject クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Movie object.  
+ <a href="classlib4dsv_1_1_movie_object.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_movie_object_8h_source.html">MovieObject.h</a>&gt;</code></p>
+<div class="dynheader">
+lib4dsv::MovieObject の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classlib4dsv_1_1_movie_object__inherit__graph.png" border="0" usemap="#lib4dsv_1_1_movie_object_inherit__map" alt="Inheritance graph"/></div>
+<map name="lib4dsv_1_1_movie_object_inherit__map" id="lib4dsv_1_1_movie_object_inherit__map">
+<area shape="rect" title="Movie object." alt="" coords="5,79,150,104"/>
+<area shape="rect" title=" " alt="" coords="19,5,136,31"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:af60860f2e31b81fe71d47813d0d03ce5"><td class="memItemLeft" align="right" valign="top">typedef kvs::SharedPointer&lt; kvs::opencv::CaptureDevice &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a></td></tr>
+<tr class="separator:af60860f2e31b81fe71d47813d0d03ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0436b363ede1358a477f96f533b5adea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a> { <a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">Gray8</a> = 8, 
+<a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">Color24</a> = 24
+ }</td></tr>
+<tr class="separator:a0436b363ede1358a477f96f533b5adea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:afcdda2be93caa1c5a836d8e317405afd"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">initialize</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:afcdda2be93caa1c5a836d8e317405afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the video object.  <a href="classlib4dsv_1_1_movie_object.html#afcdda2be93caa1c5a836d8e317405afd">[詳解]</a><br /></td></tr>
+<tr class="separator:afcdda2be93caa1c5a836d8e317405afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf387417d94d922a220259b9961417e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">MovieObject</a> ()</td></tr>
+<tr class="memdesc:a9bf387417d94d922a220259b9961417e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classlib4dsv_1_1_movie_object.html" title="Movie object.">MovieObject</a> class.  <a href="classlib4dsv_1_1_movie_object.html#a9bf387417d94d922a220259b9961417e">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bf387417d94d922a220259b9961417e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a290988e8b61c4390c0fd673c26aef3bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a290988e8b61c4390c0fd673c26aef3bb">MovieObject</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a290988e8b61c4390c0fd673c26aef3bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classlib4dsv_1_1_movie_object.html" title="Movie object.">MovieObject</a> class.  <a href="classlib4dsv_1_1_movie_object.html#a290988e8b61c4390c0fd673c26aef3bb">[詳解]</a><br /></td></tr>
+<tr class="separator:a290988e8b61c4390c0fd673c26aef3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6164cf9e6baaa0d3ea63f5a14d589e"><td class="memItemLeft" align="right" valign="top">ObjectType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">objectType</a> () const</td></tr>
+<tr class="memdesc:acd6164cf9e6baaa0d3ea63f5a14d589e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the object type.  <a href="classlib4dsv_1_1_movie_object.html#acd6164cf9e6baaa0d3ea63f5a14d589e">[詳解]</a><br /></td></tr>
+<tr class="separator:acd6164cf9e6baaa0d3ea63f5a14d589e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f75c96aeb047efadab6bcd852e800b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">shallowCopy</a> (const <a class="el" href="classlib4dsv_1_1_movie_object.html">MovieObject</a> &amp;other)</td></tr>
+<tr class="memdesc:a1f75c96aeb047efadab6bcd852e800b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy the movie object ( shallow copy )  <a href="classlib4dsv_1_1_movie_object.html#a1f75c96aeb047efadab6bcd852e800b1">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f75c96aeb047efadab6bcd852e800b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca809f4aef036261924028b23d07675"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a5ca809f4aef036261924028b23d07675">~MovieObject</a> ()</td></tr>
+<tr class="separator:a5ca809f4aef036261924028b23d07675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5c1b4467f1c0469aa647792153a9961a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a5c1b4467f1c0469aa647792153a9961a">kvsModuleBaseClass</a> (kvs::ObjectBase)</td></tr>
+<tr class="separator:a5c1b4467f1c0469aa647792153a9961a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968793a88ff3d2235ae00eb7d7b050d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a968793a88ff3d2235ae00eb7d7b050d1">kvsModuleCategory</a> (Object)</td></tr>
+<tr class="separator:a968793a88ff3d2235ae00eb7d7b050d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d35e4eba22fc89a93ffeab8583813c4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a1d35e4eba22fc89a93ffeab8583813c4">kvsModuleName</a> (<a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a>)</td></tr>
+<tr class="separator:a1d35e4eba22fc89a93ffeab8583813c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a634524a3e6e9391606e17a93308fcca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">m_device</a></td></tr>
+<tr class="memdesc:a634524a3e6e9391606e17a93308fcca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">video capture device  <a href="classlib4dsv_1_1_movie_object.html#a634524a3e6e9391606e17a93308fcca9">[詳解]</a><br /></td></tr>
+<tr class="separator:a634524a3e6e9391606e17a93308fcca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d55793821b5db5e1c356d092632b25d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">m_device_id</a></td></tr>
+<tr class="memdesc:a2d55793821b5db5e1c356d092632b25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">capture device ID  <a href="classlib4dsv_1_1_movie_object.html#a2d55793821b5db5e1c356d092632b25d">[詳解]</a><br /></td></tr>
+<tr class="separator:a2d55793821b5db5e1c356d092632b25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9711eb8d14c17219138b1301a36ba9d2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">m_height</a></td></tr>
+<tr class="memdesc:a9711eb8d14c17219138b1301a36ba9d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">capture height  <a href="classlib4dsv_1_1_movie_object.html#a9711eb8d14c17219138b1301a36ba9d2">[詳解]</a><br /></td></tr>
+<tr class="separator:a9711eb8d14c17219138b1301a36ba9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b58b67c482b1626d82cb5f9b425de9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">m_nchannels</a></td></tr>
+<tr class="memdesc:ad3b58b67c482b1626d82cb5f9b425de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of channels  <a href="classlib4dsv_1_1_movie_object.html#ad3b58b67c482b1626d82cb5f9b425de9">[詳解]</a><br /></td></tr>
+<tr class="separator:ad3b58b67c482b1626d82cb5f9b425de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14a0b87d98ca75df679ef03f2b1209b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">m_type</a></td></tr>
+<tr class="memdesc:ab14a0b87d98ca75df679ef03f2b1209b"><td class="mdescLeft">&#160;</td><td class="mdescRight">pixel type  <a href="classlib4dsv_1_1_movie_object.html#ab14a0b87d98ca75df679ef03f2b1209b">[詳解]</a><br /></td></tr>
+<tr class="separator:ab14a0b87d98ca75df679ef03f2b1209b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880e6ab8cc952531bd6b69cc5ad886be"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">m_width</a></td></tr>
+<tr class="memdesc:a880e6ab8cc952531bd6b69cc5ad886be"><td class="mdescLeft">&#160;</td><td class="mdescRight">capture width  <a href="classlib4dsv_1_1_movie_object.html#a880e6ab8cc952531bd6b69cc5ad886be">[詳解]</a><br /></td></tr>
+<tr class="separator:a880e6ab8cc952531bd6b69cc5ad886be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Movie object. </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00023">23</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="af60860f2e31b81fe71d47813d0d03ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af60860f2e31b81fe71d47813d0d03ce5">&#9670;&nbsp;</a></span>CaptureDevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef kvs::SharedPointer&lt;kvs::opencv::CaptureDevice&gt; <a class="el" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">lib4dsv::MovieObject::CaptureDevice</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a0436b363ede1358a477f96f533b5adea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0436b363ede1358a477f96f533b5adea">&#9670;&nbsp;</a></span>PixelType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">lib4dsv::MovieObject::PixelType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999"></a>Gray8&#160;</td><td class="fielddoc"><p>8 bit gray pixel </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce"></a>Color24&#160;</td><td class="fielddoc"><p>24 bit RGB color pixel (8x8x8 bits) </p>
+</td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a9bf387417d94d922a220259b9961417e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf387417d94d922a220259b9961417e">&#9670;&nbsp;</a></span>MovieObject() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieObject::MovieObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classlib4dsv_1_1_movie_object.html" title="Movie object.">MovieObject</a> class. </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a> の <a class="el" href="_movie_object_8cpp_source.html#l00018">18</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a290988e8b61c4390c0fd673c26aef3bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a290988e8b61c4390c0fd673c26aef3bb">&#9670;&nbsp;</a></span>MovieObject() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieObject::MovieObject </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classlib4dsv_1_1_movie_object.html" title="Movie object.">MovieObject</a> class. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>[in] filename </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a> の <a class="el" href="_movie_object_8cpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>.</p>
+
+</div>
+</div>
+<a id="a5ca809f4aef036261924028b23d07675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca809f4aef036261924028b23d07675">&#9670;&nbsp;</a></span>~MovieObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual lib4dsv::MovieObject::~MovieObject </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="afcdda2be93caa1c5a836d8e317405afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdda2be93caa1c5a836d8e317405afd">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool lib4dsv::MovieObject::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the video object. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_id</td><td>[in] device ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true, if the video object is initialized successfully </dd></dl>
+
+<p class="definition"> <a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a> の <a class="el" href="_movie_object_8cpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_object_8h_source.html#l00035">Color24</a>, <a class="el" href="_movie_object_8h_source.html#l00034">Gray8</a>, <a class="el" href="_movie_object_8h_source.html#l00040">m_device</a>, <a class="el" href="_movie_object_8h_source.html#l00043">m_height</a>, <a class="el" href="_movie_object_8h_source.html#l00044">m_nchannels</a>, <a class="el" href="_movie_object_8h_source.html#l00041">m_type</a>, <a class="el" href="_movie_object_8h_source.html#l00042">m_width</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00031">MovieObject()</a>.</p>
+
+</div>
+</div>
+<a id="a5c1b4467f1c0469aa647792153a9961a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1b4467f1c0469aa647792153a9961a">&#9670;&nbsp;</a></span>kvsModuleBaseClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieObject::kvsModuleBaseClass </td>
+          <td>(</td>
+          <td class="paramtype">kvs::ObjectBase&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a968793a88ff3d2235ae00eb7d7b050d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968793a88ff3d2235ae00eb7d7b050d1">&#9670;&nbsp;</a></span>kvsModuleCategory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieObject::kvsModuleCategory </td>
+          <td>(</td>
+          <td class="paramtype">Object&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d35e4eba22fc89a93ffeab8583813c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d35e4eba22fc89a93ffeab8583813c4">&#9670;&nbsp;</a></span>kvsModuleName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::MovieObject::kvsModuleName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd6164cf9e6baaa0d3ea63f5a14d589e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd6164cf9e6baaa0d3ea63f5a14d589e">&#9670;&nbsp;</a></span>objectType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::ObjectBase::ObjectType lib4dsv::MovieObject::objectType </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the object type. </p>
+<dl class="section return"><dt>戻り値</dt><dd>object type </dd></dl>
+
+<p class="definition"> <a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a> の <a class="el" href="_movie_object_8cpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1f75c96aeb047efadab6bcd852e800b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f75c96aeb047efadab6bcd852e800b1">&#9670;&nbsp;</a></span>shallowCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::MovieObject::shallowCopy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_movie_object.html">MovieObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy the movie object ( shallow copy ) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>[in] <a class="el" href="classlib4dsv_1_1_movie_object.html" title="Movie object.">MovieObject</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a> の <a class="el" href="_movie_object_8cpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_movie_object_8h_source.html#l00040">m_device</a>, <a class="el" href="_movie_object_8h_source.html#l00039">m_device_id</a>, <a class="el" href="_movie_object_8h_source.html#l00043">m_height</a>, <a class="el" href="_movie_object_8h_source.html#l00044">m_nchannels</a>, <a class="el" href="_movie_object_8h_source.html#l00041">m_type</a>, <a class="el" href="_movie_object_8h_source.html#l00042">m_width</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a634524a3e6e9391606e17a93308fcca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634524a3e6e9391606e17a93308fcca9">&#9670;&nbsp;</a></span>m_device</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib4dsv_1_1_movie_object.html#af60860f2e31b81fe71d47813d0d03ce5">CaptureDevice</a> lib4dsv::MovieObject::m_device</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>video capture device </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>, <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<a id="a2d55793821b5db5e1c356d092632b25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d55793821b5db5e1c356d092632b25d">&#9670;&nbsp;</a></span>m_device_id</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lib4dsv::MovieObject::m_device_id</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>capture device ID </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<a id="a9711eb8d14c17219138b1301a36ba9d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9711eb8d14c17219138b1301a36ba9d2">&#9670;&nbsp;</a></span>m_height</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t lib4dsv::MovieObject::m_height</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>capture height </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00043">43</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>, <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<a id="ad3b58b67c482b1626d82cb5f9b425de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b58b67c482b1626d82cb5f9b425de9">&#9670;&nbsp;</a></span>m_nchannels</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t lib4dsv::MovieObject::m_nchannels</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>number of channels </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00044">44</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>, <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<a id="ab14a0b87d98ca75df679ef03f2b1209b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14a0b87d98ca75df679ef03f2b1209b">&#9670;&nbsp;</a></span>m_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adea">PixelType</a> lib4dsv::MovieObject::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>pixel type </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>, <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<a id="a880e6ab8cc952531bd6b69cc5ad886be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a880e6ab8cc952531bd6b69cc5ad886be">&#9670;&nbsp;</a></span>m_width</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t lib4dsv::MovieObject::m_width</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>capture width </p>
+
+<p class="definition"> <a class="el" href="_movie_object_8h_source.html">MovieObject.h</a> の <a class="el" href="_movie_object_8h_source.html#l00042">42</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_movie_object_8cpp_source.html#l00076">initialize()</a>, <a class="el" href="_movie_object_8cpp_source.html#l00058">shallowCopy()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Lib/<a class="el" href="_movie_object_8h_source.html">MovieObject.h</a></li>
+<li>Lib/<a class="el" href="_movie_object_8cpp_source.html">MovieObject.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

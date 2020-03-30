@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Lib/SphericalMapImageRenderer.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8f3de2ae926fecfe6abd5379fd2b6eb1.html">Lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SphericalMapImageRenderer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_spherical_map_image_renderer_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;kvs/RendererBase&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;kvs/Texture2D&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;kvs/ImageObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;kvs/Module&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;kvs/ProgramObject&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelib4dsv.html">lib4dsv</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span>ObjectBase;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span>Camera;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">class </span>Light;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *  Image renderer class.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a> : <span class="keyword">public</span> kvs::RendererBase</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#aaad8482754f6a49bfba87b67357f7017">kvsModule</a>( <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a>, Renderer );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a9d60962bc249f525f5974871d97f9a2a">kvsModuleBaseClass</a>( kvs::RendererBase );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">   27</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8">   29</a></span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8">Stretching</a> = 0,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">   30</a></span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">Centering</a> = 1</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a56e874dadffefb2dc5f546294814981d">   34</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a56e874dadffefb2dc5f546294814981d">m_initial_aspect_ratio</a>; <span class="comment">///&lt; initial aspect ratio</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a3d34438e42d62403a7e66027f3689d1a">   35</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a3d34438e42d62403a7e66027f3689d1a">m_left</a>; <span class="comment">///&lt; screen left position</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a897ec4fab4485ce97d174041e1c795ef">   36</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a897ec4fab4485ce97d174041e1c795ef">m_right</a>; <span class="comment">///&lt; screen right position</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a1928f19205ecc91e622545abf7349dcf">   37</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a1928f19205ecc91e622545abf7349dcf">m_bottom</a>; <span class="comment">///&lt; screen bottom position</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a40b74aca2ee44f5799b7e1655882c199">   38</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a40b74aca2ee44f5799b7e1655882c199">m_top</a>; <span class="comment">///&lt; screen top position</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0bff4bc19928480045cd1b085a87672">   39</a></span>&#160;<span class="comment"></span>    <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0bff4bc19928480045cd1b085a87672">m_type</a>; <span class="comment">///&lt; rendering type</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a30c4e0f711d3f4ea566642c4be9f6aa2">   40</a></span>&#160;<span class="comment"></span>    kvs::Texture2D <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a30c4e0f711d3f4ea566642c4be9f6aa2">m_texture</a>; <span class="comment">///&lt; texture image</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0aff22cc918bee01c2dfedecd9b8a5f">   41</a></span>&#160;<span class="comment"></span>    kvs::ProgramObject <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0aff22cc918bee01c2dfedecd9b8a5f">m_shader_program</a>; <span class="comment">///&lt; shader program</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a401e1b37f90846fd7022aeb614ca705c">SphericalMapImageRenderer</a>( <span class="keyword">const</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a>&amp; type = <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">SphericalMapImageRenderer::Centering</a> );</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a913f68baf8cf6d03973dd5d389829e30">~SphericalMapImageRenderer</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ac43e110eaaa1fab9a898064a125a6c08">exec</a>( kvs::ObjectBase* <span class="keywordtype">object</span>, kvs::Camera* camera, kvs::Light* light );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5ff7e7646096f99ba70ad7fcdfc817d5">create_shader_program</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a425607ff2db82b6745de34d0104d0b62">create_texture</a>( <span class="keyword">const</span> kvs::ImageObject* image );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a31150abd84cbc572ff355192393ad90f">center_alignment</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> width, <span class="keyword">const</span> <span class="keywordtype">double</span> height );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// end of namespace lib4dsv</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a56e874dadffefb2dc5f546294814981d"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a56e874dadffefb2dc5f546294814981d">lib4dsv::SphericalMapImageRenderer::m_initial_aspect_ratio</a></div><div class="ttdeci">double m_initial_aspect_ratio</div><div class="ttdoc">initial aspect ratio</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00034">SphericalMapImageRenderer.h:34</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00021">SphericalMapImageRenderer.h:21</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a9d60962bc249f525f5974871d97f9a2a"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a9d60962bc249f525f5974871d97f9a2a">lib4dsv::SphericalMapImageRenderer::kvsModuleBaseClass</a></div><div class="ttdeci">kvsModuleBaseClass(kvs::RendererBase)</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a401e1b37f90846fd7022aeb614ca705c"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a401e1b37f90846fd7022aeb614ca705c">lib4dsv::SphericalMapImageRenderer::SphericalMapImageRenderer</a></div><div class="ttdeci">SphericalMapImageRenderer(const Type &amp;type=SphericalMapImageRenderer::Centering)</div><div class="ttdoc">Constructs a new SphericalMapImageRenderer class.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00019">SphericalMapImageRenderer.cpp:19</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">lib4dsv::SphericalMapImageRenderer::Centering</a></div><div class="ttdeci">@ Centering</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00030">SphericalMapImageRenderer.h:30</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a31150abd84cbc572ff355192393ad90f"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a31150abd84cbc572ff355192393ad90f">lib4dsv::SphericalMapImageRenderer::center_alignment</a></div><div class="ttdeci">void center_alignment(const double width, const double height)</div><div class="ttdoc">Calculates centering parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00170">SphericalMapImageRenderer.cpp:170</a></div></div>
+<div class="ttc" id="anamespacelib4dsv_html"><div class="ttname"><a href="namespacelib4dsv.html">lib4dsv</a></div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00010">MovieObject.cpp:10</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a3d34438e42d62403a7e66027f3689d1a"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a3d34438e42d62403a7e66027f3689d1a">lib4dsv::SphericalMapImageRenderer::m_left</a></div><div class="ttdeci">double m_left</div><div class="ttdoc">screen left position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00035">SphericalMapImageRenderer.h:35</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a5ff7e7646096f99ba70ad7fcdfc817d5"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5ff7e7646096f99ba70ad7fcdfc817d5">lib4dsv::SphericalMapImageRenderer::create_shader_program</a></div><div class="ttdeci">void create_shader_program()</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00103">SphericalMapImageRenderer.cpp:103</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8">lib4dsv::SphericalMapImageRenderer::Stretching</a></div><div class="ttdeci">@ Stretching</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00029">SphericalMapImageRenderer.h:29</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a897ec4fab4485ce97d174041e1c795ef"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a897ec4fab4485ce97d174041e1c795ef">lib4dsv::SphericalMapImageRenderer::m_right</a></div><div class="ttdeci">double m_right</div><div class="ttdoc">screen right position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00036">SphericalMapImageRenderer.h:36</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a913f68baf8cf6d03973dd5d389829e30"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a913f68baf8cf6d03973dd5d389829e30">lib4dsv::SphericalMapImageRenderer::~SphericalMapImageRenderer</a></div><div class="ttdeci">virtual ~SphericalMapImageRenderer()</div><div class="ttdoc">Destruct the SphericalMapImageRenderer class.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00029">SphericalMapImageRenderer.cpp:29</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_ad0bff4bc19928480045cd1b085a87672"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0bff4bc19928480045cd1b085a87672">lib4dsv::SphericalMapImageRenderer::m_type</a></div><div class="ttdeci">Type m_type</div><div class="ttdoc">rendering type</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00039">SphericalMapImageRenderer.h:39</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a425607ff2db82b6745de34d0104d0b62"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a425607ff2db82b6745de34d0104d0b62">lib4dsv::SphericalMapImageRenderer::create_texture</a></div><div class="ttdeci">void create_texture(const kvs::ImageObject *image)</div><div class="ttdoc">Creates the texture region on the GPU.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00116">SphericalMapImageRenderer.cpp:116</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_ac43e110eaaa1fab9a898064a125a6c08"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ac43e110eaaa1fab9a898064a125a6c08">lib4dsv::SphericalMapImageRenderer::exec</a></div><div class="ttdeci">void exec(kvs::ObjectBase *object, kvs::Camera *camera, kvs::Light *light)</div><div class="ttdoc">Executes the rendering process.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8cpp_source.html#l00041">SphericalMapImageRenderer.cpp:41</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a5fcf556682d205cc4d43721d2da712d2"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">lib4dsv::SphericalMapImageRenderer::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00027">SphericalMapImageRenderer.h:27</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_ad0aff22cc918bee01c2dfedecd9b8a5f"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0aff22cc918bee01c2dfedecd9b8a5f">lib4dsv::SphericalMapImageRenderer::m_shader_program</a></div><div class="ttdeci">kvs::ProgramObject m_shader_program</div><div class="ttdoc">shader program</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00041">SphericalMapImageRenderer.h:41</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_aaad8482754f6a49bfba87b67357f7017"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#aaad8482754f6a49bfba87b67357f7017">lib4dsv::SphericalMapImageRenderer::kvsModule</a></div><div class="ttdeci">kvsModule(lib4dsv::SphericalMapImageRenderer, Renderer)</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a40b74aca2ee44f5799b7e1655882c199"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a40b74aca2ee44f5799b7e1655882c199">lib4dsv::SphericalMapImageRenderer::m_top</a></div><div class="ttdeci">double m_top</div><div class="ttdoc">screen top position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00038">SphericalMapImageRenderer.h:38</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a30c4e0f711d3f4ea566642c4be9f6aa2"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a30c4e0f711d3f4ea566642c4be9f6aa2">lib4dsv::SphericalMapImageRenderer::m_texture</a></div><div class="ttdeci">kvs::Texture2D m_texture</div><div class="ttdoc">texture image</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00040">SphericalMapImageRenderer.h:40</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html_a1928f19205ecc91e622545abf7349dcf"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a1928f19205ecc91e622545abf7349dcf">lib4dsv::SphericalMapImageRenderer::m_bottom</a></div><div class="ttdeci">double m_bottom</div><div class="ttdoc">screen bottom position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00037">SphericalMapImageRenderer.h:37</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
