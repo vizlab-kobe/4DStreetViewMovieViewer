@@ -1,5 +1,10 @@
+/* ***************************************************************************/
+/**
+* @file Application.h
+* @brief Applicationクラスのtypedef宣言
+*/
+/* ***************************************************************************/
 #pragma once
 
-#include <kvs/glut/Application>
-namespace local { typedef kvs::glut::Application Application; }
-
+#include <kvs/qt/Application>
+namespace local { typedef kvs::qt::Application Application; }

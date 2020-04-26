@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Lib/SphericalMapMovieRenderer.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8f3de2ae926fecfe6abd5379fd2b6eb1.html">Lib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SphericalMapMovieRenderer.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_spherical_map_movie_renderer_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* ***************************************************************************/</span><span class="comment"></span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* @file SphericalMapMovieRenderer.cpp</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* @brief SphericalMapMovieRendererクラスの実装</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/* ***************************************************************************/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_spherical_map_movie_renderer_8h.html">SphericalMapMovieRenderer.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;kvs/Camera&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;kvs/ImageObject&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;kvs/Message&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;kvs/IgnoreUnusedVariable&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;kvs/OpenGL&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;kvs/ShaderSource&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelib4dsv.html">lib4dsv</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *  @brief  Constructs a new SphericalMapMovieRenderer class.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *  @param  type [in] rendering type</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#acac9927afae2e358e79ae89f3b4403da">   25</a></span>&#160;<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#acac9927afae2e358e79ae89f3b4403da">SphericalMapMovieRenderer::SphericalMapMovieRenderer</a>( <span class="keyword">const</span> <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">SphericalMapMovieRenderer::Type</a>&amp; type ):</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    m_enable_auto_play( false ),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    m_enable_loop_play( false ),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    m_enable_reverse_play( false ),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    m_frame_index( 0 ),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    m_current_frame_index( 0 )</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a9258d6ecd8099f0ffc597e020c02a13f">m_type</a> = type;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> *  @brief  Destruct the SphericalMapMovieRenderer class.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6dd86c7b5d17d9c42ed731eaa5504d4f">   40</a></span>&#160;<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6dd86c7b5d17d9c42ed731eaa5504d4f">SphericalMapMovieRenderer::~SphericalMapMovieRenderer</a>()</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment"> *  @brief  Executes the rendering process.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"> *  @param  object [in] pointer to the object</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment"> *  @param  camera [in] pointer to the camera</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"> *  @param  light [in] pointer to the light</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"> *  @details Create texture.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"> *  @details Create shader program.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> *  @details OpenGL関連の設定</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment"> *  @details ファイルから表示するfile/frameを取り出し、描画する画像を切出し/貼付けをする</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"> *  @details 次回表示する画像のframeIndex等の処理を行う</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a36075ebdabdf1c5c815eb46064c521e5">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a36075ebdabdf1c5c815eb46064c521e5">SphericalMapMovieRenderer::exec</a>( kvs::ObjectBase* <span class="keywordtype">object</span>, kvs::Camera* camera, kvs::Light* light )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    kvs::IgnoreUnusedVariable( light );</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    BaseClass::startTimer();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a>* video = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a>*<span class="keyword">&gt;</span>( object );</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> ( !<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.isCreated() )</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        this-&gt;<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">create_texture</a>( video ); <span class="comment">// textureを作成</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> ( !<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.isCreated() )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        this-&gt;<a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">create_shader_program</a>(); <span class="comment">// shader programを作成</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//    if ( m_type == Centering )</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//        this-&gt;center_alignment( camera-&gt;windowWidth(), camera-&gt;windowHeight() );</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">//    kvs::OpenGL::SetClearDepth( 1.0 );</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    kvs::OpenGL::Clear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT ); <span class="comment">// カラー/デプスバッファのクリア</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    kvs::OpenGL::WithPushedAttrib p( GL_ALL_ATTRIB_BITS ); <span class="comment">// glPushAttrib( GL_ALL_ATTRIB_BITS )</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        kvs::OpenGL::Disable( GL_DEPTH_TEST ); <span class="comment">// glDisable( GL_DEPTH_TEST )：深部テストの無効化</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        kvs::OpenGL::Disable( GL_TEXTURE_1D ); <span class="comment">// 1次元テクスチャを無効化</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        kvs::OpenGL::Disable( GL_TEXTURE_3D ); <span class="comment">// 3次元テクスチャを無効化</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        kvs::OpenGL::Enable( GL_TEXTURE_2D ); <span class="comment">// 2次元テクスチャを有効化</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        kvs::ProgramObject::Binder shader( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a> ); <span class="comment">// 描画に使用するProgramObject(m_shader_program)を設定</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        kvs::Texture::Binder unit( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>, 0 ); <span class="comment">// 使用するテクスチャユニットをm_textureに関連づける</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> IplImage* frame = video-&gt;device().queryFrame(); <span class="comment">// cvQueryFrame：fileから1つのフレームを取り出す</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> width = frame-&gt;width; <span class="comment">// フレームの幅</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> height = frame-&gt;height; <span class="comment">// フレームの高さ</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* data = frame-&gt;imageData; <span class="comment">// BGRBGRBGR... ：画像データへのポインタ</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.load( width, height, data ); <span class="comment">// GPUへテクスチャデータをダウンロードする</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.setUniform( <span class="stringliteral">&quot;spherical_map&quot;</span>, 0 ); <span class="comment">// &quot;spherical_map&quot;というデータをテクスチャID:0としてシェーダに渡す</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.setUniform( <span class="stringliteral">&quot;R&quot;</span>, object-&gt;xform().rotation() ); <span class="comment">// &quot;R&quot;というuniform変数に回転行列を指定する</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.setUniform( <span class="stringliteral">&quot;image_size&quot;</span>, kvs::Vec2( video-&gt;width(), video-&gt;height() ) ); <span class="comment">// &quot;image_size&quot;というuniform変数に画像の幅/高さを指定する</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.setUniform( <span class="stringliteral">&quot;screen_size&quot;</span>, kvs::Vec2( camera-&gt;windowWidth(), camera-&gt;windowHeight() ) ); <span class="comment">// &quot;screen_size&quot;というuniform変数にwindowの幅/高さを指定する</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        kvs::OpenGL::WithPushedMatrix p1( GL_MODELVIEW ); <span class="comment">// モデルビューモードに変換（以降モデルビュー変換行列演算を行う）</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        p1.loadIdentity(); <span class="comment">// 変換行列を単位行列に初期化する</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            kvs::OpenGL::WithPushedMatrix p2( GL_PROJECTION ); <span class="comment">// 投影変換モードに変換（以降投影変換行列演算を行う）</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            p2.loadIdentity(); <span class="comment">// 変換行列を単位行列に初期化する</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                kvs::OpenGL::SetOrtho( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">m_left</a>, <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">m_right</a>, <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">m_bottom</a>, <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">m_top</a>, -1, 1 ); <span class="comment">// m_left, m_right, m_bottom, m_top, front(-1), back(1)で囲まれる範囲を平行投影する</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                kvs::OpenGL::Begin( GL_QUADS ); <span class="comment">// 4つの頂点をペアとしてそれぞれ独立した４角形を描画する</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                kvs::OpenGL::TexCoordVertex( kvs::Vec2( 0.0, 0.0 ), kvs::Vec2( 0.0, 1.0 ) ); <span class="comment">// テクスチャ切出し座標と貼付け座標の指定</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                kvs::OpenGL::TexCoordVertex( kvs::Vec2( 0.0, 1.0 ), kvs::Vec2( 0.0, 0.0 ) );</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                kvs::OpenGL::TexCoordVertex( kvs::Vec2( 1.0, 1.0 ), kvs::Vec2( 1.0, 0.0 ) );</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                kvs::OpenGL::TexCoordVertex( kvs::Vec2( 1.0, 0.0 ), kvs::Vec2( 1.0, 1.0 ) );</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                kvs::OpenGL::End(); <span class="comment">// 描画終了</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a72fb28d42957c5cc11f1429cbbad9f54">m_enable_auto_play</a> ) <span class="comment">// AutoPlay実行中</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac78779913c07f0d46e56b2c9e4015b05">m_current_frame_index</a> = <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a>;  <span class="comment">// 現在描画中のframe_indexを取得(以降のm_frame_indexは次の描画への準備)</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae9ecf63eca0b5d11e75ab29a5f6e4880">m_enable_reverse_play</a> ) <span class="comment">// ReversePlay実行中</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordtype">int</span> reverse_play_index = video-&gt;device().nextFrameIndex() - 2;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a>--;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1c03d05459bc155e989552020b2c93e1">m_enable_loop_play</a> ) <span class="comment">// LoopPlay実行中</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">if</span> ( video-&gt;device().nextFrameIndex() == 1 ) <span class="comment">// nextFrameIndexが1の時（ 現在描画中のframeIndexは0 ）</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    reverse_play_index = video-&gt;device().numberOfFrames() - 1;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a> = video-&gt;device().numberOfFrames() - 1; <span class="comment">// nextFrameIndexを一番最後のフレームに指定する</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// LoopPlay OFFの場合</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keywordflow">if</span> ( video-&gt;device().nextFrameIndex() == 1 )</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                    reverse_play_index = 0;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a> = 0;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            video-&gt;device().setNextFrameIndex( reverse_play_index ); <span class="comment">// nextFrameIndexをOpenCVに反映する</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">else</span> <span class="comment">// ReversePlay OFFの場合</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a>++;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span> ( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1c03d05459bc155e989552020b2c93e1">m_enable_loop_play</a> ) <span class="comment">// LooPlay 実行中</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">if</span> ( video-&gt;device().nextFrameIndex() == video-&gt;device().numberOfFrames() ) <span class="comment">// 最後のフレームまで行ったら</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                    video-&gt;device().setNextFrameIndex(0); <span class="comment">// 次回は最初のフレームへ</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a> = 0;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// LoopPlay OFFの場合</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keywordflow">if</span> ( video-&gt;device().nextFrameIndex() == video-&gt;device().numberOfFrames() ) <span class="comment">// 最後のフレームまできたら</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    video-&gt;device().setNextFrameIndex( video-&gt;device().numberOfFrames() - 1 ); <span class="comment">// 以降も最後のフレームを保持</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a> = video-&gt;device().numberOfFrames() - 1;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// AutoPlay OFFの場合</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> index = kvs::Math::Clamp( <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">m_frame_index</a>, 0, (<span class="keywordtype">int</span>)video-&gt;device().numberOfFrames() - 1 );</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        video-&gt;device().setNextFrameIndex( index );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    BaseClass::stopTimer();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;}</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">* @brief Create the shader program</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">  181</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">SphericalMapMovieRenderer::create_shader_program</a>()</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    kvs::ShaderSource vert(<span class="stringliteral">&quot;spherical_map.vert&quot;</span>); <span class="comment">// &quot;spherical_map.vert&quot;というファイルを探して読み込む</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    kvs::ShaderSource frag(<span class="stringliteral">&quot;spherical_map.frag&quot;</span>); <span class="comment">// &quot;spherical_map.frag&quot;というファイルを探して読み込む</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">m_shader_program</a>.build( vert, frag ); <span class="comment">// vert/fragの2つのshader objectをcompile → linkしてshader programを作成する</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment"> *  @brief  Creates the texture region on the GPU.</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment"> *  @param  image [in] pointer to the image object</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">  194</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">SphericalMapMovieRenderer::create_texture</a>( <span class="keyword">const</span> <a class="code" href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a>* movie )</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;{</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> width  = movie-&gt;width();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> height = movie-&gt;height();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a186d4d1cb8b55d8972e06e3763b18d50">m_initial_aspect_ratio</a> = width / height;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">m_left</a> = 0.0;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">m_right</a> = 1.0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">m_bottom</a> = 0.0;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">m_top</a> = 1.0;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">if</span> ( movie-&gt;type() == <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">lib4dsv::MovieObject::Gray8</a> )</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setPixelFormat( GL_INTENSITY8, GL_LUMINANCE, GL_UNSIGNED_BYTE ); <span class="comment">// Set the pixcel format.</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( movie-&gt;type() == <a class="code" href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">lib4dsv::MovieObject::Color24</a> )</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#ifdef GL_BGR_EXT</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setPixelFormat( GL_RGB8, GL_BGR_EXT, GL_UNSIGNED_BYTE );</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setPixelFormat( GL_RGB8, GL_RGB, GL_UNSIGNED_BYTE );</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        kvsMessageError(<span class="stringliteral">&quot;Unknown pixel color type.&quot;</span>);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//    const IplImage* frame = movie-&gt;device().queryFrame();</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    kvs::Texture::SetEnv( GL_TEXTURE_ENV_MODE, GL_REPLACE ); <span class="comment">// textureの合成環境の設定(背景の色を無視してtextureの色に変換)</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setWrapS( GL_REPEAT ); <span class="comment">// wrap method for s-axis</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setWrapT( GL_REPEAT ); <span class="comment">// wrap method for t-axis</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setMagFilter( GL_LINEAR ); <span class="comment">// magnification filter (拡大)</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.setMinFilter( GL_LINEAR ); <span class="comment">// minification filter (縮小)</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">//    m_texture.create( frame-&gt;width, frame-&gt;height );</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">m_texture</a>.create( width, height ); <span class="comment">// texture objectを作成し、これに画像を設定する。</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">/*==========================================================================*/</span><span class="comment"></span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment"> *  @brief  Calculates centering parameters.</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment"> *  @param  width [in] image width</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment"> *  @param  height [in] image height</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">/*==========================================================================*/</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a44c9c9ad043c5d419f41dd44062cc9b7">  239</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a44c9c9ad043c5d419f41dd44062cc9b7">SphericalMapMovieRenderer::center_alignment</a>( <span class="keyword">const</span> <span class="keywordtype">double</span> width, <span class="keyword">const</span> <span class="keywordtype">double</span> height )</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;{</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> current_aspect_ratio = width / height; <span class="comment">// アスペクト比</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> aspect_ratio = current_aspect_ratio / <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a186d4d1cb8b55d8972e06e3763b18d50">m_initial_aspect_ratio</a>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span>( aspect_ratio &gt;= 1.0 )</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">m_left</a> = ( 1.0 - aspect_ratio ) * 0.5;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">m_right</a> = ( 1.0 + aspect_ratio ) * 0.5;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">m_bottom</a> = 0.0;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">m_top</a> = 1.0;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">m_left</a> = 0.0;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">m_right</a> = 1.0;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">m_bottom</a> = ( 1.0 - 1.0 / aspect_ratio ) * 0.5;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <a class="code" href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">m_top</a> = ( 1.0 + 1.0 / aspect_ratio ) * 0.5;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;} <span class="comment">// end of namespace lib4dsv</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a72fb28d42957c5cc11f1429cbbad9f54"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a72fb28d42957c5cc11f1429cbbad9f54">lib4dsv::SphericalMapMovieRenderer::m_enable_auto_play</a></div><div class="ttdeci">bool m_enable_auto_play</div><div class="ttdoc">AutoPlay ON/OFF</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00051">SphericalMapMovieRenderer.h:51</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_ab27fe07c05bdf3f7e7603122cb2e19f3"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ab27fe07c05bdf3f7e7603122cb2e19f3">lib4dsv::SphericalMapMovieRenderer::m_frame_index</a></div><div class="ttdeci">int m_frame_index</div><div class="ttdoc">Frame Index</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00054">SphericalMapMovieRenderer.h:54</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaa0bfccfda76ed6addd6f9a9bdbb9154ce">lib4dsv::MovieObject::Color24</a></div><div class="ttdeci">@ Color24</div><div class="ttdoc">24 bit RGB color pixel (8x8x8 bits)</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00035">MovieObject.h:35</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a249f7f6793e2bfaed582999569f0d27c"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a249f7f6793e2bfaed582999569f0d27c">lib4dsv::SphericalMapMovieRenderer::m_texture</a></div><div class="ttdeci">kvs::Texture2D m_texture</div><div class="ttdoc">texture image</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00049">SphericalMapMovieRenderer.h:49</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_ae68909f5f49e1c4e506ea1c30c7b1c60"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae68909f5f49e1c4e506ea1c30c7b1c60">lib4dsv::SphericalMapMovieRenderer::m_bottom</a></div><div class="ttdeci">double m_bottom</div><div class="ttdoc">screen bottom position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00046">SphericalMapMovieRenderer.h:46</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a20f848f8edc8a306249f1094392e5b87"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a20f848f8edc8a306249f1094392e5b87">lib4dsv::SphericalMapMovieRenderer::create_texture</a></div><div class="ttdeci">void create_texture(const lib4dsv::MovieObject *movie)</div><div class="ttdoc">Creates the texture region on the GPU.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00194">SphericalMapMovieRenderer.cpp:194</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a6dd86c7b5d17d9c42ed731eaa5504d4f"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6dd86c7b5d17d9c42ed731eaa5504d4f">lib4dsv::SphericalMapMovieRenderer::~SphericalMapMovieRenderer</a></div><div class="ttdeci">virtual ~SphericalMapMovieRenderer()</div><div class="ttdoc">Destruct the SphericalMapMovieRenderer class.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00040">SphericalMapMovieRenderer.cpp:40</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a8d2b34d5ac23daf7b0997d01df23d241"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a8d2b34d5ac23daf7b0997d01df23d241">lib4dsv::SphericalMapMovieRenderer::create_shader_program</a></div><div class="ttdeci">void create_shader_program()</div><div class="ttdoc">Create the shader program</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00181">SphericalMapMovieRenderer.cpp:181</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a44c9c9ad043c5d419f41dd44062cc9b7"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a44c9c9ad043c5d419f41dd44062cc9b7">lib4dsv::SphericalMapMovieRenderer::center_alignment</a></div><div class="ttdeci">void center_alignment(const double width, const double height)</div><div class="ttdoc">Calculates centering parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00239">SphericalMapMovieRenderer.cpp:239</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_acac9927afae2e358e79ae89f3b4403da"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#acac9927afae2e358e79ae89f3b4403da">lib4dsv::SphericalMapMovieRenderer::SphericalMapMovieRenderer</a></div><div class="ttdeci">SphericalMapMovieRenderer(const Type &amp;type=SphericalMapMovieRenderer::Centering)</div><div class="ttdoc">Constructs a new SphericalMapMovieRenderer class.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00025">SphericalMapMovieRenderer.cpp:25</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a36075ebdabdf1c5c815eb46064c521e5"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a36075ebdabdf1c5c815eb46064c521e5">lib4dsv::SphericalMapMovieRenderer::exec</a></div><div class="ttdeci">void exec(kvs::ObjectBase *object, kvs::Camera *camera, kvs::Light *light)</div><div class="ttdoc">Executes the rendering process.</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8cpp_source.html#l00057">SphericalMapMovieRenderer.cpp:57</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a9258d6ecd8099f0ffc597e020c02a13f"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a9258d6ecd8099f0ffc597e020c02a13f">lib4dsv::SphericalMapMovieRenderer::m_type</a></div><div class="ttdeci">Type m_type</div><div class="ttdoc">rendering type</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00048">SphericalMapMovieRenderer.h:48</a></div></div>
+<div class="ttc" id="anamespacelib4dsv_html"><div class="ttname"><a href="namespacelib4dsv.html">lib4dsv</a></div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8cpp_source.html#l00010">MovieObject.cpp:10</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_ac78779913c07f0d46e56b2c9e4015b05"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac78779913c07f0d46e56b2c9e4015b05">lib4dsv::SphericalMapMovieRenderer::m_current_frame_index</a></div><div class="ttdeci">int m_current_frame_index</div><div class="ttdoc">現在表示中のFrame Index</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00055">SphericalMapMovieRenderer.h:55</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a6f74f8b449b02c3088d915843541bdf9"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a6f74f8b449b02c3088d915843541bdf9">lib4dsv::SphericalMapMovieRenderer::m_shader_program</a></div><div class="ttdeci">kvs::ProgramObject m_shader_program</div><div class="ttdoc">shader program</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00050">SphericalMapMovieRenderer.h:50</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a1d426e15b0fbdb99b659a67231606ca7"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1d426e15b0fbdb99b659a67231606ca7">lib4dsv::SphericalMapMovieRenderer::m_left</a></div><div class="ttdeci">double m_left</div><div class="ttdoc">screen left position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00044">SphericalMapMovieRenderer.h:44</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a1c03d05459bc155e989552020b2c93e1"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a1c03d05459bc155e989552020b2c93e1">lib4dsv::SphericalMapMovieRenderer::m_enable_loop_play</a></div><div class="ttdeci">bool m_enable_loop_play</div><div class="ttdoc">LoopPlay ON/OFF</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00052">SphericalMapMovieRenderer.h:52</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html_a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html#a0436b363ede1358a477f96f533b5adeaafa95a64c474a34d10e8e2183bbb15999">lib4dsv::MovieObject::Gray8</a></div><div class="ttdeci">@ Gray8</div><div class="ttdoc">8 bit gray pixel</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00034">MovieObject.h:34</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_ac489d0394bc8cb1854ce28224301075a"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ac489d0394bc8cb1854ce28224301075a">lib4dsv::SphericalMapMovieRenderer::m_right</a></div><div class="ttdeci">double m_right</div><div class="ttdoc">screen right position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00045">SphericalMapMovieRenderer.h:45</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a186d4d1cb8b55d8972e06e3763b18d50"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a186d4d1cb8b55d8972e06e3763b18d50">lib4dsv::SphericalMapMovieRenderer::m_initial_aspect_ratio</a></div><div class="ttdeci">double m_initial_aspect_ratio</div><div class="ttdoc">initial aspect ratio</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00043">SphericalMapMovieRenderer.h:43</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_movie_object_html"><div class="ttname"><a href="classlib4dsv_1_1_movie_object.html">lib4dsv::MovieObject</a></div><div class="ttdoc">Movie object.</div><div class="ttdef"><b>Definition:</b> <a href="_movie_object_8h_source.html#l00023">MovieObject.h:23</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_ae9ecf63eca0b5d11e75ab29a5f6e4880"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#ae9ecf63eca0b5d11e75ab29a5f6e4880">lib4dsv::SphericalMapMovieRenderer::m_enable_reverse_play</a></div><div class="ttdeci">bool m_enable_reverse_play</div><div class="ttdoc">ReversePlay ON/OFF</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00053">SphericalMapMovieRenderer.h:53</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a2ce6b3ba9bd36f034d840434b2cb5e6b"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a2ce6b3ba9bd36f034d840434b2cb5e6b">lib4dsv::SphericalMapMovieRenderer::Type</a></div><div class="ttdeci">Type</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00036">SphericalMapMovieRenderer.h:36</a></div></div>
+<div class="ttc" id="a_spherical_map_movie_renderer_8h_html"><div class="ttname"><a href="_spherical_map_movie_renderer_8h.html">SphericalMapMovieRenderer.h</a></div><div class="ttdoc">SphericalMapMovieRendererクラスの定義</div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_movie_renderer_html_a364d25dd18c9cbe2f2d9a0eed3f91b4c"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_movie_renderer.html#a364d25dd18c9cbe2f2d9a0eed3f91b4c">lib4dsv::SphericalMapMovieRenderer::m_top</a></div><div class="ttdeci">double m_top</div><div class="ttdoc">screen top position</div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_movie_renderer_8h_source.html#l00047">SphericalMapMovieRenderer.h:47</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

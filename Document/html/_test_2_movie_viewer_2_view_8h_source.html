@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Test/MovieViewer/View.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37618a71d99bdfed5979e976980d5eec.html">Test</a></li><li class="navelem"><a class="el" href="dir_e69329bd82f9f4d218b143044998cfcb.html">MovieViewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">View.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_test_2_movie_viewer_2_view_8h.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_2_movie_viewer_2_application_8h.html">Application.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_2_movie_viewer_2_screen_8h.html">Screen.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_2_movie_viewer_2_model_8h.html">Model.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;kvs/Label&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span>View</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classlocal_1_1_model.html">local::Model</a>* <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>; <span class="comment">///&lt; pointer to the model</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a901d18f660cb4fd4e7d757d145892381">   14</a></span>&#160;<span class="comment"></span>    <a class="code" href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a> <a class="code" href="classlocal_1_1_view.html#a901d18f660cb4fd4e7d757d145892381">m_distorted_movie_screen</a>; <span class="comment">///&lt; screen for distorted (equirectanglar) movie</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a2cd9486743186e504bdb72bf41bc5cf3">   15</a></span>&#160;<span class="comment"></span>    <a class="code" href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a> <a class="code" href="classlocal_1_1_view.html#a2cd9486743186e504bdb72bf41bc5cf3">m_undistorted_movie_screen</a>; <span class="comment">///&lt; screen for undistorted image cropped from equi. movie</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#aba53e7191758e1219a0c8c2f3f59cbb6">   16</a></span>&#160;<span class="comment"></span>    kvs::Label <a class="code" href="classlocal_1_1_view.html#aba53e7191758e1219a0c8c2f3f59cbb6">m_distorted_movie_info</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#ae98a4874d80e522680966c4e80355df6">   17</a></span>&#160;    kvs::Label <a class="code" href="classlocal_1_1_view.html#ae98a4874d80e522680966c4e80355df6">m_undistorted_movie_info</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classlocal_1_1_view.html#ae40e03825e1767e4951590c60ac1f0c4">View</a>( <a class="code" href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a>* app, <a class="code" href="classlocal_1_1_model.html">local::Model</a>* model );</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a7efcd15d084aa2966f4d5f3da934e8e4">   22</a></span>&#160;    <a class="code" href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a>&amp; <a class="code" href="classlocal_1_1_view.html#a7efcd15d084aa2966f4d5f3da934e8e4">distortedMovieScreen</a>() { <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_view.html#a901d18f660cb4fd4e7d757d145892381">m_distorted_movie_screen</a>; }</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a10ff766f685b83c1d2c23d5ed6336d35">   23</a></span>&#160;    <a class="code" href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a>&amp; <a class="code" href="classlocal_1_1_view.html#a10ff766f685b83c1d2c23d5ed6336d35">undistortedMovieScreen</a>() { <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_view.html#a2cd9486743186e504bdb72bf41bc5cf3">m_undistorted_movie_screen</a>; }</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#ad508a0f3670c0e87c592a19500834c73">   24</a></span>&#160;    kvs::Label&amp; <a class="code" href="classlocal_1_1_view.html#ad508a0f3670c0e87c592a19500834c73">distortedMovieInfo</a>() { <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_view.html#aba53e7191758e1219a0c8c2f3f59cbb6">m_distorted_movie_info</a>; }</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#ae2b069424d7459781f8de304e67b5aea">   25</a></span>&#160;    kvs::Label&amp; <a class="code" href="classlocal_1_1_view.html#ae2b069424d7459781f8de304e67b5aea">undistortedMovieInfo</a>() { <span class="keywordflow">return</span> <a class="code" href="classlocal_1_1_view.html#ae98a4874d80e522680966c4e80355df6">m_undistorted_movie_info</a>; }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#aecda9399f744e86482ff18b488cfa419">setup</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">layout</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">show</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslocal_1_1_view_html_ae40e03825e1767e4951590c60ac1f0c4"><div class="ttname"><a href="classlocal_1_1_view.html#ae40e03825e1767e4951590c60ac1f0c4">local::View::View</a></div><div class="ttdeci">View(local::Application *app, local::Model *model)</div><div class="ttdoc">コンストラクタ @params app Applicationへのポインタ @params model Modelへのポインタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8cpp_source.html#l00021">View.cpp:21</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a10ff766f685b83c1d2c23d5ed6336d35"><div class="ttname"><a href="classlocal_1_1_view.html#a10ff766f685b83c1d2c23d5ed6336d35">local::View::undistortedMovieScreen</a></div><div class="ttdeci">local::Screen &amp; undistortedMovieScreen()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00023">View.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a7efcd15d084aa2966f4d5f3da934e8e4"><div class="ttname"><a href="classlocal_1_1_view.html#a7efcd15d084aa2966f4d5f3da934e8e4">local::View::distortedMovieScreen</a></div><div class="ttdeci">local::Screen &amp; distortedMovieScreen()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00022">View.h:22</a></div></div>
+<div class="ttc" id="anamespacelocal_html_a41aac936d9cc4deda112305aa30113e0"><div class="ttname"><a href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a></div><div class="ttdeci">kvs::qt::Application Application</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_ad508a0f3670c0e87c592a19500834c73"><div class="ttname"><a href="classlocal_1_1_view.html#ad508a0f3670c0e87c592a19500834c73">local::View::distortedMovieInfo</a></div><div class="ttdeci">kvs::Label &amp; distortedMovieInfo()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00024">View.h:24</a></div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="a_test_2_movie_viewer_2_model_8h_html"><div class="ttname"><a href="_test_2_movie_viewer_2_model_8h.html">Model.h</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a9624098d36406343a83bb25d90d07688"><div class="ttname"><a href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">local::View::layout</a></div><div class="ttdeci">void layout()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8cpp_source.html#l00064">View.cpp:64</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_ae2b069424d7459781f8de304e67b5aea"><div class="ttname"><a href="classlocal_1_1_view.html#ae2b069424d7459781f8de304e67b5aea">local::View::undistortedMovieInfo</a></div><div class="ttdeci">kvs::Label &amp; undistortedMovieInfo()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00025">View.h:25</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_aecda9399f744e86482ff18b488cfa419"><div class="ttname"><a href="classlocal_1_1_view.html#aecda9399f744e86482ff18b488cfa419">local::View::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">表示するscreen・informationのsetupを行う関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8cpp_source.html#l00034">View.cpp:34</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a2cd9486743186e504bdb72bf41bc5cf3"><div class="ttname"><a href="classlocal_1_1_view.html#a2cd9486743186e504bdb72bf41bc5cf3">local::View::m_undistorted_movie_screen</a></div><div class="ttdeci">local::Screen m_undistorted_movie_screen</div><div class="ttdoc">screen for undistorted image cropped from equi. movie</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00015">View.h:15</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a901d18f660cb4fd4e7d757d145892381"><div class="ttname"><a href="classlocal_1_1_view.html#a901d18f660cb4fd4e7d757d145892381">local::View::m_distorted_movie_screen</a></div><div class="ttdeci">local::Screen m_distorted_movie_screen</div><div class="ttdoc">screen for distorted (equirectanglar) movie</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00014">View.h:14</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_aba53e7191758e1219a0c8c2f3f59cbb6"><div class="ttname"><a href="classlocal_1_1_view.html#aba53e7191758e1219a0c8c2f3f59cbb6">local::View::m_distorted_movie_info</a></div><div class="ttdeci">kvs::Label m_distorted_movie_info</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00016">View.h:16</a></div></div>
+<div class="ttc" id="a_test_2_movie_viewer_2_application_8h_html"><div class="ttname"><a href="_test_2_movie_viewer_2_application_8h.html">Application.h</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a5d1b9e426bea1f37eb5f0fdb51338c52"><div class="ttname"><a href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">local::View::show</a></div><div class="ttdeci">void show()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8cpp_source.html#l00081">View.cpp:81</a></div></div>
+<div class="ttc" id="a_test_2_movie_viewer_2_screen_8h_html"><div class="ttname"><a href="_test_2_movie_viewer_2_screen_8h.html">Screen.h</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_af58f72e7c2187d359138d60cf0dc1fa6"><div class="ttname"><a href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">local::View::m_model</a></div><div class="ttdeci">local::Model * m_model</div><div class="ttdoc">pointer to the model</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8h_source.html#l00026">View.h:26</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_ae98a4874d80e522680966c4e80355df6"><div class="ttname"><a href="classlocal_1_1_view.html#ae98a4874d80e522680966c4e80355df6">local::View::m_undistorted_movie_info</a></div><div class="ttdeci">kvs::Label m_undistorted_movie_info</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_movie_viewer_2_view_8h_source.html#l00017">View.h:17</a></div></div>
+<div class="ttc" id="anamespacelocal_html_a3b75bd59a85ae7a81e308c79b4ed2402"><div class="ttname"><a href="namespacelocal.html#a3b75bd59a85ae7a81e308c79b4ed2402">local::Screen</a></div><div class="ttdeci">kvs::qt::Screen Screen</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_screen_8h_source.html#l00010">Screen.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

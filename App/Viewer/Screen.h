@@ -1,4 +1,10 @@
+/* ***************************************************************************/
+/**
+* @file Screen.h
+* @brief Screenクラスのtypedef宣言
+*/
+/* ***************************************************************************/
 #pragma once
 
-#include <kvs/glut/Screen>
-namespace local { typedef kvs::glut::Screen Screen; }
+#include <kvs/qt/Screen>
+namespace local { typedef kvs::qt::Screen Screen; }

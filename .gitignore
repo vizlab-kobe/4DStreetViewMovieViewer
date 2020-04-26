@@ -7,6 +7,7 @@
 *.o
 *.obj
 
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -32,3 +33,11 @@
 *.app
 App/Viewer/Viewer
 *.kvs
+
+*.csv
+*.pro
+.DS_Store
+.qmake.stash
+moc_*
+Makefile
+*.swp

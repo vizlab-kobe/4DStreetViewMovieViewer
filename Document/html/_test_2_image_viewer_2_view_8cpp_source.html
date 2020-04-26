@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: Test/ImageViewer/View.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37618a71d99bdfed5979e976980d5eec.html">Test</a></li><li class="navelem"><a class="el" href="dir_19ac91851f2a4551fb0079b6a586018c.html">ImageViewer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">View.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_test_2_image_viewer_2_view_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_test_2_image_viewer_2_view_8h.html">View.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;kvs/Font&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;kvs/ImageObject&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;kvs/ImageRenderer&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_spherical_map_image_renderer_8h.html">4DStreetViewMovieViewer/Lib/SphericalMapImageRenderer.h</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacelocal.html">local</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="classlocal_1_1_view.html#ae40e03825e1767e4951590c60ac1f0c4">View::View</a>( <a class="code" href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a>* app, <a class="code" href="classlocal_1_1_model.html">local::Model</a>* model ):</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_model( model ),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_distorted_image_screen( app ),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_undistorted_image_screen( app ),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_distorted_image_info( &amp;m_distorted_image_screen ),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_undistorted_image_info( &amp;m_undistorted_image_screen, model )</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;<a class="code" href="classlocal_1_1_view.html#aecda9399f744e86482ff18b488cfa419">setup</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    this-&gt;<a class="code" href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">layout</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">show</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#aecda9399f744e86482ff18b488cfa419">View::setup</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> width = 512;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> height = 512;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> image_width = <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>-&gt;<a class="code" href="classlocal_1_1_model.html#a0d7b4d78abf5e4fb1deed00c0bf309cc">objectPointer</a>()-&gt;width();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">size_t</span> image_height = <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>-&gt;<a class="code" href="classlocal_1_1_model.html#a0d7b4d78abf5e4fb1deed00c0bf309cc">objectPointer</a>()-&gt;height();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> scale = float( image_width ) / image_height;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.setTitle( <span class="stringliteral">&quot;Source Image&quot;</span> );</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.setSize( width * scale, height );</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">typedef</span> kvs::ImageRenderer Renderer;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.registerObject( <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>-&gt;<a class="code" href="classlocal_1_1_model.html#a7934e4d1cc688a9a03c8eae0fb58b226">object</a>(), <span class="keyword">new</span> Renderer() );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">m_undistorted_image_screen</a>.setTitle( <span class="stringliteral">&quot;Cropped Image&quot;</span> );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">m_undistorted_image_screen</a>.setSize( width, height );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">typedef</span> <a class="code" href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a> Renderer;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">m_undistorted_image_screen</a>.registerObject( <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>-&gt;<a class="code" href="classlocal_1_1_model.html#a7934e4d1cc688a9a03c8eae0fb58b226">object</a>(), <span class="keyword">new</span> Renderer() );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    kvs::Font font;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    font.setSize( 24 );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    font.setFamilyToSans();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    font.setStyleToBold();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    font.setColor( kvs::RGBColor::White() );</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    font.setShadowColor( kvs::RGBColor::Black() );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    font.setEnabledShadow( <span class="keyword">true</span> );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">m_distorted_image_info</a>.setFont( font );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">m_distorted_image_info</a>.setMargin( 10 );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">m_distorted_image_info</a>.setText( <span class="stringliteral">&quot;Filename: %s&quot;</span>, <a class="code" href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">m_model</a>-&gt;<a class="code" href="classlocal_1_1_model.html#ad3bbfc6b2b7e45bd14ac99964982a818">filename</a>().c_str() );</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">m_distorted_image_info</a>.addText( <span class="stringliteral">&quot;Resolution: %d x %d&quot;</span>, image_width, image_height );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//    m_undistorted_image_info.setFont( font );</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//    m_undistorted_image_info.setMargin( 10 );</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//    m_undistorted_image_info.setText( &quot;Filename: %s&quot;, m_model-&gt;filename().c_str() );</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//    m_undistorted_image_info.addText( &quot;Resolution: %d x %d&quot;, width, height );</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">View::layout</a>()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Top-left on the desktop.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> x = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> y = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.setPosition( x, y );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Right side of the distorted image screen.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> x = <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.x() + <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.width();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">size_t</span> y = <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.y();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">m_undistorted_image_screen</a>.setPosition( x, y );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">View::show</a>()</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">m_distorted_image_screen</a>.show();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">m_undistorted_image_screen</a>.show();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">m_distorted_image_info</a>.show();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classlocal_1_1_view.html#af3aa632e7ff3e71acdb81d84b5439222">m_undistorted_image_info</a>.show();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// end of namespace local</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclasslocal_1_1_view_html_ae40e03825e1767e4951590c60ac1f0c4"><div class="ttname"><a href="classlocal_1_1_view.html#ae40e03825e1767e4951590c60ac1f0c4">local::View::View</a></div><div class="ttdeci">View(local::Application *app, local::Model *model)</div><div class="ttdoc">コンストラクタ @params app Applicationへのポインタ @params model Modelへのポインタ</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8cpp_source.html#l00021">View.cpp:21</a></div></div>
+<div class="ttc" id="a_test_2_image_viewer_2_view_8h_html"><div class="ttname"><a href="_test_2_image_viewer_2_view_8h.html">View.h</a></div></div>
+<div class="ttc" id="anamespacelocal_html_a41aac936d9cc4deda112305aa30113e0"><div class="ttname"><a href="namespacelocal.html#a41aac936d9cc4deda112305aa30113e0">local::Application</a></div><div class="ttdeci">kvs::qt::Application Application</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslib4dsv_1_1_spherical_map_image_renderer_html"><div class="ttname"><a href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="_spherical_map_image_renderer_8h_source.html#l00021">SphericalMapImageRenderer.h:21</a></div></div>
+<div class="ttc" id="anamespacelocal_html"><div class="ttname"><a href="namespacelocal.html">local</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_application_8h_source.html#l00010">Application.h:10</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_af3aa632e7ff3e71acdb81d84b5439222"><div class="ttname"><a href="classlocal_1_1_view.html#af3aa632e7ff3e71acdb81d84b5439222">local::View::m_undistorted_image_info</a></div><div class="ttdeci">local::Info m_undistorted_image_info</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8h_source.html#l00019">View.h:19</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a0d7b4d78abf5e4fb1deed00c0bf309cc"><div class="ttname"><a href="classlocal_1_1_model.html#a0d7b4d78abf5e4fb1deed00c0bf309cc">local::Model::objectPointer</a></div><div class="ttdeci">const ObjectPointer &amp; objectPointer() const</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_model_8h_source.html#l00023">Model.h:23</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_a7934e4d1cc688a9a03c8eae0fb58b226"><div class="ttname"><a href="classlocal_1_1_model.html#a7934e4d1cc688a9a03c8eae0fb58b226">local::Model::object</a></div><div class="ttdeci">Object * object() const</div><div class="ttdoc">表示するオブジェクトのポインタを取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00194">Model.cpp:194</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a13d94421df902ee9a53c9927b3f2c1d4"><div class="ttname"><a href="classlocal_1_1_view.html#a13d94421df902ee9a53c9927b3f2c1d4">local::View::m_undistorted_image_screen</a></div><div class="ttdeci">local::Screen m_undistorted_image_screen</div><div class="ttdoc">screen for undistorted image cropped from equi. image</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8h_source.html#l00016">View.h:16</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a9624098d36406343a83bb25d90d07688"><div class="ttname"><a href="classlocal_1_1_view.html#a9624098d36406343a83bb25d90d07688">local::View::layout</a></div><div class="ttdeci">void layout()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8cpp_source.html#l00064">View.cpp:64</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_aecda9399f744e86482ff18b488cfa419"><div class="ttname"><a href="classlocal_1_1_view.html#aecda9399f744e86482ff18b488cfa419">local::View::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">表示するscreen・informationのsetupを行う関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8cpp_source.html#l00034">View.cpp:34</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html_ad3bbfc6b2b7e45bd14ac99964982a818"><div class="ttname"><a href="classlocal_1_1_model.html#ad3bbfc6b2b7e45bd14ac99964982a818">local::Model::filename</a></div><div class="ttdeci">const std::string filename() const</div><div class="ttdoc">ファイル名を取得する関数</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8cpp_source.html#l00172">Model.cpp:172</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a5d1b9e426bea1f37eb5f0fdb51338c52"><div class="ttname"><a href="classlocal_1_1_view.html#a5d1b9e426bea1f37eb5f0fdb51338c52">local::View::show</a></div><div class="ttdeci">void show()</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8cpp_source.html#l00081">View.cpp:81</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_adfc71f07f2e7d55cb04dbc0c2ea00bb7"><div class="ttname"><a href="classlocal_1_1_view.html#adfc71f07f2e7d55cb04dbc0c2ea00bb7">local::View::m_distorted_image_info</a></div><div class="ttdeci">kvs::Label m_distorted_image_info</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8h_source.html#l00017">View.h:17</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_af58f72e7c2187d359138d60cf0dc1fa6"><div class="ttname"><a href="classlocal_1_1_view.html#af58f72e7c2187d359138d60cf0dc1fa6">local::View::m_model</a></div><div class="ttdeci">local::Model * m_model</div><div class="ttdoc">pointer to the model</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_view_8h_source.html#l00026">View.h:26</a></div></div>
+<div class="ttc" id="a_spherical_map_image_renderer_8h_html"><div class="ttname"><a href="_spherical_map_image_renderer_8h.html">SphericalMapImageRenderer.h</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_model_html"><div class="ttname"><a href="classlocal_1_1_model.html">local::Model</a></div><div class="ttdoc">インプット情報からモデルを取得するModelクラスの定義</div><div class="ttdef"><b>Definition:</b> <a href="_app_2_viewer_2_model_8h_source.html#l00021">Model.h:21</a></div></div>
+<div class="ttc" id="aclasslocal_1_1_view_html_a19a1e5e23f656f29cb03f0c026f82f1c"><div class="ttname"><a href="classlocal_1_1_view.html#a19a1e5e23f656f29cb03f0c026f82f1c">local::View::m_distorted_image_screen</a></div><div class="ttdeci">local::Screen m_distorted_image_screen</div><div class="ttdoc">screen for distorted (equirectanglar) image</div><div class="ttdef"><b>Definition:</b> <a href="_test_2_image_viewer_2_view_8h_source.html#l00015">View.h:15</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

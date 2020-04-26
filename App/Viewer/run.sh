@@ -1,10 +1,4 @@
 #!/bin/sh
-PROGRAM=${PWD##*/}
+PROGRAM=./Viewer.app/Contents/MacOS/Viewer
 
-DIRNAME=~/Work/Data/4DStreatViewData/movies/
-EXTENSION=mp4
-DIMENSIONS=(10,10,10)
-POSITION=(0,0,0)
-FRAME_RATE=5
-
-./$PROGRAM -dir $DIRNAME -ext $EXTENSION -dims $DIMENSIONS[0] $DIMENSIONS[1] $DIMENSIONS[2] -pos $POSITION[0] $POSITION[1] $POSITION[2] -fps $FRAME_RATE
+./$PROGRAM

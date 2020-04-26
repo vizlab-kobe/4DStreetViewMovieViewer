@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>4DStreetViewMovieViewer: lib4dsv::SphericalMapImageRenderer クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">4DStreetViewMovieViewer
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacelib4dsv.html">lib4dsv</a></li><li class="navelem"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classlib4dsv_1_1_spherical_map_image_renderer-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">lib4dsv::SphericalMapImageRenderer クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a>&gt;</code></p>
+<div class="dynheader">
+lib4dsv::SphericalMapImageRenderer の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="classlib4dsv_1_1_spherical_map_image_renderer__inherit__graph.png" border="0" usemap="#lib4dsv_1_1_spherical_map_image_renderer_inherit__map" alt="Inheritance graph"/></div>
+<map name="lib4dsv_1_1_spherical_map_image_renderer_inherit__map" id="lib4dsv_1_1_spherical_map_image_renderer_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,79,194,117"/>
+<area shape="rect" title=" " alt="" coords="46,5,153,31"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a5fcf556682d205cc4d43721d2da712d2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a> { <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8">Stretching</a> = 0, 
+<a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">Centering</a> = 1
+ }</td></tr>
+<tr class="separator:a5fcf556682d205cc4d43721d2da712d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ac43e110eaaa1fab9a898064a125a6c08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ac43e110eaaa1fab9a898064a125a6c08">exec</a> (kvs::ObjectBase *object, kvs::Camera *camera, kvs::Light *light)</td></tr>
+<tr class="memdesc:ac43e110eaaa1fab9a898064a125a6c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the rendering process.  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ac43e110eaaa1fab9a898064a125a6c08">[詳解]</a><br /></td></tr>
+<tr class="separator:ac43e110eaaa1fab9a898064a125a6c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401e1b37f90846fd7022aeb614ca705c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a401e1b37f90846fd7022aeb614ca705c">SphericalMapImageRenderer</a> (const <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a> &amp;type=<a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">SphericalMapImageRenderer::Centering</a>)</td></tr>
+<tr class="memdesc:a401e1b37f90846fd7022aeb614ca705c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a> class.  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a401e1b37f90846fd7022aeb614ca705c">[詳解]</a><br /></td></tr>
+<tr class="separator:a401e1b37f90846fd7022aeb614ca705c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a913f68baf8cf6d03973dd5d389829e30"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a913f68baf8cf6d03973dd5d389829e30">~SphericalMapImageRenderer</a> ()</td></tr>
+<tr class="memdesc:a913f68baf8cf6d03973dd5d389829e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destruct the <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a> class.  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a913f68baf8cf6d03973dd5d389829e30">[詳解]</a><br /></td></tr>
+<tr class="separator:a913f68baf8cf6d03973dd5d389829e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a31150abd84cbc572ff355192393ad90f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a31150abd84cbc572ff355192393ad90f">center_alignment</a> (const double width, const double height)</td></tr>
+<tr class="memdesc:a31150abd84cbc572ff355192393ad90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates centering parameters.  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a31150abd84cbc572ff355192393ad90f">[詳解]</a><br /></td></tr>
+<tr class="separator:a31150abd84cbc572ff355192393ad90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ff7e7646096f99ba70ad7fcdfc817d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5ff7e7646096f99ba70ad7fcdfc817d5">create_shader_program</a> ()</td></tr>
+<tr class="separator:a5ff7e7646096f99ba70ad7fcdfc817d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425607ff2db82b6745de34d0104d0b62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a425607ff2db82b6745de34d0104d0b62">create_texture</a> (const kvs::ImageObject *image)</td></tr>
+<tr class="memdesc:a425607ff2db82b6745de34d0104d0b62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the texture region on the GPU.  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a425607ff2db82b6745de34d0104d0b62">[詳解]</a><br /></td></tr>
+<tr class="separator:a425607ff2db82b6745de34d0104d0b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad8482754f6a49bfba87b67357f7017"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#aaad8482754f6a49bfba87b67357f7017">kvsModule</a> (<a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a>, Renderer)</td></tr>
+<tr class="separator:aaad8482754f6a49bfba87b67357f7017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d60962bc249f525f5974871d97f9a2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a9d60962bc249f525f5974871d97f9a2a">kvsModuleBaseClass</a> (kvs::RendererBase)</td></tr>
+<tr class="separator:a9d60962bc249f525f5974871d97f9a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a1928f19205ecc91e622545abf7349dcf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a1928f19205ecc91e622545abf7349dcf">m_bottom</a></td></tr>
+<tr class="memdesc:a1928f19205ecc91e622545abf7349dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen bottom position  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a1928f19205ecc91e622545abf7349dcf">[詳解]</a><br /></td></tr>
+<tr class="separator:a1928f19205ecc91e622545abf7349dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56e874dadffefb2dc5f546294814981d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a56e874dadffefb2dc5f546294814981d">m_initial_aspect_ratio</a></td></tr>
+<tr class="memdesc:a56e874dadffefb2dc5f546294814981d"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial aspect ratio  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a56e874dadffefb2dc5f546294814981d">[詳解]</a><br /></td></tr>
+<tr class="separator:a56e874dadffefb2dc5f546294814981d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d34438e42d62403a7e66027f3689d1a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a3d34438e42d62403a7e66027f3689d1a">m_left</a></td></tr>
+<tr class="memdesc:a3d34438e42d62403a7e66027f3689d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen left position  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a3d34438e42d62403a7e66027f3689d1a">[詳解]</a><br /></td></tr>
+<tr class="separator:a3d34438e42d62403a7e66027f3689d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897ec4fab4485ce97d174041e1c795ef"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a897ec4fab4485ce97d174041e1c795ef">m_right</a></td></tr>
+<tr class="memdesc:a897ec4fab4485ce97d174041e1c795ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen right position  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a897ec4fab4485ce97d174041e1c795ef">[詳解]</a><br /></td></tr>
+<tr class="separator:a897ec4fab4485ce97d174041e1c795ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0aff22cc918bee01c2dfedecd9b8a5f"><td class="memItemLeft" align="right" valign="top">kvs::ProgramObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0aff22cc918bee01c2dfedecd9b8a5f">m_shader_program</a></td></tr>
+<tr class="memdesc:ad0aff22cc918bee01c2dfedecd9b8a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">shader program  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0aff22cc918bee01c2dfedecd9b8a5f">[詳解]</a><br /></td></tr>
+<tr class="separator:ad0aff22cc918bee01c2dfedecd9b8a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c4e0f711d3f4ea566642c4be9f6aa2"><td class="memItemLeft" align="right" valign="top">kvs::Texture2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a30c4e0f711d3f4ea566642c4be9f6aa2">m_texture</a></td></tr>
+<tr class="memdesc:a30c4e0f711d3f4ea566642c4be9f6aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">texture image  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a30c4e0f711d3f4ea566642c4be9f6aa2">[詳解]</a><br /></td></tr>
+<tr class="separator:a30c4e0f711d3f4ea566642c4be9f6aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b74aca2ee44f5799b7e1655882c199"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a40b74aca2ee44f5799b7e1655882c199">m_top</a></td></tr>
+<tr class="memdesc:a40b74aca2ee44f5799b7e1655882c199"><td class="mdescLeft">&#160;</td><td class="mdescRight">screen top position  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#a40b74aca2ee44f5799b7e1655882c199">[詳解]</a><br /></td></tr>
+<tr class="separator:a40b74aca2ee44f5799b7e1655882c199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bff4bc19928480045cd1b085a87672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0bff4bc19928480045cd1b085a87672">m_type</a></td></tr>
+<tr class="memdesc:ad0bff4bc19928480045cd1b085a87672"><td class="mdescLeft">&#160;</td><td class="mdescRight">rendering type  <a href="classlib4dsv_1_1_spherical_map_image_renderer.html#ad0bff4bc19928480045cd1b085a87672">[詳解]</a><br /></td></tr>
+<tr class="separator:ad0bff4bc19928480045cd1b085a87672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Image renderer class. </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00021">21</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a5fcf556682d205cc4d43721d2da712d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fcf556682d205cc4d43721d2da712d2">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">lib4dsv::SphericalMapImageRenderer::Type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a5fcf556682d205cc4d43721d2da712d2a202d49d5478773c95173cd2822eaa1e8"></a>Stretching&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb"></a>Centering&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a401e1b37f90846fd7022aeb614ca705c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401e1b37f90846fd7022aeb614ca705c">&#9670;&nbsp;</a></span>SphericalMapImageRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapImageRenderer::SphericalMapImageRenderer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em> = <code><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2a08a23469ffa5ae684214c216b9ce28bb">SphericalMapImageRenderer::Centering</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a> class. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>[in] rendering type </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00039">m_type</a>.</p>
+
+</div>
+</div>
+<a id="a913f68baf8cf6d03973dd5d389829e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913f68baf8cf6d03973dd5d389829e30">&#9670;&nbsp;</a></span>~SphericalMapImageRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapImageRenderer::~SphericalMapImageRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destruct the <a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">SphericalMapImageRenderer</a> class. </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a31150abd84cbc572ff355192393ad90f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31150abd84cbc572ff355192393ad90f">&#9670;&nbsp;</a></span>center_alignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapImageRenderer::center_alignment </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates centering parameters. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>[in] image width </td></tr>
+    <tr><td class="paramname">height</td><td>[in] image height </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">170</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00037">m_bottom</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00034">m_initial_aspect_ratio</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00035">m_left</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00036">m_right</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00038">m_top</a>.</p>
+
+</div>
+</div>
+<a id="a5ff7e7646096f99ba70ad7fcdfc817d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff7e7646096f99ba70ad7fcdfc817d5">&#9670;&nbsp;</a></span>create_shader_program()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapImageRenderer::create_shader_program </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00103">103</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00041">m_shader_program</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a425607ff2db82b6745de34d0104d0b62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a425607ff2db82b6745de34d0104d0b62">&#9670;&nbsp;</a></span>create_texture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapImageRenderer::create_texture </td>
+          <td>(</td>
+          <td class="paramtype">const kvs::ImageObject *&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates the texture region on the GPU. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>[in] pointer to the image object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">116</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00037">m_bottom</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00034">m_initial_aspect_ratio</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00035">m_left</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00036">m_right</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00040">m_texture</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00038">m_top</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ac43e110eaaa1fab9a898064a125a6c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac43e110eaaa1fab9a898064a125a6c08">&#9670;&nbsp;</a></span>exec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lib4dsv::SphericalMapImageRenderer::exec </td>
+          <td>(</td>
+          <td class="paramtype">kvs::ObjectBase *&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Camera *&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">kvs::Light *&#160;</td>
+          <td class="paramname"><em>light</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Executes the rendering process. </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>[in] pointer to the object </td></tr>
+    <tr><td class="paramname">camera</td><td>[in] pointer to the camera </td></tr>
+    <tr><td class="paramname">light</td><td>[in] pointer to the light </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a> の <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">41</a> 行目に定義があります。</p>
+
+<p class="reference">参照先 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00103">create_shader_program()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00037">m_bottom</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00035">m_left</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00036">m_right</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00041">m_shader_program</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00040">m_texture</a>, <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00038">m_top</a>.</p>
+
+</div>
+</div>
+<a id="aaad8482754f6a49bfba87b67357f7017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad8482754f6a49bfba87b67357f7017">&#9670;&nbsp;</a></span>kvsModule()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapImageRenderer::kvsModule </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html">lib4dsv::SphericalMapImageRenderer</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Renderer&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d60962bc249f525f5974871d97f9a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d60962bc249f525f5974871d97f9a2a">&#9670;&nbsp;</a></span>kvsModuleBaseClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lib4dsv::SphericalMapImageRenderer::kvsModuleBaseClass </td>
+          <td>(</td>
+          <td class="paramtype">kvs::RendererBase&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a1928f19205ecc91e622545abf7349dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1928f19205ecc91e622545abf7349dcf">&#9670;&nbsp;</a></span>m_bottom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapImageRenderer::m_bottom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen bottom position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">center_alignment()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a56e874dadffefb2dc5f546294814981d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e874dadffefb2dc5f546294814981d">&#9670;&nbsp;</a></span>m_initial_aspect_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapImageRenderer::m_initial_aspect_ratio</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initial aspect ratio </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">center_alignment()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>.</p>
+
+</div>
+</div>
+<a id="a3d34438e42d62403a7e66027f3689d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d34438e42d62403a7e66027f3689d1a">&#9670;&nbsp;</a></span>m_left</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapImageRenderer::m_left</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen left position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">center_alignment()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a897ec4fab4485ce97d174041e1c795ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897ec4fab4485ce97d174041e1c795ef">&#9670;&nbsp;</a></span>m_right</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapImageRenderer::m_right</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen right position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">center_alignment()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ad0aff22cc918bee01c2dfedecd9b8a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0aff22cc918bee01c2dfedecd9b8a5f">&#9670;&nbsp;</a></span>m_shader_program</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::ProgramObject lib4dsv::SphericalMapImageRenderer::m_shader_program</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>shader program </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00041">41</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00103">create_shader_program()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a30c4e0f711d3f4ea566642c4be9f6aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c4e0f711d3f4ea566642c4be9f6aa2">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">kvs::Texture2D lib4dsv::SphericalMapImageRenderer::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>texture image </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="a40b74aca2ee44f5799b7e1655882c199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b74aca2ee44f5799b7e1655882c199">&#9670;&nbsp;</a></span>m_top</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double lib4dsv::SphericalMapImageRenderer::m_top</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>screen top position </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00170">center_alignment()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00116">create_texture()</a>, <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00041">exec()</a>.</p>
+
+</div>
+</div>
+<a id="ad0bff4bc19928480045cd1b085a87672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0bff4bc19928480045cd1b085a87672">&#9670;&nbsp;</a></span>m_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlib4dsv_1_1_spherical_map_image_renderer.html#a5fcf556682d205cc4d43721d2da712d2">Type</a> lib4dsv::SphericalMapImageRenderer::m_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>rendering type </p>
+
+<p class="definition"> <a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a> の <a class="el" href="_spherical_map_image_renderer_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="_spherical_map_image_renderer_8cpp_source.html#l00019">SphericalMapImageRenderer()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>Lib/<a class="el" href="_spherical_map_image_renderer_8h_source.html">SphericalMapImageRenderer.h</a></li>
+<li>Lib/<a class="el" href="_spherical_map_image_renderer_8cpp_source.html">SphericalMapImageRenderer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
