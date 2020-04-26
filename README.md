@@ -7,6 +7,7 @@
 
 * [KVS](https://github.com/naohisas/KVS.git)
 * [Qt](https://www.qt.io)
+* [OpenCV3](https://opencv.org)
 
 ### Build
 Clone 4DStreetViewMovieViewer repository from Github as follows:
