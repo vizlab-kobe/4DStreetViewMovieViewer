@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file SphericalMapMovieRenderer.h
-* @brief SphericalMapMovieRendererクラスの定義
+* @file  SphericalMapMovieRenderer.h
+* @brief Definition of SphericalMapMovieRenderer class
 */
 /* ***************************************************************************/
 #pragma once
@@ -52,7 +52,7 @@ private:
     bool m_enable_loop_play; ///< LoopPlay ON/OFF
     bool m_enable_reverse_play; ///< ReversePlay ON/OFF
     int m_frame_index; ///< Frame Index
-    int m_current_frame_index; ///< 現在表示中のFrame Index
+    int m_current_frame_index; ///< Frame Index for current framebuffer
 
 public:
     SphericalMapMovieRenderer( const Type& type = SphericalMapMovieRenderer::Centering );

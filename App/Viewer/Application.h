@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file Application.h
-* @brief Applicationクラスのtypedef宣言
+* @file  Application.h
+* @brief Definition of Application class
 */
 /* ***************************************************************************/
 #pragma once

@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file Controller.h
-* @brief Controllerクラスの定義
+* @file  Controller.h
+* @brief Definition of Controller class
 */
 /* ***************************************************************************/
 #pragma once
@@ -20,7 +20,7 @@ namespace local
 {
 /*==========================================================================*/
 /**
-* @brief 表示画像を操作するControllerクラスの定義
+* @brief Controller class for operating the displaying image
 */
 /*==========================================================================*/
 class Controller : public QWidget
@@ -30,22 +30,22 @@ class Controller : public QWidget
 private:
     local::Model* m_model; ///< pointer to the model
     local::View* m_view; ///< pointer to the view
-    local::Event m_event; ///< Eventクラスのm_eventの宣言
-    local::Timer m_timer; ///< Timerクラスのm_timerの宣言
+    local::Event m_event; ///< Event
+    local::Timer m_timer; ///< Timer
 
     QPushButton *m_auto_button; ///< AutoPlay Button
-    QPushButton *m_flip_data_button; ///< 物理量データ表示切替Button
-    QSlider *m_slider; ///< 画像のFrameIndex Slider
-    QSpinBox *m_current_index_spbox; ///< 画像のFrameIndex SpinBox
-    QLabel *m_x_label; ///< カメラ位置Label "X"
-    QLabel *m_y_label; ///< カメラ位置Label "Y"
-    QLabel *m_z_label; ///< カメラ位置Label "Z"
-    QSlider *m_x_position; ///< カメラ位置 X方向Slider
-    QSlider *m_y_position; ///< カメラ位置 Y方向Slider
-    QSlider *m_z_position; ///< カメラ位置 Z方向Slidet
-    QSpinBox *m_x_pos_spbox; ///< カメラ位置 X方向SpinBox
-    QSpinBox *m_y_pos_spbox; ///< カメラ位置 Y方向SpinBox
-    QSpinBox *m_z_pos_spbox; ///< カメラ位置 Z方向SpinBox
+    QPushButton *m_flip_data_button; ///< Button for switching the displaying data
+    QSlider *m_slider; ///< Slider of frame index
+    QSpinBox *m_current_index_spbox; ///< SpinBox of frame index
+    QLabel *m_x_label; ///< Label of camera position X
+    QLabel *m_y_label; ///< Label of camera position Y
+    QLabel *m_z_label; ///< Label of camera position Z
+    QSlider *m_x_position; ///< Slider for changing camera direction X
+    QSlider *m_y_position; ///< Slider for changing camera direction Y
+    QSlider *m_z_position; ///< Slider for changing camera direction Z
+    QSpinBox *m_x_pos_spbox; ///< SpinBox for camera direction X
+    QSpinBox *m_y_pos_spbox; ///< SpinBox for camera direction Y
+    QSpinBox *m_z_pos_spbox; ///< SpinBox for camera direction Z
     QCheckBox *m_loop_box; ///< LoopPlay CheckBox
     QCheckBox *m_reverse_box; ///< ReversePlay CheckBox
     QCheckBox *m_orientation_axis_box; ///< OrientationAxis CheckBox

@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file Controller.cpp
-* @brief Controllerクラスの実装
+* @file  Controller.cpp
+* @brief Implementation of Controller class
 */
 /* ***************************************************************************/
 #include "Controller.h"
@@ -19,23 +19,23 @@ namespace
 
 /*==========================================================================*/
 /**
-* @brief タイマーイベントクラスの定義
+* @brief Timer event class
 */
 /*==========================================================================*/
 class TimerEvent : public kvs::TimerEventListener
 {
 private:
-    local::Model* m_model;
-    local::View* m_view;
-    local::Controller* m_controller;
+    local::Model* m_model; ///< pointer to the model
+    local::View* m_view; ///< pointer to the view
+    local::Controller* m_controller; ///< pointer to the controller
 
 public:
     /*==========================================================================*/
     /**
-    * @brief コンストラクタ
-    * @param model Modelへのポインタ
-    * @param view Viewへのポインタ
-    * @param controller Controllerへのポインタ
+    * @brief Constructs a new TimerEvent class.
+    * @param model [in] pointer to the model
+    * @param view [in] pointer to the view
+    * @param controller [in] pointer to the controller
     */
     /*==========================================================================*/
     TimerEvent( local::Model* model, local::View* view, local::Controller* controller ):
@@ -45,11 +45,11 @@ public:
 
     /*==========================================================================*/
     /**
-    * @brief タイマーイベントを実行する関数
-    * @param event TimerEventへのポインタ
-    * @details Controllerの更新
-    * @details スクリーンの再描画
-    * @details AutoPlay中でLoopPlayしていない時に最後（最初）のフレームまできたらAutoPlayをOFFにする
+    * @brief Executes time event process.
+    * @param event [in] pointer to the time event
+    * @details Updates the controller
+    * @details Redraw the screen
+    * @details Off the AutoPlay when reaching the current frame to the begin or last frame with "AutoPlay: enable, LoopPlay: disable"
     */
     /*==========================================================================*/
     void update( kvs::TimeEvent* event )
@@ -106,12 +106,12 @@ namespace local
 
 /*==========================================================================*/
 /**
-* @brief コンストラクタ
-* @param model Modelへのポインタ
-* @param view Viewへのポインタ
-* @details event handlerにイベントを追加
-* @details timer event listenerを追加
-* @details Controller上の各要素を作成する
+* @brief Constructs a new Controller class.
+* @param model [in] pointer to the model
+* @param view [in] pointer to the view
+* @details Add an event to the event handler
+* @details Add a timer event to the timer event listener
+* @details Create UI conmponents on the Controller
 */
 /*==========================================================================*/
 Controller::Controller( local::Model* model, local::View* view ):
@@ -136,8 +136,7 @@ Controller::Controller( local::Model* model, local::View* view ):
 
 /*==========================================================================*/
 /**
-* @brief AutoPlay Button, LoopPlay / ReversePlay CheckBoxを作成する関数
-* @brief 各要素に対してconnect関数でSIGNALとSLOTを接続する
+* @brief Creates AutoPlay Button, LoopPlay / ReversePlay CheckBox
 */
 /*==========================================================================*/
 void Controller::createAutoPlayButton()
@@ -163,7 +162,7 @@ void Controller::createAutoPlayButton()
 
 /*==========================================================================*/
 /**
-* @brief 物理量データ表示切替Buttonを作成し、SIGNALとSLOTを接続する関数
+* @brief Creates button for switching displaying data.
 */
 /*==========================================================================*/
 void Controller::createFlipDataButton()
@@ -194,8 +193,7 @@ void Controller::createFlipDataButton()
 
 /*==========================================================================*/
 /**
-* @brief 現在のFrameIndexを表示/操作するSliderとSpinBoxを作成する関数
-* @brief SliderとSpinBoxのそれぞれでconnect関数を用いてSIGNALとSLOTを接続する
+* @brief Creates slider and spinbox for displaying and operating the current frame index.
 */
 /*==========================================================================*/
 void Controller::createFrameIndex()
@@ -229,8 +227,7 @@ void Controller::createFrameIndex()
 
 /*==========================================================================*/
 /**
-* @brief 画像のカメラ位置を表示/操作するSlider,SpinBoxなどを作成する関数
-* @brief それぞれにおいてconnect関数を用いてSIGNALとSLOTを接続する
+* @brief Creates slider and spinbox for displaying and operating the camera position.
 */
 /*==========================================================================*/
 void Controller::createCameraPosition()
@@ -293,9 +290,8 @@ void Controller::createCameraPosition()
 
 /*==========================================================================*/
 /**
-* @brief OrientationAxis / Bird'sEyeViewMode / FocusMode CheckBoxを作成する関数
-* @brief それぞれにconnet関数を用いてSIGNALとSLOTを接続する
-* @note birdsEyeBoxStateChanged()とorientationAxisBoxStateChanged()の中身は未実装
+* @brief Creates OrientationAxis / Bird'sEyeViewMode / FocusMode CheckBox
+* @note Not implemented: birdsEyeBoxStateChanged(), orientationAxisBoxStateChanged()
 */
 /*==========================================================================*/
 void Controller::createModeBoxes()
@@ -387,8 +383,8 @@ void Controller::showWidget()
 
 /*==========================================================================*/
 /**
-* @brief 起動後設定ファイルが読み込まれた時にControllerにモデルの情報を反映させる関数
-* @note MainWindow::open()にて呼び出し
+* @brief Apply the model information to the controller after loading the configuration file.
+* @note Called at MainWindow::open()
 */
 /*==========================================================================*/
 void Controller::show()
@@ -431,7 +427,7 @@ void Controller::show()
 
 /*==========================================================================*/
 /**
-* @brief カメラ位置がSliderやSpinBoxなどから変更された場合に実行する関数
+* @brief A function called when the camera position is changed by using slider or spinbox.
 */
 /*==========================================================================*/
 void Controller::cameraPositionChanged()
@@ -468,7 +464,7 @@ void Controller::cameraPositionChanged()
 
 /*==========================================================================*/
 /**
-* @brief Controllerの表示を更新する関数
+* @brief Updates the displayed information of Controller.
 */
 /*==========================================================================*/
 void Controller::update()
@@ -496,7 +492,7 @@ void Controller::update()
 
 /*==========================================================================*/
 /**
-* @brief AutoPlay Buttonが押された場合に実行する関数
+* @brief A method called when the AutoPlay button is pressed.
 */
 /*==========================================================================*/
 void Controller::autoButtonPressed()
@@ -520,7 +516,7 @@ void Controller::autoButtonPressed()
 
 /*==========================================================================*/
 /**
-* @brief 物理量データ表示切替Buttonが押された場合に実行する関数
+* @brief A method called when the switching data button is pressed.
 */
 /*==========================================================================*/
 void Controller::flipDataButtonPressed()
@@ -549,8 +545,8 @@ void Controller::flipDataButtonPressed()
 
 /*==========================================================================*/
 /**
-* @brief FrameIndexが変更された(Slider, SpinBox)場合に実行される関数
-* @param value 変更するFrameIndexの値
+* @brief A method called when the frame index is changed by using slider or spinbox.
+* @param value [in] updated frame index
 */
 /*==========================================================================*/
 void Controller::currentIndexChanged( int value )
@@ -575,7 +571,7 @@ void Controller::currentIndexChanged( int value )
 
 /*==========================================================================*/
 /**
-* @brief Sliderでカメラ位置が変更された場合に実行される関数
+* @brief A method called when the camera position is changed by using slider.
 */
 /*==========================================================================*/
 void Controller::sliderCameraPositionChanged()
@@ -590,7 +586,7 @@ void Controller::sliderCameraPositionChanged()
 
 /*==========================================================================*/
 /**
-* @brief SpinBoxでカメラ位置が変更された場合に実行される関数
+* @brief A method called when the camera position is changed by using spinbox.
 */
 /*==========================================================================*/
 void Controller::spboxCameraPositionChanged()
@@ -605,7 +601,7 @@ void Controller::spboxCameraPositionChanged()
 
 /*==========================================================================*/
 /**
-* @brief LoopPlay CheckBoxの状態が変更された場合に実行する関数
+* @brief A method called when the LoopPlay CheckBox state is changed.
 */
 /*==========================================================================*/
 void Controller::loopBoxStateChanged()
@@ -628,7 +624,7 @@ void Controller::loopBoxStateChanged()
 
 /*==========================================================================*/
 /**
-* @brief ReversePlay CheckBoxの状態が変更された場合に実行する関数
+* @brief A method called when the ReversePlay CheckBox state is changed.
 */
 /*==========================================================================*/
 void Controller::reverseBoxStateChanged()
@@ -651,10 +647,9 @@ void Controller::reverseBoxStateChanged()
 
 /*==========================================================================*/
 /**
-* @brief OrientationAxis CheckBoxの状態が変更された場合に実行する関数
-* @note OrientationAxisは未実装。
-* @note 新しいウィンドウを作成し、そこにそれぞれX, Y, Z方向を示すAxisを表示する
-*       OrientationAxisはKVSにある。
+* @brief A method called when the OrientationAxis CheckBox state is changed.
+* @note OrientationAxis has not yet been implemented.
+* @note Create a new window, and then display an axis object. OrientationAxis is provided from KVS.
 */
 /*==========================================================================*/
 void Controller::orientationAxisBoxStateChanged()
@@ -666,9 +661,9 @@ void Controller::orientationAxisBoxStateChanged()
 
 /*==========================================================================*/
 /**
-* @brief Bird'sEyeViewMode CheckBoxの状態が変更された場合に実行する関数
-* @note Bird'sEyeViewModeは未実装。
-* @note 新しいウィンドウを作成し、そこにカメラ位置表示・視線方向の矢印を描画する
+* @brief A method called when the Bird'sEyeViewMode CheckBox state is changed.
+* @note Bird'sEyeViewMode has not yet been implemented.
+* @note Create a new window, and then display the camera position and direction as arrow.
 */
 /*==========================================================================*/
 void Controller::birdsEyeBoxStateChanged()
@@ -680,13 +675,13 @@ void Controller::birdsEyeBoxStateChanged()
 
 /*==========================================================================*/
 /**
-* @brief FocusMode CheckBoxの状態が変更された場合に実行する関数
-* @note CheckBox ON/OFF時に直ちに視線方向を変更する訳ではなく、
-*       この次にカメラ位置が移動した時に初めてFocusModeが実行されるので、不要かも？
+* @brief A method called when the FocusMode CheckBox state is changed.
 */
 /*==========================================================================*/
 void Controller::focusModeBoxStateChanged()
 {
+    // Note: CheckBox ON/OFF時に直ちに視線方向を変更する訳ではなく、
+    // この次にカメラ位置が移動した時に初めてFocusModeが実行されるので、不要かも？
     if( m_model->isSet() )
     {
     }

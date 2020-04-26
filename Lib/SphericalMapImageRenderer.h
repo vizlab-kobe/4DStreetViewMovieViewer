@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file  SphericalMapImageRenderer.h
+* @brief Definition of SphericalMapImageRendererr class
+*/
+/* ***************************************************************************/
 #pragma once
 #include <kvs/RendererBase>
 #include <kvs/Texture2D>

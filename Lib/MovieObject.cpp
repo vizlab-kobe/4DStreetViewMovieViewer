@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file MovieObject.cpp
-* @brief MovieObjectクラスの実装
+* @file  MovieObject.cpp
+* @brief Implementation of MovieObject class
 */
 /* ***************************************************************************/
 #include "MovieObject.h"

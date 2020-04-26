@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file SphericalMapMovieRenderer.cpp
-* @brief SphericalMapMovieRendererクラスの実装
+* @file  SphericalMapMovieRenderer.cpp
+* @brief Implementation of SphericalMapMovieRenderer class
 */
 /* ***************************************************************************/
 #include "SphericalMapMovieRenderer.h"
@@ -49,9 +49,9 @@ SphericalMapMovieRenderer::~SphericalMapMovieRenderer()
  *  @param  light [in] pointer to the light
  *  @details Create texture.
  *  @details Create shader program.
- *  @details OpenGL関連の設定
- *  @details ファイルから表示するfile/frameを取り出し、描画する画像を切出し/貼付けをする
- *  @details 次回表示する画像のframeIndex等の処理を行う
+ *  @details Setup OpenGL-related states
+ *  @details Grab a frame from the video object (movie data), crop the rendering image and render it onto the window
+ *  @details Update the frame index for next rendering
  */
 /*==========================================================================*/
 void SphericalMapMovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* camera, kvs::Light* light )

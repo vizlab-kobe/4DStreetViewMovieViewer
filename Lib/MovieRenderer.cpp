@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file  MovieRenderer.h
+* @brief Implementation of MovieRenderer class
+*/
+/* ***************************************************************************/
 #include "MovieRenderer.h"
 #include <kvs/Camera>
 #include <kvs/Message>

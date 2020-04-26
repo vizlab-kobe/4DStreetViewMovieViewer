@@ -1,3 +1,9 @@
+/* ***************************************************************************/
+/**
+* @file  SphericalMapImageRenderer.h
+* @brief Implementation of SphericalMapImageRendererr class
+*/
+/* ***************************************************************************/
 #include "SphericalMapImageRenderer.h"
 #include <kvs/Camera>
 #include <kvs/ImageObject>

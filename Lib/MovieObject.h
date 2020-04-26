@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file MovieObject.h
-* @brief MovieObjectクラスの定義
+* @file  MovieObject.h
+* @brief Definition of MovieObject class
 */
 /* ***************************************************************************/
 #pragma once
