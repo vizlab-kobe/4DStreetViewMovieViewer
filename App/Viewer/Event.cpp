@@ -1,7 +1,7 @@
 /* ***************************************************************************/
 /**
-* @file Event.cpp
-* @brief Eventクラスの実装
+* @file  Event.cpp
+* @brief Implementation of Event class
 */
 /* ***************************************************************************/
 #include "Event.h"
@@ -21,10 +21,10 @@ namespace local
 
 /*==========================================================================*/
 /**
-* @brief コンストラクタ
-* @param model Modelへのポインタ
-* @param view Viewへのポインタ
-* @param controller Controllerへのポインタ
+* @brief Constructs a new Event class.
+* @param model [in] pointer to the model
+* @param view [in] pointer to the view
+* @param controller [in] pointer to the controller
 */
 /*==========================================================================*/
 Event::Event( local::Model* model, local::View* view, local::Controller* controller ):
@@ -46,12 +46,13 @@ Event::Event( local::Model* model, local::View* view, local::Controller* control
 
 /*==========================================================================*/
 /**
-* @brief FocusMode時に実行する関数
-* @bug FocusMode実行時、挙動が少しおかしい気がする。要確認。
+* @brief A method called when the rendering mode is FocusMode.
 */
 /*==========================================================================*/
 void Event::focusMode()
 {
+    // Bug: FocusMode実行時、挙動が少しおかしい気がする。要確認。
+
     m_view->movieScreen().scene()->objectManager()->resetXform();
 
     const kvs::Vec3i dimensions = m_model->cameraArrayDimensions();
@@ -76,9 +77,9 @@ void Event::focusMode()
 
 /*==========================================================================*/
 /**
-* @brief マウスが押された時に実行する関数
-* @param event MouseEventへのポインタ
-* @details AutoPlayを一旦中断する
+* @brief A method called when the mouse is pressed.
+* @param event [in] pointer to the mouse event
+* @details Stop AutoPlay
 */
 /*==========================================================================*/
 void Event::mousePressEvent( kvs::MouseEvent* event )
@@ -94,8 +95,8 @@ void Event::mousePressEvent( kvs::MouseEvent* event )
 
 /*==========================================================================*/
 /**
-* @brief マウスがドラッグされた時に実行する関数
-* @param event MouseEventへのポインタ
+* @brief A method called when the mouse is dragged.
+* @param event [in] pointer to the mouse event
 */
 /*==========================================================================*/
 void Event::mouseMoveEvent( kvs::MouseEvent* event )
@@ -110,14 +111,15 @@ void Event::mouseMoveEvent( kvs::MouseEvent* event )
 
 /*==========================================================================*/
 /**
-* @brief マウスが離された時に実行する関数
-* @param event MouseEventへのポインタ
-* @details 一旦中断していたAutoPlayを再開する
-* @note Bird'sEyeView / OrientationAxis Modeは未実装
+* @brief A method called when the mouse is released.
+* @param event [in] pointer to the mouse event
+* @details Restart AutoPlay
 */
 /*==========================================================================*/
 void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 {
+    // Note: Bird'sEyeView / OrientationAxis Modeは未実装
+
     if ( m_model->isSet() )
     {
     typedef lib4dsv::SphericalMapMovieRenderer Renderer;
@@ -145,9 +147,9 @@ void Event::mouseReleaseEvent( kvs::MouseEvent* event )
 
 /*==========================================================================*/
 /**
-* @brief マウスがダブルクリックされた時に実行する関数
-* @param event MouseEventへのポインタ
-* @details 視線方向に一番近いカメラ位置へ移動する
+* @brief A method called when the mouse is double-clicked.
+* @param event [in] pointer to the mouse event
+* @details Move the camera position to a position placed near by the camera direction.
 */
 /*==========================================================================*/
 void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
@@ -187,27 +189,28 @@ void Event::mouseDoubleClickEvent( kvs::MouseEvent* event )
 
 /*==========================================================================*/
 /**
-* @brief キーが押された時に実行する関数
-* @param event KeyEventへのポインタ
-* @details → / ← / ↑ / ↓ / PageUp / PageDown ：カメラ位置をx,y,z方向に±1移動する
-* @details Space：AutoPlay ButtonのON/OFFを切替える
-* @details a：FrameIndexを一番最初に戻す ( FrameIndex = 0 )
-* @details b：（空）
-* @details c：物理量データ表示切替
-* @details e：FrameIndexを一番最後にする ( FrameIndex = 総フレーム数 - 1 )
-* @details i：（空）
-* @details l：LoopPlayのON/OFFを切替える
-* @details r：ReversePlayのON/OFFを切替える
-* @details s：スクリーンサイズを今より50大きくする
-* @details S：スクリーンサイズを今より50小さくする
-* @details t：FrameIndexを1つ前に進める
-* @details T：FrameIndexを1つ戻す
-* @bug s / Sキーのスクリーンサイズを変更する機能の中身は、GLUT版のままであり、
-*      Qt版としては変更していないため、動作がおかしい。要確認。
+* @brief A method called when the key is pressed.
+* @param event [in] pointer to the key event
+* @details arrow keys and PageUp / PageDown: Move the camra position to x, y, and z directions (+1,-1)
+* @details Space: Toggle AutoPlay mode (ON/OFF)
+* @details a: Move the FrameIndex to the begin frame ( FrameIndex = 0 )
+* @details b: ---
+* @details c: Switching the displaying data
+* @details e: Move the FrameIndex to the last frame ( FrameIndex = total-number-of-frames - 1 )
+* @details i: ---
+* @details l: Toggle LoopPlay (ON/OFF)
+* @details r: Toggle ReversePlay (ON/OFF)
+* @details s: Resize the screen size (+50)
+* @details S: Resize the screen size (-50)
+* @details t: Increment the FrameIndex (+1)
+* @details T: Decrement the FrameIndex (-1)
 */
 /*==========================================================================*/
 void Event::keyPressEvent( kvs::KeyEvent* event )
 {
+    // Bug: s / Sキーのスクリーンサイズを変更する機能の中身は、GLUT版のままであり、
+    //      Qt版としては変更していないため、動作がおかしい。要確認。
+
     if ( m_model->isSet() )
     {
     const kvs::Vec3i& pos = m_model->cameraPosition();
@@ -419,7 +422,7 @@ void Event::keyPressEvent( kvs::KeyEvent* event )
 
 /*==========================================================================*/
 /**
-* @brief Resize Eventが発生した時に実行する関数
+* @brief A method called when the Resize Event is occured.
 * @param width スクリーンの幅
 * @param height スクリーンの高さ
 * @bug ここも上記s / Sキーと同様、GLUT版からQt版へ移行時未修正のため、要見直し。
