@@ -121,7 +121,11 @@ Controller::Controller( local::Model* model, local::View* view ):
     m_timer( ::FrameRate2MSec( model->frameRate() ) )
 {
     m_view->movieScreen().addEvent( &(m_event) ); // EventHandlerにm_eventを追加
-    m_view->movieScreen().addTimerEvent( new ::TimerEvent( model, view, this ), &m_timer ); // TimerEventListenerに追加
+//    m_view->movieScreen().addTimerEvent( new ::TimerEvent( model, view, this ), &m_timer ); // TimerEventListenerに追加
+
+    auto* timer_event = new ::TimerEvent( model, view, this );
+    timer_event->setTimerInterval( ::FrameRate2MSec( model->frameRate() ) );
+    m_view->movieScreen().addEvent( timer_event ); // TimerEventListenerに追加
 
     // 各要素を作成
     this->createAutoPlayButton();
@@ -168,7 +172,8 @@ void Controller::createAutoPlayButton()
 void Controller::createFlipDataButton()
 {
     m_flip_data_button = new QPushButton( " " );
-    if ( m_model->isDirectory() )
+//    if ( m_model->isDirectory() )
+    if ( m_model->isDirectory() && m_model->numberOfDirectories() > 0 )
     {
         std::string path = m_model->directoryPath( m_model->flipData() );
         kvs::Directory directory( path );
