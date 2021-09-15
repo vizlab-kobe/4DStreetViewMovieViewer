@@ -82,6 +82,7 @@ KVS_SUPPORT_QT        = 1
 KVS_SUPPORT_PYTHON    = 0
 KVS_SUPPORT_EGL       = 0
 KVS_SUPPORT_OSMESA    = 0```
+
 　7. QtおよびKVSのための環境変数を、.bashrcに設定する。
 　　`$vim ~/.bashrc`
 　　　→　無ければ新しく作成し、以下の内容を入力して保存する。
