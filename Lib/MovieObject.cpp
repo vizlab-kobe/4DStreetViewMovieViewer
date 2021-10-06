@@ -16,7 +16,8 @@ namespace lib4dsv
  */
 /*===========================================================================*/
 MovieObject::MovieObject():
-    m_device_id( CV_CAP_ANY ),
+//    m_device_id( CV_CAP_ANY ),
+    m_device_id( 0 ),
     m_device( new kvs::opencv::CaptureDevice() ),
     m_type( lib4dsv::MovieObject::Color24 )
 {
@@ -29,7 +30,8 @@ MovieObject::MovieObject():
  */
 /*===========================================================================*/
 MovieObject::MovieObject( const std::string& filename ):
-    m_device_id( CV_CAP_ANY ),
+//    m_device_id( CV_CAP_ANY ),
+    m_device_id( 0 ),
     m_device( new kvs::opencv::CaptureDevice() )
 {
     if ( !this->initialize( filename ) )
@@ -81,7 +83,7 @@ const bool MovieObject::initialize( const std::string& filename )
         return false;
     }
 
-    const IplImage* frame = m_device->queryFrame();
+    const auto* frame = m_device->queryFrame();
     if ( !frame )
     {
         kvsMessageError("Cannot query a new frame from the capture device.");
@@ -93,7 +95,11 @@ const bool MovieObject::initialize( const std::string& filename )
     m_nchannels = static_cast<size_t>( frame->nChannels );
 
     const int depth = frame->depth;
+#if ( CV_MAJOR_VERSION > 3 )
+    if ( depth != CV_8U )
+#else
     if ( depth != IPL_DEPTH_8U )
+#endif
     {
         kvsMessageError("The depth of the grabbed image isn't 'IPL_DEPTH_8U'.");
         return false;

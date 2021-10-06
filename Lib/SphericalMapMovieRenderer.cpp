@@ -89,10 +89,10 @@ void SphericalMapMovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* came
         kvs::ProgramObject::Binder shader( m_shader_program ); // 描画に使用するProgramObject(m_shader_program)を設定
         kvs::Texture::Binder unit( m_texture, 0 ); // 使用するテクスチャユニットをm_textureに関連づける
 
-        const IplImage* frame = video->device().queryFrame(); // cvQueryFrame：fileから1つのフレームを取り出す
-        const int width = frame->width; // フレームの幅
-        const int height = frame->height; // フレームの高さ
-        const char* data = frame->imageData; // BGRBGRBGR... ：画像データへのポインタ
+        const auto* frame = video->device().queryFrame(); // cvQueryFrame：fileから1つのフレームを取り出す
+        const auto width = frame->width; // フレームの幅
+        const auto height = frame->height; // フレームの高さ
+        const auto* data = frame->imageData; // BGRBGRBGR... ：画像データへのポインタ
         m_texture.load( width, height, data ); // GPUへテクスチャデータをダウンロードする
 
         m_shader_program.setUniform( "spherical_map", 0 ); // "spherical_map"というデータをテクスチャID:0としてシェーダに渡す

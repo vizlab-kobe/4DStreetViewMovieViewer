@@ -58,7 +58,7 @@ void MovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* camera, kvs::Lig
 //        video->device().setNextFrameIndex( video->device().numberOfFrames() - 1 );
     }
 
-    const IplImage* frame = video->device().queryFrame();
+    const auto* frame = video->device().queryFrame();
 //    if ( !frame ) return;
 
     kvs::OpenGL::WithPushedAttrib p( GL_ALL_ATTRIB_BITS );
@@ -81,9 +81,9 @@ void MovieRenderer::exec( kvs::ObjectBase* object, kvs::Camera* camera, kvs::Lig
     default: break;
     }
 
-    const int width = frame->width;
-    const int height = frame->height;
-    const char* data = frame->imageData; // BGRBGRBGR...
+    const auto width = frame->width;
+    const auto height = frame->height;
+    const auto* data = frame->imageData; // BGRBGRBGR...
     m_texture.bind();
     m_texture.load( width, height, data );
 
@@ -151,7 +151,7 @@ void MovieRenderer::create_texture( const lib4dsv::MovieObject* movie )
         kvsMessageError("Unknown pixel color type.");
     }
 
-    const IplImage* frame = movie->device().queryFrame();
+    const auto* frame = movie->device().queryFrame();
     m_texture.create( frame->width, frame->height );
 }
 
