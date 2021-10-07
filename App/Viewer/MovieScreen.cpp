@@ -42,6 +42,7 @@ void MovieScreen::setup( local::Model* model )
         typedef lib4dsv::SphericalMapMovieRenderer Renderer;
 
         Object* object = model->object(); // モデルのオブジェクトを取得
+        if ( !object ) { return; }
         object->setName("Object");
 
         Renderer* renderer = new Renderer(); // 登録するレンダラー
@@ -61,6 +62,8 @@ void MovieScreen::setup( local::Model* model )
 /*==========================================================================*/
 void MovieScreen::update( local::Model* model )
 {
+    if ( !scene()->object("Object") ) { return; }
+
     typedef lib4dsv::MovieObject Object;
     const int index = static_cast<Object*>( scene()->object("Object") )->device().nextFrameIndex();
 

@@ -40,8 +40,8 @@ void Model::load()
     std::string dirname = m_input->dirname();
 
     kvs::Directory data_dir( dirname ); // inputで得たディレクトリ名からディレクトリクラスのdata_dirを定義
-    if ( !data_dir.exists() ) { throw; }
-    if ( !data_dir.isDirectory() ) { throw; }
+    if ( !data_dir.exists() ) { return; }
+    if ( !data_dir.isDirectory() ) { return; }
 
     /*------------------------------------------*/
     /* dirname以下のファイル構造を調べる        */
@@ -52,7 +52,7 @@ void Model::load()
     kvs::FileList all_files;
 
     DIR* dir = opendir( data_dir.path().c_str() ); // ディレクトリをopenする
-    if ( !dir ) { throw; }
+    if ( !dir ) { return; }
 
     struct dirent* ent;
     while ( ( ent = readdir( dir ) ) != NULL )
@@ -99,8 +99,8 @@ void Model::load()
         for ( size_t i = 0; i < m_directories.size(); i++ )
         {
                 kvs::Directory type_dir( m_directories[i] );
-                if ( !type_dir.exists() ) { throw; }
-                if ( !type_dir.isDirectory() ) { throw; }
+                if ( !type_dir.exists() ) { return; }
+                if ( !type_dir.isDirectory() ) { return; }
 
                 const std::string ext = m_input->extension();
                 const kvs::FileList& files = type_dir.fileList( true );
@@ -193,6 +193,8 @@ const  std::string Model::filename() const
 /*==========================================================================*/
 Model::Object* Model::object() const
 {
+    if ( !m_object_pointer.get() ) { return nullptr; }
+
     Object* object = new Object();
     object->shallowCopy( *( m_object_pointer.get() ) ); // オブジェクトのポインタをコピーする
     return object;
@@ -227,14 +229,17 @@ void Model::setup_object( const size_t index )
     if ( m_is_directory )
     {
         kvs::FileList file_list( m_file_lists[ m_flip_data ]);
+        if ( file_list.size() <= index ) { return; }
         file = file_list[ index ];
     }
     else if ( m_is_file )
     {
+        if ( m_files.size() <= index ) { return; }
         file = m_files[ index ];
     }
-    if ( !file.exists() ) { throw; }
-    if ( !file.isFile() ) { throw; }
+
+    if ( !file.exists() ) { return; }
+    if ( !file.isFile() ) { return; }
 
     const std::string filename = file.filePath();
     m_object_pointer = ObjectPointer( new Object( filename ) );
