@@ -3,18 +3,30 @@
 ＜準備編＞
 
 1. Gitが入っているかどうかを確認する。
+
 　　$ git --version
+  
  　　　→　バージョン情報が出たら、すでに入っている。
+    
 　　　 →　ポップアップなどが表示されるなど、入っていなければ、Xcodeをインストールする。
+    
 　2. Homebrewが入っているかどうかを確認する。
+
 　　$brew list
+  
 　　　→　リストが表示されれば、すでにインストールされている。
+   
 　　　　　下記コマンドを実行してhomebrewとgitの最新版をインストールする。
+     
 　　　　　　```$brew update
 　　　　　　$brew install git```
+      
 　　　→　『-bash:brew:command not found』が返ってきた場合は、Homebrewをインストールする。
+   
 　　　　　下記をターミナル上で実行する。
+     
 　　　　　　```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"```
+      
 　3. OpenCVが入っているかどうかを確認する。
 　　3.1 OpenCVのバージョン３が入っているかどうかを確認する。
 　　　　`$brew info opencv@3`
