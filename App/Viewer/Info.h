@@ -10,6 +10,7 @@
 #include <QWidget>
 #include <QTabWidget>
 #include <QLayout>
+#include <QLabel>
 
 namespace local
 {

@@ -7,6 +7,8 @@
 #include "MainWindow.h"
 #include <QDockWidget>
 #include <QSizePolicy>
+#include <QFileDialog>
+#include <QMenuBar>
 
 namespace
 {
