@@ -21,5 +21,8 @@
    　 `brew install opencv`
 4.  Qtをインストール、設定を行う  
    4-1. Qtを必要に応じてインストール  
-      `brew info qt`
+         `brew info qt`  
+         → ファイル情報や『Poured from bottle on 2020-03-23 at 09:56:53』などが表示されれば既にインストールされている。 
+         → 『Not installed』などと表示されていればこれからインストールを行う。  
+               `brew install qt`
 5.  
