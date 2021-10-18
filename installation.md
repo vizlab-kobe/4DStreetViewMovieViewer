@@ -1,32 +1,32 @@
 ◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
 ＜準備編＞
 1. Gitを必要に応じてインストールする  
-   `git --version`  
+   `$git --version`  
      → バージョン情報が表示されると、既にインストールされている  
      → 入っていない場合、Xcodeをインストールする
 2. Homebrewを必要に応じてインストールする  
-   `brew list`  
+   `$brew list`  
     → リストが表示されていれば既にインストールされている  
     　 下記コマンドを実行して、homebrewとgitの最新版のインストールを行う  
-    　 `brew update`  
-    　 `brew install git`  
+    　 `$brew update`  
+    　 `$brew install git`  
     → 『-bash:brew:command not found』が返ってきた場合は、Homebrewをインストールする。  
     　 下記をターミナル上で実行する。  
-    　 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`  
+    　 `$/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`  
 3.  OpenCVを必要に応じてインストールする  
    バージョン4でないとffmpegを使うことができない  
-   `brew info opencv`  
+   `$brew info opencv`  
    → ファイル情報や『Poured from bottle on 2020-03-23 at 09:56:53』などが表示されれば既にインストールされている。  
    → 『Not installed』などと表示されていればこれからインストールを行う。  
-   　 `brew install opencv`
+   　 `$brew install opencv`
 4.  Qtをインストール、設定を行う  
    4-1. Qtを必要に応じてインストール  
-         `brew info qt`  
+         `$brew info qt`  
          → ファイル情報や『Poured from bottle on 2020-03-23 at 09:56:53』などが表示されれば既にインストールされている。 
          → 『Not installed』などと表示されていればこれからインストールを行う。  
-               `brew install qt`  
+               `$brew install qt`  
    4-2. Qtの設定を行う  
-         ファイル`/usr/local/Cellar/qt/5.14.0/mkspecs/common/macx.conf`をテキストエディタで開く  
+         ファイル`$/usr/local/Cellar/qt/5.14.0/mkspecs/common/macx.conf`をテキストエディタで開く  
          QMAKE_MACOSX_DEPLOYMENT_TARGETをMacOSのバージョンに設定する  
 
 〈インストール手順〉
@@ -122,4 +122,4 @@ mp4
 このデータは、それぞれｘ方向４、ｙ方向４、z方向４のカメラ視点を持つデータです。
   ```
 2. Viewerを起動する  
-　　`$ ./run.sh`  
+　　`$./run.sh`  
