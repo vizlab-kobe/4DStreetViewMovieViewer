@@ -45,3 +45,25 @@
 　　　→　GitHubディレクトリの下にKVSディレクトリが新しく作成され、その下にソースがcloneされる。  
 5. 4で作成されたKVSディレクトリへ移動。  
 　　`$cd KVS`  
+6. kvs.confの内容を一部書き換える
+　　
+```
+#=============================================================================                                  
+#  KVS enable/support flags
+#  $Id: kvs.conf 1525 2013-04-11 02:58:08Z naohisa.sakamoto@gmail.com $
+#=============================================================================
+KVS_ENABLE_OPENGL     = 1
+KVS_ENABLE_GLU        = 1
+KVS_ENABLE_GLEW       = 0
+KVS_ENABLE_OPENMP     = 0
+KVS_ENABLE_DEPRECATED = 0
+
+KVS_SUPPORT_CUDA      = 0
+KVS_SUPPORT_GLUT      = 1
+KVS_SUPPORT_OPENCV    = 1
+KVS_SUPPORT_QT        = 1
+KVS_SUPPORT_PYTHON    = 0
+KVS_SUPPORT_EGL       = 0
+KVS_SUPPORT_OSMESA    = 0
+```
+7. 
