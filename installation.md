@@ -66,4 +66,38 @@ KVS_SUPPORT_PYTHON    = 0
 KVS_SUPPORT_EGL       = 0
 KVS_SUPPORT_OSMESA    = 0
 ```
-7. 
+7. QtおよびKVSの環境変数を~/.zshrcに設定する  
+```
+export KVS_DIR=~/local/kvs
+export PATH=$PATH:$KVS_DIR/bin                                                                                  
+export KVS_CPP=g++
+export PKG_CONFIG_PATH=/usr/local/opt/opencv@3/lib/pkgconfig:$PKG_CONFIG_PATH
+
+export QMAKESPEC=macx-clang
+export QTDIR=/usr/local/opt/qt
+export PATH=$QTDIR/bin:$PATH
+export DYLD_LIBRARY_PATH=$QTDIR/lib:$DYLD_LIBRARY_PATH
+export PATH=/usr/local/sbin:$PATH
+```
+8. 7で設定した環境変数を反映させる  
+　　`$source ~/.zshrc`  
+9. KVSをコンパイル・インストールする  
+　　9-1. KVSをコンパイル　`$make`  
+　　9-2. KVSをインストール　`$make install`  
+　　　　→ 2.で設定したloca/KVSにインストールされる  
+10.  1で作成したGitHubディレクトリへ移動し、4DStreetViewMovieViewerをgithubからcloneする。
+　　10.1 GitHubディレクトリへ移動　　　　　　$cd ../　もしくは　$cd ~/GitHub
+　　10.2 4DStreetViewMovieViewerをcloneする　$git clone https://github.com/keikoootsuji/4DStreetViewMovieViewer.git
+　　　　　→　GitHubディレクトリの下に4DStreetViewMovieViewerディレクトリが新しく作成され、その下にソースがcloneされる。
+ 11. 4DStreetViewMovieViewerをコンパイルする。
+　　11.1 Libのコンパイル
+　　　11.1-1 Libディレクトリへ移動　`$cd 4DStreetViewMovieViewer/Lib`  
+　　　11.1-2 コンパイルする　　　 　`$./kvsmake.py`  
+　　11.2 Viewerのコンパイル
+　　　11.2-1 App/Viewerへ移動　　`$cd ../App/Viewer`  
+　　　11.2-2 proファイルの作成　　`$kvsmake -Q`  
+　　　　　　　→ Viewer.proが作成される
+　　　11.2-3 Makefileの作成　　　   `$qmake`  
+　　　　　　　→ Makefileが作成される
+　　　11.2-4 コンパイルする　　  　`$make`
+　　　　　　　→  Viewer.appが作成される
