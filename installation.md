@@ -25,4 +25,5 @@
          → ファイル情報や『Poured from bottle on 2020-03-23 at 09:56:53』などが表示されれば既にインストールされている。 
          → 『Not installed』などと表示されていればこれからインストールを行う。  
                `brew install qt`
+   4-2. Qtの設定を行う
 5.  
