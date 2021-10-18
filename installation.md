@@ -86,18 +86,18 @@ export PATH=/usr/local/sbin:$PATH
 　　9-2. KVSをインストール　`$make install`  
 　　　　→ 2.で設定したloca/KVSにインストールされる  
 10.  1で作成したGitHubディレクトリへ移動し、4DStreetViewMovieViewerをgithubからcloneする。
-　　10.1 GitHubディレクトリへ移動　　　　　　$cd ../　もしくは　$cd ~/GitHub
-　　10.2 4DStreetViewMovieViewerをcloneする　$git clone https://github.com/keikoootsuji/4DStreetViewMovieViewer.git
-　　　　　→　GitHubディレクトリの下に4DStreetViewMovieViewerディレクトリが新しく作成され、その下にソースがcloneされる。
- 11. 4DStreetViewMovieViewerをコンパイルする。
-　　11.1 Libのコンパイル
+　　10.1 GitHubディレクトリへ移動　　　　　　`$cd ../`　もしくは　`$cd ~/GitHub`  
+　　10.2 4DStreetViewMovieViewerをcloneする　`$git clone https://github.com/keikoootsuji/4DStreetViewMovieViewer.git`  
+　　　　　→　GitHubディレクトリの下に4DStreetViewMovieViewerディレクトリが新しく作成され、その下にソースがcloneされる。  
+ 11. 4DStreetViewMovieViewerをコンパイルする。  
+　　11.1 Libのコンパイル  
 　　　11.1-1 Libディレクトリへ移動　`$cd 4DStreetViewMovieViewer/Lib`  
 　　　11.1-2 コンパイルする　　　 　`$./kvsmake.py`  
-　　11.2 Viewerのコンパイル
+　　11.2 Viewerのコンパイル  
 　　　11.2-1 App/Viewerへ移動　　`$cd ../App/Viewer`  
 　　　11.2-2 proファイルの作成　　`$kvsmake -Q`  
-　　　　　　　→ Viewer.proが作成される
+　　　　　　　→ Viewer.proが作成される  
 　　　11.2-3 Makefileの作成　　　   `$qmake`  
-　　　　　　　→ Makefileが作成される
-　　　11.2-4 コンパイルする　　  　`$make`
-　　　　　　　→  Viewer.appが作成される
+　　　　　　　→ Makefileが作成される  
+　　　11.2-4 コンパイルする　　  　`$make`  
+　　　　　　　→  Viewer.appが作成される  
