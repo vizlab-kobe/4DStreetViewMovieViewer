@@ -1,3 +1,6 @@
+# A simple installation manual for 4DStrretViewMovieViewer.
+English version will be uploaded soon.
+
 ◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
 ＜準備編＞
 1. Gitを必要に応じてインストールする  
