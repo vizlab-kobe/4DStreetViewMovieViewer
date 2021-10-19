@@ -90,7 +90,7 @@ export PATH=/usr/local/sbin:$PATH
 　　　　→ 2.で設定したloca/KVSにインストールされる  
 10.  1で作成したGitHubディレクトリへ移動し、4DStreetViewMovieViewerをgithubからcloneする。  
 　　10.1 GitHubディレクトリへ移動　　　　　　`$cd ../`　もしくは　`$cd ~/GitHub`  
-　　10.2 4DStreetViewMovieViewerをcloneする　`$git clone https://github.com/keikoootsuji/4DStreetViewMovieViewer.git`  
+　　10.2 4DStreetViewMovieViewerをcloneする　`$git clone https://github.com/vizlab-kobe/4DStreetViewMovieViewer.git`  
 　　　　　→　GitHubディレクトリの下に4DStreetViewMovieViewerディレクトリが新しく作成され、その下にソースがcloneされる。  
  11. 4DStreetViewMovieViewerをコンパイルする。  
 　　11.1 Libのコンパイル  
