@@ -1,5 +1,5 @@
-#◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
-##＜準備編＞
+◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
+＜準備編＞
 1. Gitを必要に応じてインストールする  
    `$git --version`  
      → バージョン情報が表示されると、既にインストールされている  
@@ -29,7 +29,7 @@
          ファイル`$/usr/local/Cellar/qt/5.14.0/mkspecs/common/macx.conf`をテキストエディタで開く  
          QMAKE_MACOSX_DEPLOYMENT_TARGETをMacOSのバージョンに設定する  
 
-##〈4DStreetViewerのインストール手順〉
+〈4DStreetViewerのインストール手順〉
 1. Homeディレクトリの下にGitHub用のディレクトリを作成する。  
 　　`$mkdir GitHub`  
 2. KVSのインストール先のディレクトリを作成する。  
@@ -123,4 +123,4 @@ mp4
   ```
 2. Viewerを起動する  
 　　`$./run.sh`  
-3. ヘッダーのFILEボタンから適用する.4dsvファイルを選択する
+3. メニューバーのFILEボタンから適用する.4dsvファイルを選択する
