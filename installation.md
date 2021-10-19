@@ -1,5 +1,5 @@
-◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
-＜準備編＞
+#◆◆ 4DStreetViewMovieViewerの設定手順 ◆◆（指示がない限りターミナルで行う）  
+##＜準備編＞
 1. Gitを必要に応じてインストールする  
    `$git --version`  
      → バージョン情報が表示されると、既にインストールされている  
@@ -13,11 +13,11 @@
     → 『-bash:brew:command not found』が返ってきた場合は、Homebrewをインストールする。  
     　 下記をターミナル上で実行する。  
     　 `$/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`  
-3.  OpenCVを必要に応じてインストールする  
+3.  OpenCVのversion4がインストールされていない場合、インストールする  
    バージョン4でないとffmpegを使うことができない  
    `$brew info opencv`  
-   → ファイル情報や『Poured from bottle on 2020-03-23 at 09:56:53』などが表示されれば既にインストールされている。  
-   → 『Not installed』などと表示されていればこれからインストールを行う。  
+   → 『opencv: stable 4.5.3 (bottled) 』などと表示されれば既にversion4がインストールされている。  
+   → それ以外であれば以下でインストールを行う。  
    　 `$brew install opencv`
 4.  Qtをインストール、設定を行う  
    4-1. Qtを必要に応じてインストール  
@@ -29,7 +29,7 @@
          ファイル`$/usr/local/Cellar/qt/5.14.0/mkspecs/common/macx.conf`をテキストエディタで開く  
          QMAKE_MACOSX_DEPLOYMENT_TARGETをMacOSのバージョンに設定する  
 
-〈インストール手順〉
+##〈4DStreetViewerのインストール手順〉
 1. Homeディレクトリの下にGitHub用のディレクトリを作成する。  
 　　`$mkdir GitHub`  
 2. KVSのインストール先のディレクトリを作成する。  
