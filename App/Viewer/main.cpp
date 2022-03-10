@@ -6,6 +6,8 @@
 /****************************************************************************/
 #include <kvs/ShaderSource>
 #include "Program.h"
+#include <iostream>
+
 
 /*==========================================================================*/
 /**
@@ -18,6 +20,6 @@
 int main( int argc, char** argv )
 {
     kvs::ShaderSource::AddSearchPath("../../Lib"); /** シェーダーのソースコードのパスを追加 */
-    local::Program program;                        /** programオブジェクトの生成 */
-    return program.start( argc, argv );
+    local::Program program( argc, argv );          /** programオブジェクトの生成 */
+    return program.run();
 }

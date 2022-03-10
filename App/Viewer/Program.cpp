@@ -36,10 +36,14 @@ local::Logger Program::m_logger;
 /*==========================================================================*/
 /**
 * @brief コンストラクタ
+* @param argc 引数の数
+* @param argv 引数の値の配列
 * @details 通常の方法で終了する際に呼ばれる関数の登録
 */
 /*==========================================================================*/
-Program::Program()
+Program::Program( int argc, char** argv ):
+    m_argc( argc ),
+    m_argv( argv )
 {
     atexit( ::Exit );
 }
@@ -47,16 +51,14 @@ Program::Program()
 /*==========================================================================*/
 /**
 * @brief プログラムの実行
-* @param argc 引数の数
-* @param argv 引数の値の配列
 * @return リターンコード
 * @details 4DStreetViewMovieViewerの各オブジェクトの生成
 * @details MainWindowウィジェットの設定・表示
 */
 /*==========================================================================*/
-int Program::exec( int argc, char** argv )
+int Program::exec()
 {
-    local::Application app( argc, argv );
+    local::Application app( m_argc, m_argv );
 
     local::Input input;
     local::Model model( &input );
