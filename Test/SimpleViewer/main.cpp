@@ -42,7 +42,7 @@ int main( int argc, char** argv )
         kvs::Directory dir( dirname );
         if ( !dir.exists() )
         {
-            std::cerr << "Not found " << filename << std::endl;
+            std::cerr << "Not found " << dirname << std::endl;
             return false;
         }
 
@@ -121,7 +121,8 @@ int main( int argc, char** argv )
     slider.sliderReleased( [&]()
     {
         auto index = kvs::Math::Round( slider.value() );
-        object->jumpToFrame( index );
+        auto* o = Object::DownCast( screen.scene()->object( "Object" ) );
+        o->jumpToFrame( index );
         renderer->play();
         screen.redraw();
         renderer->pause();
@@ -199,6 +200,6 @@ int main( int argc, char** argv )
 
     screen.registerObject( object, renderer );
     screen.show();
-    
+
     return app.run();
 }
