@@ -10,6 +10,7 @@
 #include <kvs/FileList>
 #include <kvs/ffmpeg/MovieObject>
 #include <kvs/ffmpeg/SphericalMovieRenderer>
+#include <kvs/CheckBox>
 
 
 int main( int argc, char** argv )
@@ -19,6 +20,7 @@ int main( int argc, char** argv )
     kvs::Vec3i position{0,0,0};
     float frame_rate{0};
     kvs::FileList files{};
+    bool m_loop = false; // added
 
     // Functions
     auto Read = [&] ( const std::string filename )
@@ -87,6 +89,15 @@ int main( int argc, char** argv )
     object->setName( "Object" );
     screen.create();
 
+    kvs::CheckBox loop( &screen );
+    loop.setCaption( "Loop play" );
+    loop.anchorToTopRight();
+    loop.setFont( { kvs::Font::Sans, 18, kvs::RGBColor::White() } );
+    loop.setMargin( 15 );
+    loop.setState( m_loop );
+    loop.stateChanged( [&] () { m_loop = loop.state(); } );
+    loop.show();
+
     kvs::Label label( &screen );
     label.anchorToTopLeft();
     label.setFont( { kvs::Font::Sans, 18, kvs::RGBColor::White() } );
@@ -140,6 +151,7 @@ int main( int argc, char** argv )
             o->setName( "Object" );
             o->jumpToFrame( index );
             screen.scene()->replaceObject( "Object", o );
+            object = o;
         };
 
         switch ( e->key() )
@@ -156,6 +168,7 @@ int main( int argc, char** argv )
             position += kvs::Vec3i{ +1, 0, 0 };
             position.x() = kvs::Math::Min( position.x(), dimension.x() - 1 );
             ReplaceObject();
+            std::cout << "change the position" << std::endl;
             break;
         }
         case kvs::Key::Up:
@@ -168,10 +181,39 @@ int main( int argc, char** argv )
         case kvs::Key::Down:
         {
             position += kvs::Vec3i{ 0, -1, 0 };
-            position.y() = kvs::Math::Max( position.x(), 0 );
+            position.y() = kvs::Math::Max( position.y(), 0 );
             ReplaceObject();
             break;
         }
+
+        // addition with S.R  on 4/7 [*1]
+        // the case for movement in direction of z-axis.
+        case kvs::Key::Comma:
+        {
+            position += kvs::Vec3i{ 0, 0, -1 };
+            position.z() =kvs::Math::Max( position.z(), 0 );
+            ReplaceObject();
+            break;
+        }
+        case kvs::Key::Period:
+        {
+            position += kvs::Vec3i{ 0, 0, +1 };
+            position.z() = kvs::Math::Min( position.z(), dimension.z() - 1 );
+            ReplaceObject();
+            break;
+        }
+        //  追加機能： ループ再生
+        case kvs::Key::l:
+        {
+            m_loop = !m_loop;
+            loop.setState( m_loop );
+            break;
+        }
+
+        //  追加するべき機能
+        //  ・逆再生
+
+        // up to here (*1)
 
         case kvs::Key::s: { renderer->stop(); break; }
         case kvs::Key::Space:
@@ -186,7 +228,19 @@ int main( int argc, char** argv )
     } );
     event.timerEvent( [&] ( kvs::TimeEvent* e )
     {
+
+
+
         if ( !object->isLastFrame() ) { screen.redraw(); kvs::OpenGL::Flush(); }
+        else
+        {
+            if ( m_loop )
+            {
+                object->jumpToFrame( 0 );
+                renderer->play();
+            }
+        }
+
         if ( renderer->isPlaying() )
         {
             auto index = Object::DownCast( screen.scene()->object( "Object" ) )->currentFrameIndex();
@@ -200,6 +254,7 @@ int main( int argc, char** argv )
 
     screen.registerObject( object, renderer );
     screen.show();
+    std::cout << object->currentFrameIndex() << std::endl;
 
     return app.run();
 }
