@@ -142,6 +142,10 @@ int main( int argc, char** argv )
 
     const int interval = 1000 / frame_rate; // msec
     kvs::EventListener event;
+    event.mousePressEvent( [&] ( kvs::MouseEvent* e )
+    {
+        if ( renderer->isPlaying() ) { renderer->pause(); }
+    } );
     event.keyPressEvent( [&] ( kvs::KeyEvent* e )
     {
         auto ReplaceObject = [&] ()
@@ -254,7 +258,7 @@ int main( int argc, char** argv )
 
     screen.registerObject( object, renderer );
     screen.show();
-    std::cout << object->currentFrameIndex() << std::endl;
+//    std::cout << object->currentFrameIndex() << std::endl;
 
     return app.run();
 }
