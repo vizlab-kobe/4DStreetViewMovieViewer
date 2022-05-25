@@ -124,6 +124,7 @@ int main( int argc, char** argv )
         auto frame = kvs::String::From( index, 6, '0' );
         slider.setValue( index );
         slider.setCaption( "Frame: " + frame );
+        renderer->pause();
     } );
     slider.sliderPressed( [&]()
     {
@@ -134,8 +135,8 @@ int main( int argc, char** argv )
         auto index = kvs::Math::Round( slider.value() );
         auto* o = Object::DownCast( screen.scene()->object( "Object" ) );
         o->jumpToFrame( index );
-        renderer->play();
-        screen.redraw();
+//        renderer->play();
+//        screen.redraw();
         renderer->pause();
     } );
     slider.show();
@@ -251,7 +252,7 @@ int main( int argc, char** argv )
             auto frame = kvs::String::From( index, 6, '0' );
             slider.setValue( index );
             slider.setCaption( "Frame: " + frame );
-            screen.redraw();
+//            screen.redraw();
         }
     }, interval );
     screen.addEvent( &event );
