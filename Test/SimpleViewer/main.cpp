@@ -20,7 +20,7 @@ int main( int argc, char** argv )
     kvs::Vec3i position{0,0,0};
     float frame_rate{0};
     kvs::FileList files{};
-    bool m_loop = false; // added
+    bool m_loop = false;
 
     // Functions
     auto Read = [&] ( const std::string filename )
@@ -234,11 +234,15 @@ int main( int argc, char** argv )
     event.timerEvent( [&] ( kvs::TimeEvent* e )
     {
 
-
-
-        if ( !object->isLastFrame() ) { screen.redraw(); kvs::OpenGL::Flush(); }
+        std::cout << "timestep: " << object->currentFrameIndex() << std::endl;    
+        if ( !object->isLastFrame() ) { 
+            std::cout << " yes" << std::endl;
+            screen.redraw(); kvs::OpenGL::Flush();
+        }
         else
         {
+            screen.redraw(); kvs::OpenGL::Flush();
+            std::cout << " no" << std::endl;
             if ( m_loop )
             {
                 object->jumpToFrame( 0 );
